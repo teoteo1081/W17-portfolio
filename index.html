@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thao Nguyen (TJ) | Performance Marketer & AI Orchestration</title>
+  <meta name="description" content="Portfolio of Thao Nguyen (TJ) - Data-Driven Performance Marketer, AI Orchestration & Multilingual Growth Specialist.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Thao Nguyen (TJ) | Performance Marketer & AI Orchestration">
+  <meta property="og:description" content="Data-Driven Performance Marketer • AI Orchestration • Multilingual Growth Specialist.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teoteo1081.github.io/">
+
+  <!-- Tailwind CDN, then class-based dark mode config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#34d399',
+              cyan: '#22d3ee',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Smooth transitions and scroll offset for sticky header */
+    html {
+      scroll-padding-top: 5rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .bar-transition {
+      transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1), width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300 selection:bg-emerald-500 selection:text-white font-sans antialiased">
+
+  <!-- Sticky Glassmorphism Navigation -->
+  <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-slate-950/80 glass-nav transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#about" class="flex items-center gap-2 group focus:outline-none">
+        <span class="shrink-0 w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-400 to-cyan-400 flex items-center justify-center text-slate-950 font-black text-lg shadow-sm group-hover:scale-105 transition-transform">
+          TJ
+        </span>
+        <span class="whitespace-nowrap font-bold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+          Thao Nguyen <span class="hidden sm:inline text-xs font-semibold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 ml-1">TJ</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" data-i18n="nav_about" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">About</a>
+        <a href="#metrics" data-i18n="nav_metrics" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Metrics</a>
+        <a href="#dashboard" data-i18n="nav_dashboard" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Dashboard</a>
+        <a href="#projects" data-i18n="nav_projects" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Projects</a>
+        <a href="#learning-lab" data-i18n="nav_lab" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Learning Lab</a>
+        <a href="#contact" data-i18n="nav_contact" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop Controls & CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Language Selector -->
+        <div class="relative inline-block">
+          <select id="langSelect" onchange="switchLanguage(this.value)" aria-label="Select Language" class="bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer">
+            <option value="en">EN</option>
+            <option value="vi">VI</option>
+            <option value="es">ES</option>
+            <option value="zh">ZH</option>
+          </select>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button onclick="toggleTheme()" id="themeBtn" aria-label="Toggle Theme" class="p-2 rounded-lg bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400">
+          <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
+          <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4 block"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" data-i18n="nav_cta" class="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-sm shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <select id="langSelectMobile" onchange="switchLanguage(this.value)" aria-label="Select Language Mobile" class="bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-2 py-1.5">
+          <option value="en">EN</option>
+          <option value="vi">VI</option>
+          <option value="es">ES</option>
+          <option value="zh">ZH</option>
+        </select>
+        <button onclick="toggleTheme()" aria-label="Toggle Theme Mobile" class="p-2 rounded-lg bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800">
+          <i data-lucide="sun" class="w-4 h-4 mobile-sun hidden"></i>
+          <i data-lucide="moon" class="w-4 h-4 mobile-moon block"></i>
+        </button>
+        <button onclick="toggleMobileMenu()" id="menuBtn" aria-label="Open Navigation Menu" class="p-2 rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800">
+          <i data-lucide="menu" id="menuIconOpen" class="w-5 h-5 block"></i>
+          <i data-lucide="x" id="menuIconClose" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Collapsible Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-b border-slate-200 dark:border-zinc-800 bg-white/95 dark:bg-slate-950/95 px-6 py-6 transition-all">
+      <nav class="flex flex-col gap-4 text-base font-medium text-slate-700 dark:text-slate-200">
+        <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about" class="hover:text-emerald-400">About</a>
+        <a href="#metrics" onclick="toggleMobileMenu()" data-i18n="nav_metrics" class="hover:text-emerald-400">Metrics</a>
+        <a href="#dashboard" onclick="toggleMobileMenu()" data-i18n="nav_dashboard" class="hover:text-emerald-400">Dashboard</a>
+        <a href="#projects" onclick="toggleMobileMenu()" data-i18n="nav_projects" class="hover:text-emerald-400">Projects</a>
+        <a href="#learning-lab" onclick="toggleMobileMenu()" data-i18n="nav_lab" class="hover:text-emerald-400">Learning Lab</a>
+        <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_contact" class="hover:text-emerald-400">Contact</a>
+        <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_cta" class="inline-flex items-center justify-center mt-2 px-4 py-2.5 text-sm font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400">
+          Get in Touch
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-24 sm:space-y-32">
+
+    <!-- Section 1: Hero (#about) -->
+    <section id="about" class="relative pt-6 sm:pt-12">
+      <!-- Glow background accent -->
+      <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+        
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 backdrop-blur-sm">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span data-i18n="hero_badge">Available for Projects & Collaborations</span>
+        </div>
+
+        <!-- Headline & Name -->
+        <div class="space-y-4">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <span data-i18n="hero_headline" class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 dark:from-white dark:via-slate-100 dark:to-slate-300 bg-clip-text text-transparent">
+              Bridging Analytical Precision with Scalable Revenue
+            </span>
+          </h1>
+          <p data-i18n="hero_positioning" class="text-base sm:text-xl font-semibold bg-gradient-to-r from-emerald-700 to-cyan-700 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent">
+            Data-Driven Performance Marketer • AI Orchestration • Multilingual Growth Specialist
+          </p>
+        </div>
+
+        <!-- Narrative Description -->
+        <p data-i18n="hero_desc" class="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
+          Unlocking commercial growth by bridging incentive architectures (MAPA model), automated Python ETL pipelines, and autonomous AI agents. Specializing in high-velocity conversion rate optimization (CRO) and sustainable sales budget ROI.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <a href="#dashboard" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-md shadow-emerald-500/20 hover:scale-[1.02] transition-all">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+            <span data-i18n="hero_btn_dashboard">Explore Live Dashboard</span>
+          </a>
+          <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 hover:border-emerald-500/50 hover:scale-[1.02] transition-all">
+            <i data-lucide="github" class="w-4 h-4"></i>
+            <span data-i18n="hero_btn_github">View GitHub Profile</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Metrics Strip (#metrics) -->
+    <section id="metrics" class="space-y-6">
+      <div class="text-center space-y-2">
+        <h2 data-i18n="metrics_section_title" class="text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold">
+          Proven Impact & Operational Scale
+        </h2>
+        <p data-i18n="metrics_section_sub" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+          Data Engineering & Commercial Results
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Card 1 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-lg hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+              <i data-lucide="clock-4" class="w-5 h-5"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight">
+              ~60%
+            </div>
+            <h3 data-i18n="metric_card1_title" class="font-semibold text-slate-800 dark:text-slate-200 text-sm">
+              Processing Time Reduced
+            </h3>
+            <p data-i18n="metric_card1_desc" class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+              Manual data processing time cut via Python automated ETL and scheduled reconciliation routines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-lg hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight">
+              500+
+            </div>
+            <h3 data-i18n="metric_card2_title" class="font-semibold text-slate-800 dark:text-slate-200 text-sm">
+              Sales Agents Tracked
+            </h3>
+            <p data-i18n="metric_card2_desc" class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+              Sales representatives and real-time performance indicators monitored dynamically across branches.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-lg hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+              <i data-lucide="line-chart" class="w-5 h-5"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight">
+              MAPA
+            </div>
+            <h3 data-i18n="metric_card3_title" class="font-semibold text-slate-800 dark:text-slate-200 text-sm">
+              Incentive Architecture
+            </h3>
+            <p data-i18n="metric_card3_desc" class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+              Incentive scheme modeling and sales budget allocation calibrated directly for bottom-line ROI.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-lg hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight">
+              AI Workflows
+            </div>
+            <h3 data-i18n="metric_card4_title" class="font-semibold text-slate-800 dark:text-slate-200 text-sm">
+              Multi-Agent Pipelines
+            </h3>
+            <p data-i18n="metric_card4_desc" class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+              Autonomous subagents orchestrated for rapid conversion rate optimization, copy & A/B testing.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Performance Dashboard (#dashboard) -->
+    <section id="dashboard" class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold mb-1">
+            <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+            <span data-i18n="dash_tag">Interactive Simulation</span>
+          </div>
+          <h2 data-i18n="dash_title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            Performance & Funnel Analytics
+          </h2>
+          <p data-i18n="dash_disclaimer" class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            * Illustrative sample dataset demonstrating dynamic KPI filtering and funnel analytics.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl">
+          <button onclick="filterDashboard('all')" id="btn-filter-all" data-i18n="filter_all" class="filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 shadow-sm transition-all">
+            All Regions
+          </button>
+          <button onclick="filterDashboard('north')" id="btn-filter-north" data-i18n="filter_north" class="filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all">
+            North
+          </button>
+          <button onclick="filterDashboard('south')" id="btn-filter-south" data-i18n="filter_south" class="filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all">
+            South
+          </button>
+          <button onclick="filterDashboard('direct')" id="btn-filter-direct" data-i18n="filter_direct" class="filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all">
+            Direct Channels
+          </button>
+        </div>
+      </div>
+
+      <!-- 3 Dynamic KPI Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- KPI 1 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 shadow-sm">
+          <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">
+            <span data-i18n="kpi_active_label">Sales Active Ratio</span>
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div id="kpi-active" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono mt-3">
+            78.4%
+          </div>
+          <p data-i18n="kpi_active_desc" class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+            Active quoting reps against assigned quota
+          </p>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 shadow-sm">
+          <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">
+            <span data-i18n="kpi_roi_label">Incentive Scheme ROI</span>
+            <i data-lucide="trending-up" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+          <div id="kpi-roi" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono mt-3">
+            3.4x
+          </div>
+          <p data-i18n="kpi_roi_desc" class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+            Net incremental revenue per incentive dollar
+          </p>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 shadow-sm">
+          <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">
+            <span data-i18n="kpi_lift_label">Funnel Conversion Lift</span>
+            <i data-lucide="zap" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div id="kpi-lift" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono mt-3 text-emerald-700 dark:text-emerald-400">
+            +24.8%
+          </div>
+          <p data-i18n="kpi_lift_desc" class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+            Relative lift over non-optimized baselines
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Visual Charts Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Bar Chart: Quarterly Budget ROI Execution -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 shadow-sm space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 data-i18n="chart_roi_title" class="font-bold text-slate-900 dark:text-white text-base">
+                Incentive ROI by Quarter
+              </h3>
+              <p data-i18n="chart_roi_sub" class="text-xs text-slate-500 dark:text-slate-400">
+                Performance coefficient across four fiscal quarters
+              </p>
+            </div>
+            <span class="text-xs font-mono font-semibold px-2 py-1 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Multiple (x)</span>
+          </div>
+
+          <!-- Flex Bar Chart -->
+          <div class="h-48 flex items-end justify-between gap-4 pt-8 px-2 border-b border-slate-200 dark:border-zinc-800">
+            
+            <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+              <span id="chart-val-q1" class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">2.1x</span>
+              <div class="w-full bg-slate-100 dark:bg-zinc-800 rounded-t-lg overflow-hidden flex items-end h-36">
+                <div id="bar-q1" style="height: 60%;" class="w-full bg-gradient-to-t from-emerald-500 to-cyan-400 rounded-t-lg bar-transition"></div>
+              </div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Q1</span>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+              <span id="chart-val-q2" class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">2.8x</span>
+              <div class="w-full bg-slate-100 dark:bg-zinc-800 rounded-t-lg overflow-hidden flex items-end h-36">
+                <div id="bar-q2" style="height: 75%;" class="w-full bg-gradient-to-t from-emerald-500 to-cyan-400 rounded-t-lg bar-transition"></div>
+              </div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Q2</span>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+              <span id="chart-val-q3" class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">3.4x</span>
+              <div class="w-full bg-slate-100 dark:bg-zinc-800 rounded-t-lg overflow-hidden flex items-end h-36">
+                <div id="bar-q3" style="height: 90%;" class="w-full bg-gradient-to-t from-emerald-500 to-cyan-400 rounded-t-lg bar-transition"></div>
+              </div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Q3</span>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+              <span id="chart-val-q4" class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">3.8x</span>
+              <div class="w-full bg-slate-100 dark:bg-zinc-800 rounded-t-lg overflow-hidden flex items-end h-36">
+                <div id="bar-q4" style="height: 100%;" class="w-full bg-gradient-to-t from-emerald-500 to-cyan-400 rounded-t-lg bar-transition"></div>
+              </div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Q4</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Conversion Funnel -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 shadow-sm space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 data-i18n="chart_funnel_title" class="font-bold text-slate-900 dark:text-white text-base">
+                Conversion Funnel Dynamics
+              </h3>
+              <p data-i18n="chart_funnel_sub" class="text-xs text-slate-500 dark:text-slate-400">
+                Retention and drop-off through optimization stages
+              </p>
+            </div>
+            <span class="text-xs font-mono font-semibold px-2 py-1 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Throughput %</span>
+          </div>
+
+          <!-- Funnel Stages -->
+          <div class="space-y-4 pt-2">
+            
+            <!-- Stage 1: Lead Ingestion -->
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5 text-slate-700 dark:text-slate-300">
+                <span data-i18n="funnel_stage1">1. Traffic & Qualified Leads</span>
+                <span id="funnel-val-1" class="font-mono font-bold">100% (10,000)</span>
+              </div>
+              <div class="w-full h-3 bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div id="funnel-bar-1" style="width: 100%;" class="h-full bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full bar-transition"></div>
+              </div>
+            </div>
+
+            <!-- Stage 2: Engagement / Quote -->
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5 text-slate-700 dark:text-slate-300">
+                <span data-i18n="funnel_stage2">2. Quote Requested & Processed</span>
+                <span id="funnel-val-2" class="font-mono font-bold">54.2% (5,420)</span>
+              </div>
+              <div class="w-full h-3 bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div id="funnel-bar-2" style="width: 54.2%;" class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full bar-transition"></div>
+              </div>
+            </div>
+
+            <!-- Stage 3: Closed Won -->
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5 text-slate-700 dark:text-slate-300">
+                <span data-i18n="funnel_stage3">3. Final Close & Contract Won</span>
+                <span id="funnel-val-3" class="font-mono font-bold">24.8% (2,480)</span>
+              </div>
+              <div class="w-full h-3 bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div id="funnel-bar-3" style="width: 24.8%;" class="h-full bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full bar-transition"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Featured Projects (#projects) -->
+    <section id="projects" class="space-y-8">
+      <div class="text-center space-y-2">
+        <h2 data-i18n="proj_section_title" class="text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold">
+          Selected Portfolio Work
+        </h2>
+        <p data-i18n="proj_section_sub" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Commercial Architecture & Engineering
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bento Project 1 -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+              <span>INCENTIVE ARCHITECTURE</span>
+            </div>
+            <h3 data-i18n="p1_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+              Sales Incentive & Commission ROI Optimization Engine
+            </h3>
+            <p data-i18n="p1_desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Designed transparent incentive schemes using the MAPA model, coupling dynamic Power BI dashboards with Python budget sensitivity simulations to align sales commission payouts directly with gross margin ROI.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">MAPA Model</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Power BI</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Python</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Financial Modeling</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 pt-6 border-t border-slate-100 dark:border-zinc-800/80 mt-6">
+            <a href="#" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 transition-all">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> <span data-i18n="btn_live_case">Live Case Study</span>
+            </a>
+            <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i> <span data-i18n="btn_github_repo">GitHub Repo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Project 2 -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20">
+              <i data-lucide="database" class="w-3.5 h-3.5"></i>
+              <span>DATA AUTOMATION & ETL</span>
+            </div>
+            <h3 data-i18n="p2_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+              Automated Multi-Region Data Pipeline & Reconciliation
+            </h3>
+            <p data-i18n="p2_desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Automated end-to-end data pipelines using Python ETL scripts and optimized SQL routines. Synchronized disparate branch reports across 12 distinct regional territories, cutting reporting turnaround latency by 60%.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Python ETL</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">PostgreSQL / SQL</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Data Integrity</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Automated Delivery</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 pt-6 border-t border-slate-100 dark:border-zinc-800/80 mt-6">
+            <a href="#" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 transition-all">
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i> <span data-i18n="btn_view_arch">View Architecture</span>
+            </a>
+            <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i> <span data-i18n="btn_github_repo">GitHub Repo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Project 3 -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-all hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+              <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+              <span>AI ORCHESTRATION & CRO</span>
+            </div>
+            <h3 data-i18n="p3_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+              AI-Assisted Conversion & Growth Workspace
+            </h3>
+            <p data-i18n="p3_desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Implemented collaborative multi-agent CLI workflows coordinating market intelligence extraction, landing page copy iteration, and conversion optimization testing, accelerating creative sprint cycles.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Antigravity CLI</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Agent Pipelines</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">CRO Testing</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-slate-300">Rapid Prototyping</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 pt-6 border-t border-slate-100 dark:border-zinc-800/80 mt-6">
+            <a href="#" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 transition-all">
+              <i data-lucide="play" class="w-3.5 h-3.5"></i> <span data-i18n="btn_live_proto">Live Prototype</span>
+            </a>
+            <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i> <span data-i18n="btn_github_repo">GitHub Repo</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 5: Continuous Learning Lab & Personal Branding (#learning-lab) -->
+    <section id="learning-lab" class="space-y-8">
+      <div class="text-center space-y-2">
+        <h2 data-i18n="lab_section_title" class="text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold">
+          Continuous Learning Lab & Competencies
+        </h2>
+        <p data-i18n="lab_section_sub" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Cross-Disciplinary Evolution
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Lab Card 1: Active Expansion -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="lab1_title" class="text-lg font-bold text-slate-900 dark:text-white">
+            Active Expansion
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab1_item1"><strong>Digital Marketing & CRO:</strong> Behavioral funnel optimization and high-intent campaign architecture.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab1_item2"><strong>AI Agent Orchestration:</strong> Engineering multi-agent workflows using Claude Code, OpenAI Codex, and Google Antigravity CLI.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab1_item3">Autonomous subagent execution contracts and deterministic testing harnesses.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Lab Card 2: Multilingual Communication -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="lab2_title" class="text-lg font-bold text-slate-900 dark:text-white">
+            Multilingual Communication
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab2_item1"><strong>English:</strong> Full Professional Working Proficiency in commercial & technical strategy.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab2_item2"><strong>Vietnamese:</strong> Native Fluency in all business and cultural contexts.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab2_item3"><strong>Spanish (Español):</strong> Active Progression (A2-B1 Operational Communication).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab2_item4"><strong>Chinese (中文):</strong> Structured Study (HSK Proficiency Path).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Lab Card 3: Core Foundation -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="lab3_title" class="text-lg font-bold text-slate-900 dark:text-white">
+            Core Foundation
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <li class="flex items-start gap-2">
+              <i data-lucide="database" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab3_item1"><strong>SQL Query Optimization:</strong> Performance tuning, window functions, and reliable relational modeling.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="pie-chart" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab3_item2"><strong>Power BI & DAX:</strong> Advanced dynamic parameter architectures and executive KPI visualizations.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="calculator" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <span data-i18n="lab3_item3"><strong>Incentive & Financial Modeling:</strong> Rigorous ROI scheme calibrations and margin sensitivity tables.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 6: Contact & Footer (#contact) -->
+    <section id="contact" class="space-y-12">
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <h2 data-i18n="contact_section_title" class="text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold">
+          Get in Touch
+        </h2>
+        <p data-i18n="contact_section_sub" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Let’s Build Measurable Growth
+        </p>
+        <p data-i18n="contact_section_desc" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+          Interested in discussing incentive engineering, AI automation workflows, or performance marketing? Send a message below.
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="max-w-xl mx-auto p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800/80 shadow-md">
+        
+        <!-- Thanks Alert Message -->
+        <div id="contactSuccess" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-sm font-medium flex items-center gap-3">
+          <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0"></i>
+          <span data-i18n="form_success_msg">Thank you for your message! I will respond promptly.</span>
+        </div>
+
+        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div>
+            <label for="formName" data-i18n="form_label_name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Name
+            </label>
+            <input type="text" id="formName" required data-i18n-placeholder="form_ph_name" placeholder="Your Name" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all">
+          </div>
+
+          <div>
+            <label for="formEmail" data-i18n="form_label_email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Email
+            </label>
+            <input type="email" id="formEmail" required data-i18n-placeholder="form_ph_email" placeholder="your.email@example.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all">
+          </div>
+
+          <div>
+            <label for="formMessage" data-i18n="form_label_message" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Message
+            </label>
+            <textarea id="formMessage" rows="4" required data-i18n-placeholder="form_ph_message" placeholder="Tell me about your project, target metrics, or inquiry..." class="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all resize-none"></textarea>
+          </div>
+
+          <button type="submit" data-i18n="form_btn_submit" class="w-full py-3 rounded-lg text-sm font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Professional Social Links & Footer -->
+      <footer class="pt-10 border-t border-slate-200 dark:border-zinc-800/80 text-center space-y-6">
+        <div class="flex items-center justify-center gap-6">
+          <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-all hover:scale-110" aria-label="GitHub">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-all hover:scale-110" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <!-- TODO: Update placeholder email when customized -->
+          <a href="mailto:hello@example.com" class="p-2.5 rounded-full bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-all hover:scale-110" aria-label="Email">
+            <i data-lucide="mail" class="w-5 h-5"></i>
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-500 dark:text-slate-400">
+          &copy; Thao Nguyen (TJ). All rights reserved.
+        </p>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- Complete Translations & Core Logic -->
+  <script>
+    const translations = {
+      en: {
+        nav_about: "About",
+        nav_metrics: "Metrics",
+        nav_dashboard: "Dashboard",
+        nav_projects: "Projects",
+        nav_lab: "Learning Lab",
+        nav_contact: "Contact",
+        nav_cta: "Get in Touch",
+        hero_badge: "Available for Projects & Collaborations",
+        hero_headline: "Bridging Analytical Precision with Scalable Revenue",
+        hero_positioning: "Data-Driven Performance Marketer • AI Orchestration • Multilingual Growth Specialist",
+        hero_desc: "Unlocking commercial growth by bridging incentive architectures (MAPA model), automated Python ETL pipelines, and autonomous AI agents. Specializing in high-velocity conversion rate optimization (CRO) and sustainable sales budget ROI.",
+        hero_btn_dashboard: "Explore Live Dashboard",
+        hero_btn_github: "View GitHub Profile",
+        metrics_section_title: "Proven Impact & Operational Scale",
+        metrics_section_sub: "Data Engineering & Commercial Results",
+        metric_card1_title: "Processing Time Reduced",
+        metric_card1_desc: "Manual data processing time cut via Python automated ETL and scheduled reconciliation routines.",
+        metric_card2_title: "Sales Agents Tracked",
+        metric_card2_desc: "Sales representatives and real-time performance indicators monitored dynamically across branches.",
+        metric_card3_title: "Incentive Architecture",
+        metric_card3_desc: "Incentive scheme modeling and sales budget allocation calibrated directly for bottom-line ROI.",
+        metric_card4_title: "Multi-Agent Pipelines",
+        metric_card4_desc: "Autonomous subagents orchestrated for rapid conversion rate optimization, copy & A/B testing.",
+        dash_tag: "Interactive Simulation",
+        dash_title: "Performance & Funnel Analytics",
+        dash_disclaimer: "* Illustrative sample dataset demonstrating dynamic KPI filtering and funnel analytics.",
+        filter_all: "All Regions",
+        filter_north: "North",
+        filter_south: "South",
+        filter_direct: "Direct Channels",
+        kpi_active_label: "Sales Active Ratio",
+        kpi_active_desc: "Active quoting reps against assigned quota",
+        kpi_roi_label: "Incentive Scheme ROI",
+        kpi_roi_desc: "Net incremental revenue per incentive dollar",
+        kpi_lift_label: "Funnel Conversion Lift",
+        kpi_lift_desc: "Relative lift over non-optimized baselines",
+        chart_roi_title: "Incentive ROI by Quarter",
+        chart_roi_sub: "Performance coefficient across four fiscal quarters",
+        chart_funnel_title: "Conversion Funnel Dynamics",
+        chart_funnel_sub: "Retention and drop-off through optimization stages",
+        funnel_stage1: "1. Traffic & Qualified Leads",
+        funnel_stage2: "2. Quote Requested & Processed",
+        funnel_stage3: "3. Final Close & Contract Won",
+        proj_section_title: "Selected Portfolio Work",
+        proj_section_sub: "Commercial Architecture & Engineering",
+        p1_title: "Sales Incentive & Commission ROI Optimization Engine",
+        p1_desc: "Designed transparent incentive schemes using the MAPA model, coupling dynamic Power BI dashboards with Python budget sensitivity simulations to align sales commission payouts directly with gross margin ROI.",
+        p2_title: "Automated Multi-Region Data Pipeline & Reconciliation",
+        p2_desc: "Automated end-to-end data pipelines using Python ETL scripts and optimized SQL routines. Synchronized disparate branch reports across 12 distinct regional territories, cutting reporting turnaround latency by 60%.",
+        p3_title: "AI-Assisted Conversion & Growth Workspace",
+        p3_desc: "Implemented collaborative multi-agent CLI workflows coordinating market intelligence extraction, landing page copy iteration, and conversion optimization testing, accelerating creative sprint cycles.",
+        btn_live_case: "Live Case Study",
+        btn_view_arch: "View Architecture",
+        btn_live_proto: "Live Prototype",
+        btn_github_repo: "GitHub Repo",
+        lab_section_title: "Continuous Learning Lab & Competencies",
+        lab_section_sub: "Cross-Disciplinary Evolution",
+        lab1_title: "Active Expansion",
+        lab1_item1: "Digital Marketing & CRO: Behavioral funnel optimization and high-intent campaign architecture.",
+        lab1_item2: "AI Agent Orchestration: Engineering multi-agent workflows using Claude Code, OpenAI Codex, and Google Antigravity CLI.",
+        lab1_item3: "Autonomous subagent execution contracts and deterministic testing harnesses.",
+        lab2_title: "Multilingual Communication",
+        lab2_item1: "English: Full Professional Working Proficiency in commercial & technical strategy.",
+        lab2_item2: "Vietnamese: Native Fluency in all business and cultural contexts.",
+        lab2_item3: "Spanish (Español): Active Progression (A2-B1 Operational Communication).",
+        lab2_item4: "Chinese (中文): Structured Study (HSK Proficiency Path).",
+        lab3_title: "Core Foundation",
+        lab3_item1: "SQL Query Optimization: Performance tuning, window functions, and reliable relational modeling.",
+        lab3_item2: "Power BI & DAX: Advanced dynamic parameter architectures and executive KPI visualizations.",
+        lab3_item3: "Incentive & Financial Modeling: Rigorous ROI scheme calibrations and margin sensitivity tables.",
+        contact_section_title: "Get in Touch",
+        contact_section_sub: "Let’s Build Measurable Growth",
+        contact_section_desc: "Interested in discussing incentive engineering, AI automation workflows, or performance marketing? Send a message below.",
+        form_label_name: "Name",
+        form_label_email: "Email",
+        form_label_message: "Message",
+        form_ph_name: "Your Name",
+        form_ph_email: "your.email@example.com",
+        form_ph_message: "Tell me about your project, target metrics, or inquiry...",
+        form_btn_submit: "Send Message",
+        form_success_msg: "Thank you for your message! I will respond promptly."
+      },
+      vi: {
+        nav_about: "Giới thiệu",
+        nav_metrics: "Chỉ số",
+        nav_dashboard: "Dashboard",
+        nav_projects: "Dự án",
+        nav_lab: "Góc học tập",
+        nav_contact: "Liên hệ",
+        nav_cta: "Liên hệ ngay",
+        hero_badge: "Sẵn sàng cho Dự án & Hợp tác",
+        hero_headline: "Kết Nối Năng Lực Dữ Liệu Sâu Sắc Với Tăng Trưởng Doanh Thu",
+        hero_positioning: "Data-Driven Performance Marketer • AI Orchestration • Multilingual Growth Specialist",
+        hero_desc: "Mở khóa tăng trưởng thương mại bằng cách kết hợp cơ chế khuyến khích (mô hình MAPA), đường ống tự động hóa dữ liệu Python ETL và hệ thống AI agent tự chủ. Tối ưu hóa phễu chuyển đổi (CRO) và ROI ngân sách bán hàng bền vững.",
+        hero_btn_dashboard: "Xem Dashboard Tương Tác",
+        hero_btn_github: "Xem Hồ Sơ GitHub",
+        metrics_section_title: "Tác Động Thực Tế & Quy Mô Vận Hành",
+        metrics_section_sub: "Kỹ Thuật Dữ Liệu & Hiệu Quả Thương Mại",
+        metric_card1_title: "Thời Gian Xử Lý Giảm",
+        metric_card1_desc: "Cắt giảm ~60% thời gian xử lý dữ liệu thủ công thông qua tự động hóa Python ETL và đối soát tự động.",
+        metric_card2_title: "Nhân Sự Bán Hàng Theo Dõi",
+        metric_card2_desc: "Hơn 500 nhân sự kinh doanh và các chỉ số hiệu suất được theo dõi trực quan và linh hoạt theo chi nhánh.",
+        metric_card3_title: "Kiến Trúc Khuyến Khích",
+        metric_card3_desc: "Mô hình MAPA thiết kế cơ chế thưởng và phân bổ ngân sách bán hàng gắn chặt với ROI doanh thu ròng.",
+        metric_card4_title: "Quy Trình Tự Động AI",
+        metric_card4_desc: "Điều phối mạng lưới multi-agent giúp tăng tốc thử nghiệm A/B, sáng tạo nội dung và tối ưu hóa CRO.",
+        dash_tag: "Mô Phỏng Tương Tác",
+        dash_title: "Phân Tích Hiệu Suất & Phễu Chuyển Đổi",
+        dash_disclaimer: "* Dữ liệu mẫu minh họa khả năng lọc KPI linh hoạt và phân tích hiệu quả phễu kinh doanh.",
+        filter_all: "Tất cả khu vực",
+        filter_north: "Miền Bắc",
+        filter_south: "Miền Nam",
+        filter_direct: "Kênh Trực Tiếp",
+        kpi_active_label: "Tỷ Lệ Hoạt Động (Active Ratio)",
+        kpi_active_desc: "Tỷ lệ nhân viên kinh doanh phát sinh doanh số thực tế",
+        kpi_roi_label: "ROI Cơ Chế Thưởng",
+        kpi_roi_desc: "Doanh thu gia tăng ròng trên mỗi đồng ngân sách thưởng",
+        kpi_lift_label: "Tăng Trưởng Chuyển Đổi Phễu",
+        kpi_lift_desc: "Mức cải thiện so với mức chuẩn ban đầu chưa tối ưu",
+        chart_roi_title: "ROI Cơ Chế Theo Quý",
+        chart_roi_sub: "Hệ số hiệu quả tài chính qua 4 quý liên tiếp",
+        chart_funnel_title: "Động Thái Phễu Chuyển Đổi",
+        chart_funnel_sub: "Tỷ lệ giữ chân và chuyển đổi qua từng giai đoạn then chốt",
+        funnel_stage1: "1. Lưu lượng & Khách tiềm năng",
+        funnel_stage2: "2. Yêu cầu báo giá & Tư vấn",
+        funnel_stage3: "3. Chốt hợp đồng & Ký kết",
+        proj_section_title: "Dự Án Nổi Bật",
+        proj_section_sub: "Kiến Trúc Thương Mại & Kỹ Thuật",
+        p1_title: "Hệ Thống Tối Ưu Hóa ROI Thưởng & Hoa Hồng Bán Hàng",
+        p1_desc: "Thiết kế cơ chế khuyến khích minh bạch dựa trên mô hình MAPA, kết hợp dashboard Power BI động và mô phỏng độ nhạy ngân sách bằng Python để gắn trực tiếp tiền thưởng với biên lợi nhuận ròng.",
+        p2_title: "Đường Ống Dữ Liệu & Đối Soát Đa Khu Vực Tự Động",
+        p2_desc: "Tự động hóa hoàn toàn luồng dữ liệu bằng Python ETL và truy vấn SQL tối ưu. Đồng bộ dữ liệu báo cáo từ 12 chi nhánh khu vực, cắt giảm 60% độ trễ xử lý báo cáo định kỳ.",
+        p3_title: "Không Gian Tăng Trưởng & Chuyển Đổi Tích Hợp AI",
+        p3_desc: "Xây dựng quy trình phối hợp multi-agent qua CLI để tự động trích xuất thông tin thị trường, tinh chỉnh thông điệp landing page và thử nghiệm tối ưu tỷ lệ chuyển đổi nhanh chóng.",
+        btn_live_case: "Xem Case Study",
+        btn_view_arch: "Xem Kiến Trúc",
+        btn_live_proto: "Bản Thử Nghiệm",
+        btn_github_repo: "Mã Nguồn GitHub",
+        lab_section_title: "Góc Học Tập & Năng Lực Phát Triển",
+        lab_section_sub: "Phát Triển Đa Lĩnh Vực Liên Tục",
+        lab1_title: "Mở Rộng Chủ Động",
+        lab1_item1: "Digital Marketing & CRO: Tối ưu hóa phễu hành vi và xây dựng chiến dịch nhắm mục tiêu cao độ.",
+        lab1_item2: "Điều Phối AI Agent: Thiết kế luồng làm việc multi-agent trên Claude Code, OpenAI Codex và Antigravity CLI.",
+        lab1_item3: "Xây dựng hợp đồng thực thi (execution contract) và bộ kiểm thử tự động cho subagent.",
+        lab2_title: "Giao Tiếp Đa Ngôn Ngữ",
+        lab2_item1: "Tiếng Anh: Sử dụng thành thạo chuyên nghiệp trong chiến lược kinh doanh và kỹ thuật.",
+        lab2_item2: "Tiếng Việt: Bản ngữ tự nhiên, am hiểu sâu sắc ngữ cảnh văn hóa và vận hành.",
+        lab2_item3: "Tiếng Tây Ban Nha: Đang tích cực rèn luyện nâng cao (Giao tiếp thực tế mức A2-B1).",
+        lab2_item4: "Tiếng Trung Quốc: Học tập bài bản theo lộ trình tiêu chuẩn HSK.",
+        lab3_title: "Nền Tảng Cốt Lõi",
+        lab3_item1: "Tối Ưu Hóa Truy Vấn SQL: Xử lý hiệu năng cao, hàm phân tích (window functions) và mô hình hóa quan hệ.",
+        lab3_item2: "Power BI & DAX: Xây dựng tham số động phức tạp và hệ thống trực quan hóa KPI quản trị.",
+        lab3_item3: "Mô Hình Tài Chính & Khuyến Khích: Định chuẩn chặt chẽ ROI ngân sách và bảng phân tích độ nhạy.",
+        contact_section_title: "Liên Hệ",
+        contact_section_sub: "Cùng Xây Dựng Tăng Trưởng Thực Chất",
+        contact_section_desc: "Bạn muốn trao đổi về cấu trúc cơ chế khuyến khích, tối ưu tự động hóa AI hay marketing hiệu suất? Hãy để lại tin nhắn.",
+        form_label_name: "Họ và tên",
+        form_label_email: "Địa chỉ Email",
+        form_label_message: "Nội dung tin nhắn",
+        form_ph_name: "Họ và tên của bạn",
+        form_ph_email: "ten.ban@example.com",
+        form_ph_message: "Chia sẻ về dự án, mục tiêu chỉ số hoặc thắc mắc của bạn...",
+        form_btn_submit: "Gửi Tin Nhắn",
+        form_success_msg: "Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi trong thời gian sớm nhất."
+      },
+      es: {
+        nav_about: "Sobre mí",
+        nav_metrics: "Métricas",
+        nav_dashboard: "Panel",
+        nav_projects: "Proyectos",
+        nav_lab: "Laboratorio",
+        nav_contact: "Contacto",
+        nav_cta: "Contactar",
+        hero_badge: "Disponible para Proyectos y Colaboraciones",
+        hero_headline: "Uniendo Precisión Analítica con Ingresos Escalables",
+        hero_positioning: "Especialista en Marketing de Rendimiento • Orquestación de IA • Crecimiento Multilingüe",
+        hero_desc: "Impulsando el crecimiento comercial mediante la integración de modelos de incentivos (MAPA), pipelines automatizados en Python y agentes autónomos de IA. Optimización de conversión (CRO) y ROI en presupuestos de ventas.",
+        hero_btn_dashboard: "Ver Panel Interactivo",
+        hero_btn_github: "Perfil de GitHub",
+        metrics_section_title: "Impacto Comprobado y Escala Operativa",
+        metrics_section_sub: "Ingeniería de Datos y Resultados Comerciales",
+        metric_card1_title: "Tiempo de Proceso Reducido",
+        metric_card1_desc: "Reducción de ~60% en procesamiento manual de datos mediante flujos ETL en Python y conciliaciones automáticas.",
+        metric_card2_title: "Agentes de Venta Monitoreados",
+        metric_card2_desc: "Más de 500 representantes de ventas e indicadores de rendimiento monitoreados dinámicamente en múltiples sucursales.",
+        metric_card3_title: "Estructura de Incentivos",
+        metric_card3_desc: "Modelado del esquema MAPA y asignación de presupuesto orientados directamente al ROI del beneficio neto.",
+        metric_card4_title: "Flujos de Trabajo con IA",
+        metric_card4_desc: "Pipelines multiagente para acelerar la optimización de conversión (CRO) y pruebas A/B de contenido.",
+        dash_tag: "Simulación Interactiva",
+        dash_title: "Análisis de Rendimiento y Embudo",
+        dash_disclaimer: "* Datos de muestra con fines ilustrativos que muestran filtros dinámicos de KPI y análisis de embudo.",
+        filter_all: "Todas las Regiones",
+        filter_north: "Norte",
+        filter_south: "Sur",
+        filter_direct: "Canales Directos",
+        kpi_active_label: "Tasa de Actividad de Ventas",
+        kpi_active_desc: "Representantes activos cotizando frente a cuotas asignadas",
+        kpi_roi_label: "ROI del Esquema de Incentivos",
+        kpi_roi_desc: "Ingreso incremental neto generado por cada dólar de incentivo",
+        kpi_lift_label: "Incremento de Conversión del Embudo",
+        kpi_lift_desc: "Aumento relativo frente a puntos de referencia iniciales",
+        chart_roi_title: "ROI de Incentivos por Trimestre",
+        chart_roi_sub: "Coeficiente de rendimiento en cuatro trimestres fiscales",
+        chart_funnel_title: "Dinámica del Embudo de Conversión",
+        chart_funnel_sub: "Retención y transición a través de etapas clave",
+        funnel_stage1: "1. Tráfico y Prospectos Cualificados",
+        funnel_stage2: "2. Cotizaciones Solicitadas y Procesadas",
+        funnel_stage3: "3. Cierre Definitivo y Contratos Ganados",
+        proj_section_title: "Trabajos Seleccionados",
+        proj_section_sub: "Arquitectura Comercial e Ingeniería",
+        p1_title: "Motor de Optimización de ROI para Incentivos y Comisiones",
+        p1_desc: "Diseño de esquemas transparentes con el modelo MAPA, vinculando paneles interactivos de Power BI con simulaciones en Python para alinear comisiones con el ROI del margen bruto.",
+        p2_title: "Pipeline Automatizado de Datos y Conciliación Multirregional",
+        p2_desc: "Automatización integral de datos con scripts ETL en Python y SQL optimizado. Sincronización de reportes de 12 territorios regionales, reduciendo la latencia de informes en un 60%.",
+        p3_title: "Espacio de Crecimiento y Conversión Asistido por IA",
+        p3_desc: "Implementación de flujos de trabajo multiagente mediante CLI para extracción de inteligencia de mercado, iteración de textos de páginas de destino y pruebas ágiles de CRO.",
+        btn_live_case: "Caso de Estudio",
+        btn_view_arch: "Ver Arquitectura",
+        btn_live_proto: "Prototipo en Vivo",
+        btn_github_repo: "Repositorio GitHub",
+        lab_section_title: "Laboratorio de Aprendizaje Continuo",
+        lab_section_sub: "Evolución Multidisciplinaria",
+        lab1_title: "Expansión Activa",
+        lab1_item1: "Marketing Digital y CRO: Optimización del embudo conductual y arquitectura de campañas de alta intención.",
+        lab1_item2: "Orquestación de Agentes de IA: Flujos de trabajo con Claude Code, OpenAI Codex y Antigravity CLI.",
+        lab1_item3: "Contratos de ejecución autónoma para subagentes y entornos de pruebas deterministas.",
+        lab2_title: "Comunicación Multilingüe",
+        lab2_item1: "Inglés: Competencia profesional completa en estrategia técnica y comercial.",
+        lab2_item2: "Vietnamita: Fluidez nativa en todos los contextos empresariales y culturales.",
+        lab2_item3: "Español: Progresión activa en comunicación operacional (nivel A2-B1).",
+        lab2_item4: "Chino (中文): Aprendizaje estructurado según el estándar HSK.",
+        lab3_title: "Fundamentos Centrales",
+        lab3_item1: "Optimización de Consultas SQL: Ajuste de rendimiento, funciones analíticas y modelado relacional.",
+        lab3_item2: "Power BI y DAX: Arquitecturas dinámicas con parámetros avanzados y paneles ejecutivos.",
+        lab3_item3: "Modelado Financiero y de Incentivos: Calibración rigurosa de ROI y tablas de sensibilidad.",
+        contact_section_title: "Contacto",
+        contact_section_sub: "Construyamos Crecimiento Medible",
+        contact_section_desc: "¿Interesado en esquemas de incentivos, automatización de IA o marketing de rendimiento? Envíe un mensaje a continuación.",
+        form_label_name: "Nombre",
+        form_label_email: "Correo Electrónico",
+        form_label_message: "Mensaje",
+        form_ph_name: "Su nombre",
+        form_ph_email: "su.correo@ejemplo.com",
+        form_ph_message: "Cuénteme sobre su proyecto, objetivos métricos o consulta...",
+        form_btn_submit: "Enviar Mensaje",
+        form_success_msg: "¡Gracias por su mensaje! Responderé a la brevedad."
+      },
+      zh: {
+        nav_about: "关于我",
+        nav_metrics: "关键指标",
+        nav_dashboard: "数据看板",
+        nav_projects: "核心项目",
+        nav_lab: "学习实验室",
+        nav_contact: "联系方式",
+        nav_cta: "即刻联络",
+        hero_badge: "开放接受项目合作",
+        hero_headline: "以数据严谨性驱动规模化业务增长",
+        hero_positioning: "数据驱动型效果营销 • AI智能编排 • 多语言业务增长专家",
+        hero_desc: "通过整合销售激励机制架构（MAPA模型）、自动化Python ETL数据流与自主AI智能体，打破数据孤岛，赋能高转化率漏斗优化（CRO）并最大化销售预算的投资回报率（ROI）。",
+        hero_btn_dashboard: "浏览交互式看板",
+        hero_btn_github: "访问GitHub主页",
+        metrics_section_title: "经证实的业务成效与运营规模",
+        metrics_section_sub: "数据工程与商业回报",
+        metric_card1_title: "数据处理时长缩减",
+        metric_card1_desc: "通过Python自动化ETL与定时对账程序，缩减约60%的人工数据处理时间。",
+        metric_card2_title: "动态追踪销售人员",
+        metric_card2_desc: "实时监控分布在各分支机构的500+名业务代表与核心绩效指标。",
+        metric_card3_title: "激励机制架构",
+        metric_card3_desc: "基于MAPA模型设计佣金机制，使销售预算配置与净利润回报率高度对齐。",
+        metric_card4_title: "AI自动化工作流",
+        metric_card4_desc: "编排多智能体工作流，快速推进转化率优化（CRO）及创意内容A/B测试。",
+        dash_tag: "交互模拟",
+        dash_title: "业务绩效与漏斗分析",
+        dash_disclaimer: "* 示例演示数据，展示动态KPI筛选及漏斗流转分析能力。",
+        filter_all: "全部区域",
+        filter_north: "北部大区",
+        filter_south: "南部大区",
+        filter_direct: "直营渠道",
+        kpi_active_label: "销售活跃比例 (Active Ratio)",
+        kpi_active_desc: "实际产生有效报价与达成配额的销售代表比例",
+        kpi_roi_label: "激励方案投资回报 (Incentive ROI)",
+        kpi_roi_desc: "单位激励预算投入所创造的净增量营业收入",
+        kpi_lift_label: "漏斗转化提升 (Conversion Lift)",
+        kpi_lift_desc: "相较于未经优化基准线的相对转化提升幅度",
+        chart_roi_title: "各季度激励方案回报率",
+        chart_roi_sub: "连续四个会计季度的财务综合效益系数",
+        chart_funnel_title: "业务转化漏斗动态",
+        chart_funnel_sub: "各关键业务节点留存率与流失度分析",
+        funnel_stage1: "1. 访问流量与合格潜在客资",
+        funnel_stage2: "2. 方案询价与跟进处理",
+        funnel_stage3: "3. 最终签单与合同达成",
+        proj_section_title: "代表性作品集",
+        proj_section_sub: "商业架构与数据工程实践",
+        p1_title: "销售激励与佣金ROI智能优化引擎",
+        p1_desc: "运用MAPA模型设计透明化激励制度，联动Power BI动态交互报表与Python预算敏感度仿真，确保销售佣金发放与毛利ROI严格对齐。",
+        p2_title: "多区域自动化数据管道与对账系统",
+        p2_desc: "构建端到端Python ETL与SQL高效查询管道，自动整合12个区域分支的异构数据报告，将周期性报告交付延迟降低60%。",
+        p3_title: "AI驱动型转化增长与协作空间",
+        p3_desc: "搭建基于CLI的多智能体协作工作流，协同完成竞品情报提取、着陆页文案迭代及高频CRO转化测试，加快创意迭代周期。",
+        btn_live_case: "案例详情",
+        btn_view_arch: "系统架构",
+        btn_live_proto: "原型演示",
+        btn_github_repo: "GitHub仓库",
+        lab_section_title: "持续学习实验室与核心技能",
+        lab_section_sub: "跨领域持续拓展",
+        lab1_title: "前沿拓展",
+        lab1_item1: "数字营销与CRO：深入用户行为转化漏斗优化，构建高意向营销战役架构。",
+        lab1_item2: "AI智能体编排：熟练运用Claude Code、OpenAI Codex与Antigravity CLI搭建多智能体自动化体系。",
+        lab1_item3: "自主Subagent执行契约规范化与确定性测试验证。",
+        lab2_title: "多语言沟通能力",
+        lab2_item1: "英语：具备全工作场景专业流利度，胜任商业洽谈与技术方案设计。",
+        lab2_item2: "越南语：母语水平，深入理解本土商业文化与运营实务。",
+        lab2_item3: "西班牙语：持续进修提升中（具备A2-B1日常工作沟通能力）。",
+        lab2_item4: "中文：依据HSK标准化进阶路径系统化学习。",
+        lab3_title: "核心基石",
+        lab3_item1: "SQL查询与性能优化：熟练进行查询调优、窗口函数及可靠关系型建模。",
+        lab3_item2: "Power BI与DAX：精通复杂动态参数建模及管理决策级可视化展示。",
+        lab3_item3: "激励与财务模型：精确测算预算ROI及商业利润敏感度。",
+        contact_section_title: "联系我",
+        contact_section_sub: "携手打造可量化的业务增长",
+        contact_section_desc: "如需深入探讨销售激励架构、AI自动化工作流或效果营销合作，欢迎随时留言。",
+        form_label_name: "您的姓名",
+        form_label_email: "电子邮箱",
+        form_label_message: "留言内容",
+        form_ph_name: "请输入您的姓名",
+        form_ph_email: "your.email@example.com",
+        form_ph_message: "请简述您的项目背景、核心目标指标或合作意向...",
+        form_btn_submit: "发送留言",
+        form_success_msg: "非常感谢您的留言！我会尽快与您取得联系。"
+      }
+    };
+
+    // Dashboard Data by Region
+    const dashboardData = {
+      all: {
+        active: "78.4%",
+        roi: "3.4x",
+        lift: "+24.8%",
+        bars: { q1: { height: "60%", val: "2.1x" }, q2: { height: "75%", val: "2.8x" }, q3: { height: "90%", val: "3.4x" }, q4: { height: "100%", val: "3.8x" } },
+        funnel: {
+          s1: { width: "100%", val: "100% (10,000)" },
+          s2: { width: "54.2%", val: "54.2% (5,420)" },
+          s3: { width: "24.8%", val: "24.8% (2,480)" }
+        }
+      },
+      north: {
+        active: "82.1%",
+        roi: "3.7x",
+        lift: "+28.2%",
+        bars: { q1: { height: "65%", val: "2.3x" }, q2: { height: "82%", val: "3.1x" }, q3: { height: "94%", val: "3.6x" }, q4: { height: "100%", val: "4.1x" } },
+        funnel: {
+          s1: { width: "100%", val: "100% (4,200)" },
+          s2: { width: "58.5%", val: "58.5% (2,457)" },
+          s3: { width: "28.2%", val: "28.2% (1,184)" }
+        }
+      },
+      south: {
+        active: "76.5%",
+        roi: "3.2x",
+        lift: "+22.4%",
+        bars: { q1: { height: "55%", val: "1.9x" }, q2: { height: "70%", val: "2.6x" }, q3: { height: "85%", val: "3.2x" }, q4: { height: "92%", val: "3.5x" } },
+        funnel: {
+          s1: { width: "100%", val: "100% (3,800)" },
+          s2: { width: "51.8%", val: "51.8% (1,968)" },
+          s3: { width: "22.4%", val: "22.4% (851)" }
+        }
+      },
+      direct: {
+        active: "85.0%",
+        roi: "4.1x",
+        lift: "+33.5%",
+        bars: { q1: { height: "70%", val: "2.5x" }, q2: { height: "85%", val: "3.3x" }, q3: { height: "95%", val: "3.9x" }, q4: { height: "100%", val: "4.5x" } },
+        funnel: {
+          s1: { width: "100%", val: "100% (2,000)" },
+          s2: { width: "63.0%", val: "63.0% (1,260)" },
+          s3: { width: "33.5%", val: "33.5% (670)" }
+        }
+      }
+    };
+
+    let currentRegion = 'all';
+
+    function filterDashboard(region) {
+      currentRegion = region;
+      const data = dashboardData[region] || dashboardData.all;
+
+      // Update KPI Cards
+      document.getElementById('kpi-active').textContent = data.active;
+      document.getElementById('kpi-roi').textContent = data.roi;
+      document.getElementById('kpi-lift').textContent = data.lift;
+
+      // Update Bar Chart
+      document.getElementById('bar-q1').style.height = data.bars.q1.height;
+      document.getElementById('chart-val-q1').textContent = data.bars.q1.val;
+
+      document.getElementById('bar-q2').style.height = data.bars.q2.height;
+      document.getElementById('chart-val-q2').textContent = data.bars.q2.val;
+
+      document.getElementById('bar-q3').style.height = data.bars.q3.height;
+      document.getElementById('chart-val-q3').textContent = data.bars.q3.val;
+
+      document.getElementById('bar-q4').style.height = data.bars.q4.height;
+      document.getElementById('chart-val-q4').textContent = data.bars.q4.val;
+
+      // Update Funnel
+      document.getElementById('funnel-bar-1').style.width = data.funnel.s1.width;
+      document.getElementById('funnel-val-1').textContent = data.funnel.s1.val;
+
+      document.getElementById('funnel-bar-2').style.width = data.funnel.s2.width;
+      document.getElementById('funnel-val-2').textContent = data.funnel.s2.val;
+
+      document.getElementById('funnel-bar-3').style.width = data.funnel.s3.width;
+      document.getElementById('funnel-val-3').textContent = data.funnel.s3.val;
+
+      // Update active button state
+      const buttons = ['all', 'north', 'south', 'direct'];
+      buttons.forEach(b => {
+        const btn = document.getElementById('btn-filter-' + b);
+        if (b === region) {
+          btn.className = "filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 shadow-sm transition-all";
+        } else {
+          btn.className = "filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all";
+        }
+      });
+    }
+
+    // Switch Language Function
+    function switchLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+
+      // Persist in localStorage
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch (e) {}
+
+      // Synchronize selectors
+      const desktopSelect = document.getElementById('langSelect');
+      const mobileSelect = document.getElementById('langSelectMobile');
+      if (desktopSelect) desktopSelect.value = lang;
+      if (mobileSelect) mobileSelect.value = lang;
+
+      // Translate all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          // If the element has strong or formatting tags inside translations
+          if (translations[lang][key].includes('<')) {
+            el.innerHTML = translations[lang][key];
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // Translate placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+
+      // Refresh icons if needed
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Theme Toggle Function
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        try { localStorage.setItem('portfolio_theme', 'light'); } catch (e) {}
+      } else {
+        document.documentElement.classList.add('dark');
+        try { localStorage.setItem('portfolio_theme', 'dark'); } catch (e) {}
+      }
+      updateThemeIcons();
+    }
+
+    function updateThemeIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const sun = document.getElementById('themeIconSun');
+      const moon = document.getElementById('themeIconMoon');
+      const mobileSuns = document.querySelectorAll('.mobile-sun');
+      const mobileMoons = document.querySelectorAll('.mobile-moon');
+
+      if (isDark) {
+        if (sun) sun.classList.remove('hidden');
+        if (moon) moon.classList.add('hidden');
+        mobileSuns.forEach(el => el.classList.remove('hidden'));
+        mobileMoons.forEach(el => el.classList.add('hidden'));
+      } else {
+        if (sun) sun.classList.add('hidden');
+        if (moon) moon.classList.remove('hidden');
+        mobileSuns.forEach(el => el.classList.add('hidden'));
+        mobileMoons.forEach(el => el.classList.remove('hidden'));
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const openIcon = document.getElementById('menuIconOpen');
+      const closeIcon = document.getElementById('menuIconClose');
+      if (!menu) return;
+
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        if (openIcon) openIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        if (openIcon) openIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const successBox = document.getElementById('contactSuccess');
+      if (successBox) {
+        successBox.classList.remove('hidden');
+        if (window.lucide) lucide.createIcons();
+      }
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.reset();
+      }
+    }
+
+    // Initial Load
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Theme initialization
+      let savedTheme = 'dark';
+      try {
+        savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+      } catch (e) {}
+
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      updateThemeIcons();
+
+      // 2. Language initialization
+      let savedLang = 'en';
+      try {
+        savedLang = localStorage.getItem('portfolio_lang') || 'en';
+      } catch (e) {}
+      switchLanguage(savedLang);
+
+      // 3. Render Lucide icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
