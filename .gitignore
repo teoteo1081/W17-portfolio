@@ -1,0 +1,16 @@
+﻿# ==========================================
+# DevOps Standard Ignore Rules (Python / Automation)
+# ==========================================
+__pycache__/
+*.py[cod]
+*.class
+~$*
+*.tmp
+*.log
+logs/
+log/
+private/
+Private/
+Thumbs.db
+.DS_Store
+desktop.ini
