@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "project_id": "airy-web-503408-c6",
+    "dataset_pattern": "analytics_<PROPERTY_ID>",
+    "property_name": "TJ Sai Gon Project / TJ WordLoop Hub",
+    "date_range_28d": {
+      "label": "28 ngày qua (14 thg 10 - 10 thg 11, 2026)",
+      "start_date": "2026-10-14",
+      "end_date": "2026-11-10"
+    },
+    "date_range_7d": {
+      "label": "7 ngày qua (04 thg 11 - 10 thg 11, 2026)",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-10"
+    }
+  },
+  "summary_28d": {
+    "active_users": 174,
+    "new_users": 163,
+    "page_views": 1684,
+    "views_per_user": 9.68,
+    "avg_engagement_time": "12m 30s",
+    "total_events": 10465
+  },
+  "countries_28d": [
+    { "rank": 1, "country": "United States", "flag": "🇺🇸", "active_users": 80, "share_pct": 45.98, "sessions": 41, "engagement_time": "0p 11s", "event_count": 422 },
+    { "rank": 2, "country": "Vietnam", "flag": "🇻🇳", "active_users": 58, "share_pct": 33.33, "sessions": 155, "engagement_time": "35p 11s", "event_count": 9393 },
+    { "rank": 3, "country": "Netherlands", "flag": "🇳🇱", "active_users": 8, "share_pct": 4.60, "sessions": 8, "engagement_time": "0p 18s", "event_count": 24 },
+    { "rank": 4, "country": "Belarus", "flag": "🇧🇾", "active_users": 4, "share_pct": 2.30, "sessions": 4, "engagement_time": "0p 15s", "event_count": 16 },
+    { "rank": 5, "country": "Iran", "flag": "🇮🇷", "active_users": 4, "share_pct": 2.30, "sessions": 4, "engagement_time": "0p 12s", "event_count": 14 },
+    { "rank": 6, "country": "United Kingdom", "flag": "🇬🇧", "active_users": 4, "share_pct": 2.30, "sessions": 4, "engagement_time": "0p 10s", "event_count": 12 },
+    { "rank": 7, "country": "Germany", "flag": "🇩🇪", "active_users": 3, "share_pct": 1.72, "sessions": 4, "engagement_time": "0p 22s", "event_count": 18 },
+    { "rank": 8, "country": "Israel", "flag": "🇮🇱", "active_users": 3, "share_pct": 1.72, "sessions": 5, "engagement_time": "1p 15s", "event_count": 32 },
+    { "rank": 9, "country": "Andorra", "flag": "🇦🇩", "active_users": 2, "share_pct": 1.15, "sessions": 2, "engagement_time": "0p 14s", "event_count": 10 },
+    { "rank": 10, "country": "China", "flag": "🇨🇳", "active_users": 2, "share_pct": 1.15, "sessions": 12, "engagement_time": "27p 25s", "event_count": 288 }
+  ],
+  "pages_28d": [
+    { "rank": 1, "page_title": "TJ WordLoop · Game", "category": "Gamification & Retention", "page_views": 911, "share_pct": 54.10, "active_users": 60, "engagement_time": "33p 38s", "event_count": 8432 },
+    { "rank": 2, "page_title": "TJ WordLoop Hub", "category": "Core Ecosystem Hub", "page_views": 655, "share_pct": 38.90, "active_users": 59, "engagement_time": "2p 07s", "event_count": 1612 },
+    { "rank": 3, "page_title": "IRS Enrolled Agent (EA 2026) · Luyện Thi & Hành Nghề Thuế Mỹ", "category": "Fintech & US Tax 1040", "page_views": 26, "share_pct": 1.54, "active_users": 20, "engagement_time": "3p 12s", "event_count": 118 },
+    { "rank": 4, "page_title": "Hệ Sinh Thái Khoá Học TJ 2026", "category": "EdTech Academy", "page_views": 21, "share_pct": 1.25, "active_users": 16, "engagement_time": "2p 45s", "event_count": 84 },
+    { "rank": 5, "page_title": "Digital Marketing Thực Chiến 2026", "category": "Performance Marketing", "page_views": 19, "share_pct": 1.13, "active_users": 17, "engagement_time": "2p 18s", "event_count": 72 },
+    { "rank": 6, "page_title": "TOEIC 4 Kỹ Năng Thực Chiến", "category": "Language Training", "page_views": 16, "share_pct": 0.95, "active_users": 14, "engagement_time": "1p 55s", "event_count": 56 },
+    { "rank": 7, "page_title": "IELTS Academic", "category": "Language Training", "page_views": 15, "share_pct": 0.89, "active_users": 13, "engagement_time": "2p 05s", "event_count": 48 },
+    { "rank": 8, "page_title": "Chunks Engine (Operation 0 — 1,000 Chunks)", "category": "Audio 4 Ngôn Ngữ", "page_views": 15, "share_pct": 0.89, "active_users": 12, "engagement_time": "4p 10s", "event_count": 31 },
+    { "rank": 9, "page_title": "WRP Tax Services — Lead Funnel", "category": "US Tax Lead Generation", "page_views": 6, "share_pct": 0.36, "active_users": 6, "engagement_time": "1p 40s", "event_count": 12 }
+  ],
+  "active_users_by_country_7d": [
+    { "country": "Vietnam", "active_users": 23 },
+    { "country": "Israel", "active_users": 3 },
+    { "country": "United States", "active_users": 2 },
+    { "country": "China", "active_users": 1 },
+    { "country": "Germany", "active_users": 1 },
+    { "country": "Sweden", "active_users": 1 }
+  ],
+  "pageviews_by_page_title_7d": [
+    { "page_title": "TJ WordLoop Game — Multiplayer Vocabulary", "page_views": 125, "active_users": 24 },
+    { "page_title": "TJ WordLoop Hub / Courses — Academy", "page_views": 68, "active_users": 15 },
+    { "page_title": "Operation 0 — 1,000 Chunks Engine (EN-ES-CN-VN)", "page_views": 44, "active_users": 11 },
+    { "page_title": "WRP Tax Services — Lead Funnel (US Tax 1040)", "page_views": 32, "active_users": 9 }
+  ],
+  "users_by_source_medium_7d": [
+    { "source": "(direct)", "medium": "(none)", "active_users": 27 },
+    { "source": "facebook", "medium": "social", "active_users": 4 },
+    { "source": "zalo", "medium": "social", "active_users": 3 },
+    { "source": "instagram", "medium": "social", "active_users": 2 },
+    { "source": "wechat", "medium": "social", "active_users": 1 }
+  ]
+}
