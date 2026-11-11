@@ -86,20 +86,20 @@
 
   <!-- Sticky Glassmorphism Navigation -->
   <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-slate-950/80 glass-nav transition-colors duration-300" id="main-navbar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
       
       <!-- Brand Logo -->
-      <a href="#about" class="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-xl">
+      <a href="#about" class="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-xl min-w-0">
         <span class="brand-title editable-node shrink-0 w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-400 to-cyan-400 flex items-center justify-center text-slate-950 font-black text-lg shadow-sm group-hover:scale-105 transition-transform">
           TJ
         </span>
-        <span class="brand-title editable-node whitespace-nowrap font-bold text-base sm:text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+        <span class="brand-title editable-node truncate font-bold text-sm sm:text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
           Thao Nguyen <span class="brand-title editable-node hidden sm:inline text-xs font-semibold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 ml-1">Portfolio Showcase (V3)</span>
         </span>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300">
+      <nav aria-label="Điều hướng chính" data-i18n-aria="aria_primary_nav" class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300">
         <a href="#about" data-i18n="nav_about" class="editable-node hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded px-1 transition-colors">Giới thiệu</a>
         <a href="#dashboard" data-i18n="nav_dashboard" class="editable-node hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded px-1 transition-colors">Mô phỏng Phễu</a>
         <a href="#ga4-ecosystem" data-i18n="nav_ecosystem" class="editable-node hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded px-1 transition-colors">Hệ Sinh Thái GA4</a>
@@ -111,7 +111,7 @@
       <div class="hidden sm:flex items-center gap-3">
         <!-- Language Selector -->
         <div class="relative inline-block">
-          <select id="langSelect" onchange="switchLanguage(this.value, true)" aria-label="Select Language" class="bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer">
+          <select id="langSelect" onchange="switchLanguage(this.value, true)" aria-label="Chọn ngôn ngữ" data-i18n-aria="aria_lang_select" class="bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer">
             <option value="vi">VI</option>
             <option value="en">EN</option>
             <option value="es">ES</option>
@@ -120,30 +120,30 @@
         </div>
 
         <!-- Theme Toggle -->
-        <button type="button" onclick="toggleTheme()" id="themeBtn" aria-label="Toggle Dark/Light Theme" aria-pressed="true" class="p-2 rounded-lg bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400">
+        <button type="button" onclick="toggleTheme()" id="themeBtn" aria-label="Chuyển đổi giao diện Sáng / Tối" data-i18n-aria="aria_theme_toggle" aria-pressed="true" class="p-2 rounded-lg bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400">
           <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
           <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4 block"></i>
         </button>
 
         <!-- CTA Button -->
-        <a href="#contact" data-i18n="nav_cta" class="editable-node inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-sm shadow-emerald-500/10 hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
+        <a href="#contact" data-i18n="nav_cta" class="editable-node inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 focus-visible:from-emerald-300 focus-visible:to-cyan-300 shadow-sm shadow-emerald-500/10 hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
           Liên hệ ngay
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="flex items-center gap-1.5 sm:gap-2 lg:hidden">
-        <select id="langSelectMobile" onchange="switchLanguage(this.value, true)" aria-label="Select Language Mobile" class="sm:hidden bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+      <div class="flex items-center gap-1 sm:gap-2 lg:hidden shrink-0">
+        <select id="langSelectMobile" onchange="switchLanguage(this.value, true)" aria-label="Chọn ngôn ngữ" data-i18n-aria="aria_lang_select" class="sm:hidden bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-1.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-400">
           <option value="vi">VI</option>
           <option value="en">EN</option>
           <option value="es">ES</option>
           <option value="zh">ZH</option>
         </select>
-        <button type="button" onclick="toggleTheme()" id="themeBtnMobile" aria-label="Toggle Dark/Light Theme Mobile" aria-pressed="true" class="sm:hidden p-2 rounded-lg bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+        <button type="button" onclick="toggleTheme()" id="themeBtnMobile" aria-label="Chuyển đổi giao diện Sáng / Tối" data-i18n-aria="aria_theme_toggle" aria-pressed="true" class="sm:hidden p-1.5 rounded-lg bg-slate-100 dark:bg-zinc-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-400">
           <i data-lucide="sun" class="w-4 h-4 mobile-sun hidden"></i>
           <i data-lucide="moon" class="w-4 h-4 mobile-moon block"></i>
         </button>
-        <button type="button" onclick="toggleMobileMenu()" id="menuBtn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+        <button type="button" onclick="toggleMobileMenu()" id="menuBtn" aria-label="Mở trình đơn điều hướng" data-i18n-aria="aria_mobile_menu" aria-expanded="false" aria-controls="mobileMenu" class="p-1.5 rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-400">
           <i data-lucide="menu" id="menuIconOpen" class="w-5 h-5 block"></i>
           <i data-lucide="x" id="menuIconClose" class="w-5 h-5 hidden"></i>
         </button>
@@ -153,13 +153,13 @@
 
     <!-- Mobile Collapsible Menu -->
     <div id="mobileMenu" class="hidden lg:hidden border-b border-slate-200 dark:border-zinc-800 bg-white/95 dark:bg-slate-950/95 px-6 py-6 transition-all">
-      <nav aria-label="Mobile Navigation" class="flex flex-col gap-4 text-base font-medium text-slate-800 dark:text-slate-200">
+      <nav aria-label="Điều hướng di động" data-i18n-aria="aria_mobile_nav" class="flex flex-col gap-4 text-base font-medium text-slate-800 dark:text-slate-200">
         <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about" class="hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded">Giới thiệu</a>
         <a href="#dashboard" onclick="toggleMobileMenu()" data-i18n="nav_dashboard" class="hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded">Mô phỏng Phễu</a>
         <a href="#ga4-ecosystem" onclick="toggleMobileMenu()" data-i18n="nav_ecosystem" class="hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded">Hệ Sinh Thái GA4</a>
         <a href="./index_portfolio_clean.html" onclick="toggleMobileMenu()" data-i18n="nav_capability" class="hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded font-semibold text-emerald-700 dark:text-emerald-400">Hồ Sơ Năng Lực ↗</a>
         <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_contact" class="hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded">Liên hệ</a>
-        <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_cta" class="inline-flex items-center justify-center mt-2 px-4 py-2.5 text-sm font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
+        <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_cta" class="inline-flex items-center justify-center mt-2 px-4 py-2.5 text-sm font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
           Liên hệ ngay
         </a>
       </nav>
@@ -171,13 +171,13 @@
     <!-- ==================== (1) SECTION 1: HERO (#about) ==================== -->
     <section id="about" class="relative pt-6 sm:pt-12 scroll-mt-32 md:scroll-mt-36" style="scroll-margin-top: 8.5rem;">
       <!-- Glow background accent -->
-      <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-56 sm:w-96 max-w-full h-64 sm:h-96 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div class="max-w-5xl mx-auto text-center space-y-8">
         
         <!-- Status Badge -->
-        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30 backdrop-blur-sm">
-          <span class="relative flex h-2.5 w-2.5">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30 backdrop-blur-sm max-w-full">
+          <span class="relative flex h-2.5 w-2.5 shrink-0">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
@@ -201,7 +201,7 @@
 
         <!-- 3 CTA Action Buttons -->
         <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-          <a href="#dashboard" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-md shadow-emerald-500/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
+          <a href="#dashboard" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 focus-visible:from-emerald-300 focus-visible:to-cyan-300 shadow-md shadow-emerald-500/20 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
             <span data-i18n="hero_btn_dashboard" class="editable-node">Xem Dashboard Tương Tác</span>
           </a>
@@ -233,7 +233,7 @@
         </div>
 
         <!-- Filter Buttons -->
-        <div role="group" aria-label="Dashboard Region Filter" class="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl">
+        <div role="group" aria-label="Bộ lọc khu vực Dashboard" data-i18n-aria="aria_region_filter" class="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl">
           <button type="button" onclick="filterDashboard('all')" id="btn-filter-all" aria-pressed="true" data-i18n="filter_all" class="filter-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
             Tất cả khu vực
           </button>
@@ -635,8 +635,8 @@
                 <span class="inline-flex items-center gap-1.5 text-emerald-300"><span class="w-2.5 h-2.5 rounded-sm bg-emerald-400"></span><span data-i18n="pbi_legend_users">Người dùng (Users)</span></span>
               </div>
             </div>
-            <div class="relative h-60 sm:h-72 w-full">
-              <canvas id="pbiGA4TrendChart"></canvas>
+            <div class="relative h-60 sm:h-72 w-full overflow-hidden max-w-full">
+              <canvas id="pbiGA4TrendChart" class="max-w-full"></canvas>
             </div>
           </div>
 
@@ -916,7 +916,7 @@
     <!-- ==================== (5) SECTION 5: CONTACT & FOOTER (#contact) ==================== -->
     <section id="contact" class="space-y-12 scroll-mt-32 md:scroll-mt-36" style="scroll-margin-top: 8.5rem;">
       <div class="max-w-3xl mx-auto text-center space-y-2">
-        <h2 data-i18n="contact_section_title" class="editable-node text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold">
+        <h2 data-i18n="contact_section_title" class="editable-node text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold text-balance">
           Liên Hệ
         </h2>
         <p data-i18n="contact_section_sub" class="editable-node text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white text-balance">
@@ -940,7 +940,7 @@
             <a id="contactMailtoFallback" href="mailto:teoteo1081@gmail.com" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-slate-950 hover:opacity-95">
               <span>✉️ teoteo1081@gmail.com</span>
             </a>
-            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white hover:bg-sky-500">
+            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-700 hover:bg-sky-800 text-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 transition-all">
               <span>💬 Zalo: 0855 239 805</span>
             </a>
           </div>
@@ -968,7 +968,7 @@
             <textarea id="formMessage" name="message" rows="4" required data-i18n-placeholder="form_ph_message" placeholder="Chia sẻ về dự án, mục tiêu chỉ số hoặc thắc mắc của bạn..." class="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all resize-none"></textarea>
           </div>
 
-          <button type="submit" data-i18n="form_btn_submit" class="editable-node w-full py-3 px-4 rounded-lg text-sm font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all cursor-pointer">
+          <button type="submit" data-i18n="form_btn_submit" class="editable-node w-full py-3 px-4 rounded-lg text-sm font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all cursor-pointer">
             ✉️ Soạn &amp; Gửi qua Ứng dụng Email
           </button>
         </form>
@@ -979,7 +979,7 @@
             Hoặc kết nối trực tiếp qua kênh chính thức:
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 transition-all">
+            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-sky-700 hover:bg-sky-800 text-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 transition-all">
               <span data-i18n="contact_btn_zalo">💬 Nhắn Zalo: 0855 239 805 ↗</span>
             </a>
             <a href="mailto:teoteo1081@gmail.com" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-zinc-800 hover:border-emerald-500 border border-slate-300 dark:border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
@@ -1167,8 +1167,8 @@
           </div>
 
           <div class="p-4 sm:p-5 rounded-xl bg-slate-900 border border-slate-800">
-            <div class="relative h-64 sm:h-80 w-full">
-              <canvas id="modalGA4TrendChart"></canvas>
+            <div class="relative h-64 sm:h-80 w-full overflow-hidden max-w-full">
+              <canvas id="modalGA4TrendChart" class="max-w-full"></canvas>
             </div>
           </div>
         </div>
@@ -1355,7 +1355,17 @@
         form_success_msg: "Đã mở ứng dụng Email với nội dung soạn sẵn gửi tới teoteo1081@gmail.com. Nếu thiết bị chưa cài ứng dụng mail, bạn có thể nhấn kết nối Zalo hoặc gửi mail trực tiếp bên dưới.",
         contact_direct_label: "Hoặc kết nối trực tiếp qua kênh chính thức:",
         contact_btn_zalo: "💬 Nhắn Zalo: 0855 239 805 ↗",
-        contact_btn_email: "✉️ teoteo1081@gmail.com"
+        contact_btn_email: "✉️ teoteo1081@gmail.com",
+        aria_primary_nav: "Điều hướng chính",
+        aria_mobile_nav: "Điều hướng di động",
+        aria_lang_select: "Chọn ngôn ngữ",
+        aria_theme_toggle: "Chuyển đổi giao diện Sáng / Tối",
+        aria_mobile_menu: "Mở trình đơn điều hướng",
+        aria_region_filter: "Bộ lọc khu vực Dashboard",
+        aria_country_telemetry_filter: "Bộ lọc đo lường theo quốc gia",
+        aria_pbi_date_slicer: "Chọn khoảng thời gian",
+        aria_ga4_modal: "Cửa sổ chi tiết GA4 & Power BI",
+        aria_modal_close: "Đóng cửa sổ"
       },
       en: {
         nav_about: "About",
@@ -1517,7 +1527,17 @@
         form_success_msg: "Opened your Email app with a pre-filled message to teoteo1081@gmail.com. You can also connect directly via Zalo or Email below.",
         contact_direct_label: "Or connect directly via official channels:",
         contact_btn_zalo: "💬 Zalo: 0855 239 805 ↗",
-        contact_btn_email: "✉️ teoteo1081@gmail.com"
+        contact_btn_email: "✉️ teoteo1081@gmail.com",
+        aria_primary_nav: "Primary Navigation",
+        aria_mobile_nav: "Mobile Navigation",
+        aria_lang_select: "Select Language",
+        aria_theme_toggle: "Toggle Dark/Light Theme",
+        aria_mobile_menu: "Toggle Navigation Menu",
+        aria_region_filter: "Dashboard Region Filter",
+        aria_country_telemetry_filter: "Country Telemetry Filter",
+        aria_pbi_date_slicer: "Select Date Range",
+        aria_ga4_modal: "GA4 & Power BI Details Dialog",
+        aria_modal_close: "Close dialog"
       },
       es: {
         nav_about: "Sobre mí",
@@ -1679,7 +1699,17 @@
         form_success_msg: "Se abrió su aplicación de correo con el mensaje preparado para teoteo1081@gmail.com. También puede contactar directamente por Zalo o Email abajo.",
         contact_direct_label: "O conecte directamente por canales oficiales:",
         contact_btn_zalo: "💬 Zalo: 0855 239 805 ↗",
-        contact_btn_email: "✉️ teoteo1081@gmail.com"
+        contact_btn_email: "✉️ teoteo1081@gmail.com",
+        aria_primary_nav: "Navegación principal",
+        aria_mobile_nav: "Navegación móvil",
+        aria_lang_select: "Seleccionar idioma",
+        aria_theme_toggle: "Cambiar tema Claro/Oscuro",
+        aria_mobile_menu: "Alternar menú de navegación",
+        aria_region_filter: "Filtro de región del panel",
+        aria_country_telemetry_filter: "Filtro de telemetría por país",
+        aria_pbi_date_slicer: "Seleccionar rango de fechas",
+        aria_ga4_modal: "Diálogo de detalles de GA4 y Power BI",
+        aria_modal_close: "Cerrar ventana"
       },
       zh: {
         nav_about: "关于我",
@@ -1841,7 +1871,17 @@
         form_success_msg: "已为您打开邮件客户端并填好发往 teoteo1081@gmail.com 的内容。您也可以直接通过下方 Zalo 或邮箱联系。",
         contact_direct_label: "或通过官方直联渠道沟通：",
         contact_btn_zalo: "💬 Zalo: 0855 239 805 ↗",
-        contact_btn_email: "✉️ teoteo1081@gmail.com"
+        contact_btn_email: "✉️ teoteo1081@gmail.com",
+        aria_primary_nav: "主导航",
+        aria_mobile_nav: "移动导航",
+        aria_lang_select: "选择语言",
+        aria_theme_toggle: "切换明暗主题",
+        aria_mobile_menu: "打开导航菜单",
+        aria_region_filter: "仪表板区域筛选",
+        aria_country_telemetry_filter: "国家/地区遥测筛选",
+        aria_pbi_date_slicer: "选择时间范围",
+        aria_ga4_modal: "GA4 与 Power BI 详情弹窗",
+        aria_modal_close: "关闭弹窗"
       }
     };
 
@@ -1897,46 +1937,54 @@
     let currentLang = 'vi';
     const W17_STORAGE_JSON_KEY = 'w17_portfolio_edits_v14';
 
-    function escapeHtmlSafe(str) {
-      return String(str ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+    const ALLOWED_SAFE_TAGS = new Set(['BR', 'SPAN', 'STRONG']);
+    const ALLOWED_SPAN_CLASSES = new Set(['inline-block', 'tag-text', 'editable-node']);
+
+    function sanitizeRichFragment(container) {
+      const children = Array.from(container.childNodes);
+      for (const child of children) {
+        if (child.nodeType === Node.ELEMENT_NODE) {
+          if (!ALLOWED_SAFE_TAGS.has(child.tagName)) {
+            const textNode = document.createTextNode(child.textContent || '');
+            container.replaceChild(textNode, child);
+          } else {
+            const allowedClasses = [];
+            if (child.tagName === 'SPAN') {
+              for (const cls of Array.from(child.classList)) {
+                if (ALLOWED_SPAN_CLASSES.has(cls)) allowedClasses.push(cls);
+              }
+            } else if (child.tagName === 'BR') {
+              if (child.className === 'hidden md:inline') allowedClasses.push('hidden', 'md:inline');
+            } else if (child.tagName === 'STRONG') {
+              if (child.className === 'text-white' || child.className.includes('text-cyan-400')) {
+                allowedClasses.push(child.className.trim());
+              }
+            }
+            while (child.attributes.length > 0) {
+              child.removeAttribute(child.attributes[0].name);
+            }
+            if (allowedClasses.length > 0) {
+              child.setAttribute('class', allowedClasses.join(' '));
+            }
+            sanitizeRichFragment(child);
+          }
+        } else if (child.nodeType !== Node.TEXT_NODE) {
+          container.removeChild(child);
+        }
+      }
     }
 
-    // Sanitizer cho chuỗi i18n nội bộ: chỉ cho phép <br> và <span class="...">
+    // Sanitizer cho chuỗi i18n: phân biệt plain text và rich text (<br>, <span>)
     function renderSafeI18nHTML(el, rawVal) {
       if (!el) return;
       const val = String(rawVal ?? '');
-      if (!val.includes('<')) {
+      if (!/<(?:br|span|strong)/i.test(val)) {
         el.textContent = val;
         return;
       }
       const template = document.createElement('template');
       template.innerHTML = val;
-      const allowedTags = new Set(['BR', 'SPAN']);
-      const walk = (node) => {
-        Array.from(node.childNodes).forEach((child) => {
-          if (child.nodeType === Node.ELEMENT_NODE) {
-            if (!allowedTags.has(child.tagName)) {
-              const textNode = document.createTextNode(child.textContent || '');
-              node.replaceChild(textNode, child);
-              return;
-            }
-            Array.from(child.attributes).forEach((attr) => {
-              if (attr.name !== 'class') {
-                child.removeAttribute(attr.name);
-              }
-            });
-            walk(child);
-          } else if (child.nodeType !== Node.TEXT_NODE) {
-            node.removeChild(child);
-          }
-        });
-      };
-      walk(template.content);
+      sanitizeRichFragment(template.content);
       el.replaceChildren(template.content.cloneNode(true));
     }
 
@@ -1977,7 +2025,15 @@
           if (translations[langKey] && langEdits && typeof langEdits === 'object') {
             Object.keys(langEdits).forEach((i18nKey) => {
               if (typeof langEdits[i18nKey] === 'string') {
-                translations[langKey][i18nKey] = escapeHtmlSafe(langEdits[i18nKey]);
+                const val = langEdits[i18nKey];
+                if (/<(?:br|span|strong)/i.test(val)) {
+                  const tpl = document.createElement('template');
+                  tpl.innerHTML = val;
+                  sanitizeRichFragment(tpl.content);
+                  translations[langKey][i18nKey] = tpl.innerHTML;
+                } else {
+                  translations[langKey][i18nKey] = val;
+                }
               }
             });
           }
@@ -2047,6 +2103,14 @@
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && (translations[lang][key] !== undefined)) {
           renderSafeI18nHTML(el, translations[lang][key]);
+        }
+      });
+
+      // Cập nhật thuộc tính aria đa ngôn ngữ
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const key = el.getAttribute('data-i18n-aria');
+        if (translations[lang] && (translations[lang][key] !== undefined)) {
+          el.setAttribute('aria-label', translations[lang][key]);
         }
       });
 
@@ -2137,6 +2201,33 @@
       if (window.lucide) lucide.createIcons();
     }
 
+    const emailTemplates = {
+      vi: {
+        subject: (name) => `[Portfolio TJ] Liên hệ dự án từ ${name}`,
+        nameLabel: 'Họ tên / Doanh nghiệp',
+        emailLabel: 'Email liên hệ',
+        contentLabel: 'Nội dung trao đổi'
+      },
+      en: {
+        subject: (name) => `[Portfolio TJ] Project Inquiry from ${name}`,
+        nameLabel: 'Name / Organization',
+        emailLabel: 'Contact Email',
+        contentLabel: 'Message Details'
+      },
+      es: {
+        subject: (name) => `[Portfolio TJ] Consulta de proyecto de ${name}`,
+        nameLabel: 'Nombre / Empresa',
+        emailLabel: 'Correo de contacto',
+        contentLabel: 'Detalles del mensaje'
+      },
+      zh: {
+        subject: (name) => `[Portfolio TJ] 来自 ${name} 的项目合作咨询`,
+        nameLabel: '姓名 / 企业名称',
+        emailLabel: '联系邮箱',
+        contentLabel: '沟通内容'
+      }
+    };
+
     function handleContactSubmit(e) {
       e.preventDefault();
       const nameInput = document.getElementById('formName');
@@ -2147,12 +2238,13 @@
       const senderEmail = (emailInput ? emailInput.value.trim() : '') || '';
       const messageBody = (msgInput ? msgInput.value.trim() : '') || '';
 
-      const subject = `[Portfolio TJ] Liên hệ dự án từ ${senderName}`;
+      const tpl = emailTemplates[currentLang] || emailTemplates.vi;
+      const subject = tpl.subject(senderName);
       const bodyLines = [
-        `Họ tên / Doanh nghiệp: ${senderName}`,
-        `Email liên hệ: ${senderEmail}`,
+        `${tpl.nameLabel}: ${senderName}`,
+        `${tpl.emailLabel}: ${senderEmail}`,
         '',
-        'Nội dung trao đổi:',
+        `${tpl.contentLabel}:`,
         messageBody
       ];
       const mailtoUrl = `mailto:teoteo1081@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
@@ -2796,10 +2888,17 @@
         document.querySelectorAll('[data-i18n][contenteditable="true"]').forEach((el) => {
           const key = el.getAttribute('data-i18n');
           if (key) {
-            const plain = (el.textContent || '').trim();
-            state.editsByLang[activeLang][key] = plain;
+            let savedVal = '';
+            if (el.querySelector('br, span.inline-block, strong')) {
+              const clone = el.cloneNode(true);
+              sanitizeRichFragment(clone);
+              savedVal = clone.innerHTML;
+            } else {
+              savedVal = el.textContent || '';
+            }
+            state.editsByLang[activeLang][key] = savedVal;
             if (translations[activeLang]) {
-              translations[activeLang][key] = escapeHtmlSafe(plain);
+              translations[activeLang][key] = savedVal;
             }
           }
         });
@@ -2969,24 +3068,7 @@
         content: finalHTML
       });
 
-      const saveEndpoints = window.location.protocol.startsWith('http')
-        ? ['/api/save']
-        : ['http://127.0.0.1:8000/api/save', 'http://localhost:8000/api/save'];
-
-      saveEndpoints.forEach((endpoint) => {
-        fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: payload
-        })
-          .then((res) => {
-            if (res && res.ok) {
-              showEditorToast('✅ Đã ghi đè trực tiếp vào file gốc trong Git & tải về máy!');
-            }
-          })
-          .catch(() => {});
-      });
-
+      // Luôn kích hoạt tải file về máy
       const blob = new Blob([finalHTML], { type: 'text/html;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -2996,8 +3078,37 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      showEditorToast('💾 Đã tải "index.html" sạch về máy! Đang kết nối máy chủ để ghi đè...');
 
-      showEditorToast('💾 Đã lưu file gốc (/api/save) & tải "index.html" sạch xuống trình duyệt!');
+      const saveEndpoints = window.location.protocol.startsWith('http')
+        ? ['/api/save']
+        : ['http://127.0.0.1:8000/api/save', 'http://localhost:8000/api/save'];
+
+      let saveAttempted = 0;
+      let saveSucceeded = false;
+
+      saveEndpoints.forEach((endpoint) => {
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload
+        })
+          .then((res) => {
+            saveAttempted++;
+            if (res && res.ok) {
+              saveSucceeded = true;
+              showEditorToast('✅ Đã ghi đè trực tiếp vào file gốc trong Git thành công!');
+            } else if (saveAttempted === saveEndpoints.length && !saveSucceeded) {
+              showEditorToast('ℹ️ Tải file thành công. Máy chủ không hỗ trợ /api/save (chế độ tĩnh), hãy dùng file vừa tải.');
+            }
+          })
+          .catch(() => {
+            saveAttempted++;
+            if (saveAttempted === saveEndpoints.length && !saveSucceeded) {
+              showEditorToast('ℹ️ Tải file thành công. Không có máy chủ cục bộ /api/save (chế độ tĩnh), hãy dùng file vừa tải.');
+            }
+          });
+      });
     }
 
     function resetVisualChanges() {

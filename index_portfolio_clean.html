@@ -131,6 +131,8 @@
       color: #0f172a !important;
     }
 
+    html.light-mode a.bg-\[\#0369a1\].text-white,
+    html.light-mode button.bg-\[\#0369a1\].text-white,
     html.light-mode a.bg-\[\#0284c7\].text-white,
     html.light-mode button.bg-\[\#0284c7\].text-white,
     html.light-mode button.bg-emerald-600.text-white {
@@ -341,7 +343,7 @@
     }
 
     .reorder-btn:hover {
-      background-color: #0284c7;
+      background-color: #0369a1;
       color: #ffffff;
       border-color: #38bdf8;
     }
@@ -446,7 +448,7 @@
         </div>
         <!-- Language Selector (Chuẩn 2 ký tự: VI | EN | ES | ZH) -->
         <div class="relative inline-block">
-          <select id="langSelectCV" onchange="switchLanguageCV(this.value, true)" aria-label="Chọn ngôn ngữ hiển thị" class="bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:border-sky-400/60 text-xs font-medium rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer transition-all">
+          <select id="langSelectCV" onchange="switchLanguageCV(this.value, true)" data-i18n-aria="aria_lang_select" aria-label="Chọn ngôn ngữ hiển thị" class="bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:border-sky-400/60 text-xs font-medium rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer transition-all">
             <option value="vi">VI</option>
             <option value="en">EN</option>
             <option value="es">ES</option>
@@ -454,7 +456,7 @@
           </select>
         </div>
         <!-- Theme Toggle Button (Đồng bộ Light/Dark với Portfolio Showcase) -->
-        <button id="themeBtnCV" type="button" onclick="toggleLightDark()" aria-label="Chuyển đổi giao diện Sáng / Tối" aria-pressed="true" class="p-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer">
+        <button id="themeBtnCV" type="button" onclick="toggleLightDark()" data-i18n-aria="aria_theme_toggle" aria-label="Chuyển đổi giao diện Sáng / Tối" aria-pressed="true" class="p-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer">
           <i data-lucide="sun" id="themeIconSunCV" class="w-4 h-4 text-amber-400"></i>
           <i data-lucide="moon" id="themeIconMoonCV" class="w-4 h-4 text-slate-700 hidden"></i>
         </button>
@@ -499,7 +501,7 @@
 
           <!-- Bộ nút CTA -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0369a1] hover:bg-[#075985] text-white shadow-lg shadow-sky-500/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
               <span data-i18n="hero_cta_zalo" class="editable-node">💬 Liên hệ Zalo / Hợp tác</span>
             </a>
             <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
@@ -559,7 +561,7 @@
         <div id="solutions-grid" class="draggable-container grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch">
           
           <!-- Card 1: [Planning & Growth] -->
-          <div class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
+          <div data-card-id="sol_card_1" class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
             <div class="space-y-4 flex-1">
               <div class="flex items-center justify-between gap-2">
                 <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
@@ -600,7 +602,7 @@
           </div>
 
           <!-- Card 2: [Advanced BI & DAX] -->
-          <div class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
+          <div data-card-id="sol_card_2" class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
             <div class="space-y-4 flex-1">
               <div class="flex items-center justify-between gap-2">
                 <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
@@ -637,7 +639,7 @@
           </div>
 
           <!-- Card 3: [Automation & AI] -->
-          <div class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
+          <div data-card-id="sol_card_3" class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
             <div class="space-y-4 flex-1">
               <div class="flex items-center justify-between gap-2">
                 <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -684,7 +686,7 @@
         <div id="metrics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
           
           <!-- Card 1: ~60% (Amber) -->
-          <div class="metric-card-item surface-card p-6 flex flex-col justify-between relative">
+          <div data-card-id="metric_card_1" class="metric-card-item surface-card p-6 flex flex-col justify-between relative">
             <div class="space-y-2">
               <div class="flex items-start justify-between gap-2">
                 <div data-i18n="metric_val_1" class="editable-node text-3xl sm:text-4xl font-black text-[#f59e0b] tracking-tight">~60%</div>
@@ -698,7 +700,7 @@
           </div>
 
           <!-- Card 2: 500+ (Sky Blue) -->
-          <div class="metric-card-item surface-card p-6 flex flex-col justify-between relative">
+          <div data-card-id="metric_card_2" class="metric-card-item surface-card p-6 flex flex-col justify-between relative">
             <div class="space-y-2">
               <div class="flex items-start justify-between gap-2">
                 <div data-i18n="metric_val_2" class="editable-node text-3xl sm:text-4xl font-black text-[#38bdf8] tracking-tight">500+</div>
@@ -712,7 +714,7 @@
           </div>
 
           <!-- Card 3: 12 Vùng (Emerald) -->
-          <div class="metric-card-item surface-card p-6 flex flex-col justify-between relative">
+          <div data-card-id="metric_card_3" class="metric-card-item surface-card p-6 flex flex-col justify-between relative">
             <div class="space-y-2">
               <div class="flex items-start justify-between gap-2">
                 <div data-i18n="metric_val_3" class="editable-node text-3xl sm:text-4xl font-black text-[#10b981] tracking-tight">12 Vùng</div>
@@ -737,7 +739,7 @@
 
         <div id="skill-groups-list" class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <!-- Box 1: MARKETING TECH & ĐO LƯỜNG CHUYỂN ĐỔI -->
-          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+          <div data-group-id="skill_grp_1" class="skill-group-card surface-card p-5 space-y-3 relative">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-amber-400">
                 <span>🎯</span>
@@ -745,17 +747,17 @@
               </div>
             </div>
             <div class="tag-list flex flex-wrap gap-2.5 items-center">
-              <span class="skill-tag"><span class="tag-text editable-node">Google Analytics 4 (GA4)</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Google Tag Manager (GTM)</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">UTM Tracking Architecture</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Google Ads &amp; Meta Ads</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">TikTok &amp; Zalo Ads</span></span>
-              <span class="skill-tag"><span data-i18n="skill_tag_cpa" class="tag-text editable-node">Tối ưu CPA, ROAS, CVR</span></span>
+              <span data-tag-id="tag_ga4" class="skill-tag"><span class="tag-text editable-node">Google Analytics 4 (GA4)</span></span>
+              <span data-tag-id="tag_gtm" class="skill-tag"><span class="tag-text editable-node">Google Tag Manager (GTM)</span></span>
+              <span data-tag-id="tag_utm" class="skill-tag"><span class="tag-text editable-node">UTM Tracking Architecture</span></span>
+              <span data-tag-id="tag_ads" class="skill-tag"><span class="tag-text editable-node">Google Ads &amp; Meta Ads</span></span>
+              <span data-tag-id="tag_tiktok" class="skill-tag"><span class="tag-text editable-node">TikTok &amp; Zalo Ads</span></span>
+              <span data-tag-id="tag_cpa" class="skill-tag"><span data-i18n="skill_tag_cpa" class="tag-text editable-node">Tối ưu CPA, ROAS, CVR</span></span>
             </div>
           </div>
 
           <!-- Box 2: BUSINESS INTELLIGENCE -->
-          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+          <div data-group-id="skill_grp_2" class="skill-group-card surface-card p-5 space-y-3 relative">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-sky-400">
                 <span>📈</span>
@@ -763,16 +765,16 @@
               </div>
             </div>
             <div class="tag-list flex flex-wrap gap-2.5 items-center">
-              <span class="skill-tag"><span data-i18n="skill_tag_pbi" class="tag-text editable-node">Power BI (Nâng cao)</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Field Parameters</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">DAX (VAR/RETURN, Calculate)</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Power Query (M)</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Dynamic Measures</span></span>
+              <span data-tag-id="tag_pbi" class="skill-tag"><span data-i18n="skill_tag_pbi" class="tag-text editable-node">Power BI (Nâng cao)</span></span>
+              <span data-tag-id="tag_field_params" class="skill-tag"><span class="tag-text editable-node">Field Parameters</span></span>
+              <span data-tag-id="tag_dax" class="skill-tag"><span class="tag-text editable-node">DAX (VAR/RETURN, Calculate)</span></span>
+              <span data-tag-id="tag_power_query" class="skill-tag"><span class="tag-text editable-node">Power Query (M)</span></span>
+              <span data-tag-id="tag_dynamic_measures" class="skill-tag"><span data-i18n="skill_tag_measures" class="tag-text editable-node">Dynamic Measures</span></span>
             </div>
           </div>
 
           <!-- Box 3: ETL & HỆ THỐNG ERP -->
-          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+          <div data-group-id="skill_grp_3" class="skill-group-card surface-card p-5 space-y-3 relative">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
                 <span>⚙️</span>
@@ -780,17 +782,17 @@
               </div>
             </div>
             <div class="tag-list flex flex-wrap gap-2.5 items-center">
-              <span class="skill-tag"><span class="tag-text editable-node">Python (Pandas, Automation)</span></span>
-              <span class="skill-tag"><span data-i18n="skill_tag_sql" class="tag-text editable-node">SQL Nâng cao</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Oracle ERP</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Bravo</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">DataLoad</span></span>
-              <span class="skill-tag"><span data-i18n="skill_tag_excel" class="tag-text editable-node">Excel Nâng cao &amp; MS Access</span></span>
+              <span data-tag-id="tag_python" class="skill-tag"><span data-i18n="skill_tag_python" class="tag-text editable-node">Python (Pandas, Automation)</span></span>
+              <span data-tag-id="tag_sql" class="skill-tag"><span data-i18n="skill_tag_sql" class="tag-text editable-node">SQL Nâng cao</span></span>
+              <span data-tag-id="tag_oracle" class="skill-tag"><span class="tag-text editable-node">Oracle ERP</span></span>
+              <span data-tag-id="tag_bravo" class="skill-tag"><span class="tag-text editable-node">Bravo</span></span>
+              <span data-tag-id="tag_dataload" class="skill-tag"><span class="tag-text editable-node">DataLoad</span></span>
+              <span data-tag-id="tag_excel" class="skill-tag"><span data-i18n="skill_tag_excel" class="tag-text editable-node">Excel Nâng cao &amp; MS Access</span></span>
             </div>
           </div>
 
           <!-- Box 4: AI ENGINEERING & DEVELOPER ECOSYSTEM -->
-          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+          <div data-group-id="skill_grp_4" class="skill-group-card surface-card p-5 space-y-3 relative">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-purple-400">
                 <span>🤖</span>
@@ -798,11 +800,11 @@
               </div>
             </div>
             <div class="tag-list flex flex-wrap gap-2.5 items-center">
-              <span class="skill-tag"><span class="tag-text editable-node">Claude Code</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Antigravity CLI</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">OpenAI Codex</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Git &amp; GitHub Workflow</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">AI Prompt Orchestration</span></span>
+              <span data-tag-id="tag_claude" class="skill-tag"><span class="tag-text editable-node">Claude Code</span></span>
+              <span data-tag-id="tag_agy" class="skill-tag"><span class="tag-text editable-node">Antigravity CLI</span></span>
+              <span data-tag-id="tag_codex" class="skill-tag"><span class="tag-text editable-node">OpenAI Codex</span></span>
+              <span data-tag-id="tag_git" class="skill-tag"><span class="tag-text editable-node">Git &amp; GitHub Workflow</span></span>
+              <span data-tag-id="tag_prompt" class="skill-tag"><span data-i18n="skill_tag_prompt" class="tag-text editable-node">AI Prompt Orchestration</span></span>
             </div>
           </div>
         </div>
@@ -817,25 +819,25 @@
 
         <div id="education-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <!-- Mục 1: MBA -->
-          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-sky-400 space-y-3" draggable="true">
+          <div data-card-id="edu_card_1" class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-sky-400 space-y-3" draggable="true">
             <span data-i18n="edu_cat_1" class="text-[10px] font-bold uppercase tracking-wider text-sky-400 font-mono">Master Degree</span>
             <div data-i18n="edu_title_1" class="editable-node text-sm font-bold text-white leading-snug">Thạc sĩ Quản Trị Kinh Doanh (MBA)</div>
           </div>
 
           <!-- Mục 2: EA, CPA -->
-          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-sky-400 space-y-3" draggable="true">
+          <div data-card-id="edu_card_2" class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-sky-400 space-y-3" draggable="true">
             <span data-i18n="edu_cat_2" class="text-[10px] font-bold uppercase tracking-wider text-sky-400 font-mono">US Tax &amp; Accounting</span>
             <div data-i18n="edu_title_2" class="editable-node text-sm font-bold text-white leading-snug">Ứng viên Enrolled Agent (EA Thuế Mỹ)</div>
           </div>
 
           <!-- Mục 3: Google Skillshop -->
-          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-emerald-400 space-y-3" draggable="true">
+          <div data-card-id="edu_card_3" class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-emerald-400 space-y-3" draggable="true">
             <span data-i18n="edu_cat_3" class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 font-mono">Digital Marketing</span>
             <div data-i18n="edu_title_3" class="editable-node text-sm font-bold text-white leading-snug">Google Skillshop · Lộ Trình Đo Lường GA4</div>
           </div>
 
           <!-- Mục 4: AI & Automation -->
-          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between bg-[#191233] border border-purple-500/40 shadow-lg border-t-2 border-t-purple-400 space-y-3" draggable="true">
+          <div data-card-id="edu_card_4" class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between bg-[#191233] border border-purple-500/40 shadow-lg border-t-2 border-t-purple-400 space-y-3" draggable="true">
             <span data-i18n="edu_cat_4" class="text-[10px] font-bold uppercase tracking-wider text-purple-300 font-mono">AI Engineering</span>
             <div data-i18n="edu_title_4" class="editable-node text-xs sm:text-sm font-bold text-purple-200 leading-snug">✨ Thực Hành Agentic AI &amp; Tự Động Hóa Quy Trình</div>
           </div>
@@ -853,7 +855,7 @@
         <p data-i18n="footer_desc" class="editable-node text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl mx-auto text-balance">Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu <span class="inline-block">thực tế.</span></p>
 
         <div class="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-          <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+          <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0369a1] hover:bg-[#075985] text-white shadow-lg shadow-sky-500/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
             <span data-i18n="footer_zalo" class="editable-node">Nhắn Zalo: 0855 239 805</span>
           </a>
           <a href="mailto:teoteo1081@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
@@ -881,7 +883,7 @@
     <div class="surface-card max-w-2xl w-full p-6 sm:p-8 border border-sky-400/30 shadow-2xl space-y-5">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <h3 id="modal-title" class="text-base sm:text-lg font-extrabold text-white">Sơ đồ &amp; Demo Giải pháp</h3>
-        <button id="demo-modal-close-btn" type="button" onclick="closeSolutionModal()" aria-label="Đóng cửa sổ" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"><span data-i18n="modal_close_btn">✕ Đóng</span></button>
+        <button id="demo-modal-close-btn" type="button" onclick="closeSolutionModal()" data-i18n-aria="aria_modal_close" aria-label="Đóng cửa sổ" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"><span data-i18n="modal_close_btn">✕ Đóng</span></button>
       </div>
       <div id="modal-body" class="text-xs sm:text-sm text-slate-300 space-y-4 leading-relaxed"></div>
     </div>
@@ -910,37 +912,57 @@
         .replace(/'/g, '&#39;');
     }
 
-    // Sanitizer cho chuỗi i18n nội bộ: chỉ cho phép <br>, <span>, <strong> với class an toàn
+    const ALLOWED_SAFE_TAGS_CV = new Set(['BR', 'SPAN', 'STRONG']);
+    const ALLOWED_SPAN_CLASSES_CV = new Set(['inline-block', 'tag-text', 'editable-node']);
+
+    function sanitizeRichFragmentCV(container) {
+      if (!container) return;
+      const children = Array.from(container.childNodes);
+      for (const child of children) {
+        if (child.nodeType === Node.ELEMENT_NODE) {
+          const tag = child.tagName.toUpperCase();
+          if (!ALLOWED_SAFE_TAGS_CV.has(tag)) {
+            const textNode = document.createTextNode(child.textContent || '');
+            container.replaceChild(textNode, child);
+          } else {
+            const allowedClasses = [];
+            if (tag === 'SPAN' && child.className) {
+              const classList = child.className.split(/\s+/);
+              for (const cls of classList) {
+                if (ALLOWED_SPAN_CLASSES_CV.has(cls)) {
+                  allowedClasses.push(cls);
+                }
+              }
+            } else if (tag === 'STRONG' && child.className) {
+              if (child.className.includes('text-white')) {
+                allowedClasses.push('text-white');
+              }
+            }
+            while (child.attributes.length > 0) {
+              child.removeAttribute(child.attributes[0].name);
+            }
+            if (allowedClasses.length > 0) {
+              child.setAttribute('class', allowedClasses.join(' '));
+            }
+            sanitizeRichFragmentCV(child);
+          }
+        } else if (child.nodeType !== Node.TEXT_NODE) {
+          container.removeChild(child);
+        }
+      }
+    }
+
+    // Sanitizer cho chuỗi i18n nội bộ: phân biệt plain text và rich text (<br>, <span>, <strong>)
     function renderSafeI18nCV(el, rawVal) {
       if (!el) return;
       const val = String(rawVal ?? '');
-      if (!val.includes('<')) {
+      if (!/<(?:br|span|strong)/i.test(val)) {
         el.textContent = val;
         return;
       }
       const template = document.createElement('template');
       template.innerHTML = val;
-      const allowedTags = new Set(['BR', 'SPAN', 'STRONG']);
-      const walk = (node) => {
-        Array.from(node.childNodes).forEach((child) => {
-          if (child.nodeType === Node.ELEMENT_NODE) {
-            if (!allowedTags.has(child.tagName)) {
-              const textNode = document.createTextNode(child.textContent || '');
-              node.replaceChild(textNode, child);
-              return;
-            }
-            Array.from(child.attributes).forEach((attr) => {
-              if (attr.name !== 'class') {
-                child.removeAttribute(attr.name);
-              }
-            });
-            walk(child);
-          } else if (child.nodeType !== Node.TEXT_NODE) {
-            node.removeChild(child);
-          }
-        });
-      };
-      walk(template.content);
+      sanitizeRichFragmentCV(template.content);
       el.replaceChildren(template.content.cloneNode(true));
     }
 
@@ -996,8 +1018,11 @@
         skill_grp_4: "AI ENGINEERING & DEVELOPER ECOSYSTEM",
         skill_tag_cpa: "Tối ưu CPA, ROAS, CVR",
         skill_tag_pbi: "Power BI (Nâng cao)",
+        skill_tag_measures: "Chỉ số động (Dynamic Measures)",
+        skill_tag_python: "Python (Pandas, Tự động hóa)",
         skill_tag_sql: "SQL Nâng cao",
         skill_tag_excel: "Excel Nâng cao & MS Access",
+        skill_tag_prompt: "Điều phối Prompt AI (Prompt Orchestration)",
         edu_heading: "Học Vấn & <span class=\"inline-block\">Bằng Cấp</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "Thạc sĩ Quản Trị Kinh Doanh (MBA)",
@@ -1011,7 +1036,10 @@
         footer_desc: "Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu <span class=\"inline-block\">thực tế.</span>",
         footer_zalo: "Nhắn Zalo: 0855 239 805",
         footer_email: "Gửi Email: teoteo1081@gmail.com",
-        modal_close_btn: "✕ Đóng"
+        modal_close_btn: "✕ Đóng",
+        aria_lang_select: "Chọn ngôn ngữ hiển thị",
+        aria_theme_toggle: "Chuyển đổi giao diện Sáng / Tối",
+        aria_modal_close: "Đóng cửa sổ"
       },
       en: {
         nav_back: "← Back to Portfolio Showcase",
@@ -1063,8 +1091,11 @@
         skill_grp_4: "AI ENGINEERING & DEVELOPER ECOSYSTEM",
         skill_tag_cpa: "CPA, ROAS, CVR Optimization",
         skill_tag_pbi: "Power BI (Advanced)",
+        skill_tag_measures: "Dynamic Measures",
+        skill_tag_python: "Python (Pandas, Automation)",
         skill_tag_sql: "Advanced SQL",
         skill_tag_excel: "Advanced Excel & MS Access",
+        skill_tag_prompt: "AI Prompt Orchestration",
         edu_heading: "Education & <span class=\"inline-block\">Certifications</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "Master of Business Administration (MBA)",
@@ -1078,7 +1109,10 @@
         footer_desc: "From setting up GA4/GTM tracking infrastructure and building omnichannel dashboards to data-driven ad cost <span class=\"inline-block\">optimization (ROAS/CPA).</span>",
         footer_zalo: "Message via Zalo: 0855 239 805",
         footer_email: "Send Email: teoteo1081@gmail.com",
-        modal_close_btn: "✕ Close"
+        modal_close_btn: "✕ Close",
+        aria_lang_select: "Select display language",
+        aria_theme_toggle: "Toggle Light / Dark mode",
+        aria_modal_close: "Close modal dialog"
       },
       es: {
         nav_back: "← Volver a Portfolio Showcase",
@@ -1130,8 +1164,11 @@
         skill_grp_4: "INGENIERÍA DE IA Y ECOSISTEMA DE DESARROLLO",
         skill_tag_cpa: "Optimización de CPA, ROAS, CVR",
         skill_tag_pbi: "Power BI (Avanzado)",
+        skill_tag_measures: "Métricas Dinámicas (Dynamic Measures)",
+        skill_tag_python: "Python (Pandas, Automatización)",
         skill_tag_sql: "SQL Avanzado",
         skill_tag_excel: "Excel Avanzado y MS Access",
+        skill_tag_prompt: "Orquestación de Prompts de IA",
         edu_heading: "Educación y <span class=\"inline-block\">Certificaciones</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "Máster en Administración de Empresas (MBA)",
@@ -1145,7 +1182,10 @@
         footer_desc: "Desde la infraestructura de medición GA4/GTM y cuadros de mando omnicanal hasta la optimización de <span class=\"inline-block\">inversión (ROAS/CPA).</span>",
         footer_zalo: "Mensaje por Zalo: 0855 239 805",
         footer_email: "Enviar Email: teoteo1081@gmail.com",
-        modal_close_btn: "✕ Cerrar"
+        modal_close_btn: "✕ Cerrar",
+        aria_lang_select: "Seleccionar idioma",
+        aria_theme_toggle: "Cambiar tema Claro / Oscuro",
+        aria_modal_close: "Cerrar ventana modal"
       },
       zh: {
         nav_back: "← 返回作品集展示",
@@ -1197,8 +1237,11 @@
         skill_grp_4: "AI 智能体工程与开发者生态",
         skill_tag_cpa: "优化 CPA, ROAS, CVR",
         skill_tag_pbi: "Power BI (高级)",
+        skill_tag_measures: "动态度量值 (Dynamic Measures)",
+        skill_tag_python: "Python (Pandas, 自动化)",
         skill_tag_sql: "高级 SQL",
         skill_tag_excel: "高级 Excel 与 MS Access",
+        skill_tag_prompt: "AI 提示词工程与编排",
         edu_heading: "教育背景与<span class=\"inline-block\">专业资质</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "工商管理硕士 (MBA)",
@@ -1212,7 +1255,10 @@
         footer_desc: "从搭建 GA4/GTM 全链路埋点底座、构建全渠道监控大屏，到基于真实业务数据的营销投产比 <span class=\"inline-block\">(ROAS/CPA) 深度调优。</span>",
         footer_zalo: "Zalo 即时沟通: 0855 239 805",
         footer_email: "发送邮件: teoteo1081@gmail.com",
-        modal_close_btn: "✕ 关闭"
+        modal_close_btn: "✕ 关闭",
+        aria_lang_select: "选择显示语言",
+        aria_theme_toggle: "切换浅色 / 深色模式",
+        aria_modal_close: "关闭模态窗口"
       }
     };
 
@@ -1242,7 +1288,7 @@
         const parsed = JSON.parse(raw);
         if (!parsed || typeof parsed !== 'object') return;
 
-        // 1. Khôi phục thứ tự các section lớn an toàn qua DOM node reference
+        // 1. Khôi phục thứ tự các section lớn
         if (Array.isArray(parsed.sectionOrder)) {
           const parent = document.getElementById('reorderable-sections');
           if (parent) {
@@ -1253,21 +1299,149 @@
           }
         }
 
-        // 2. Khôi phục text edits theo ngôn ngữ (dạng plain text đã escape an toàn)
+        // 2. Khôi phục thứ tự & các card đã xóa trong Solutions
+        if (Array.isArray(parsed.solutionsOrder)) {
+          const solGrid = document.getElementById('solutions-grid');
+          if (solGrid) {
+            const cardMap = new Map();
+            solGrid.querySelectorAll(':scope > .solution-card-item').forEach((c) => {
+              const id = c.getAttribute('data-card-id');
+              if (id) cardMap.set(id, c);
+            });
+            parsed.solutionsOrder.forEach((cardId) => {
+              const card = cardMap.get(cardId);
+              if (card) {
+                solGrid.appendChild(card);
+                cardMap.delete(cardId);
+              }
+            });
+            cardMap.forEach((c) => c.remove());
+          }
+        }
+
+        // 3. Khôi phục thứ tự & các card đã xóa trong Metrics
+        if (Array.isArray(parsed.metricsOrder)) {
+          const metricGrid = document.getElementById('metrics-grid');
+          if (metricGrid) {
+            const cardMap = new Map();
+            metricGrid.querySelectorAll(':scope > .metric-card-item').forEach((c) => {
+              const id = c.getAttribute('data-card-id');
+              if (id) cardMap.set(id, c);
+            });
+            parsed.metricsOrder.forEach((cardId) => {
+              const card = cardMap.get(cardId);
+              if (card) {
+                metricGrid.appendChild(card);
+                cardMap.delete(cardId);
+              }
+            });
+            cardMap.forEach((c) => c.remove());
+          }
+        }
+
+        // 4. Khôi phục thứ tự Skill Groups
+        if (Array.isArray(parsed.skillGroupsOrder)) {
+          const skillList = document.getElementById('skill-groups-list');
+          if (skillList) {
+            parsed.skillGroupsOrder.forEach((grpId) => {
+              const grp = skillList.querySelector(`.skill-group-card[data-group-id="${CSS.escape(String(grpId))}"]`);
+              if (grp) skillList.appendChild(grp);
+            });
+          }
+        }
+
+        // 5. Khôi phục và tái tạo chính xác toàn bộ Skill Tags theo Group (Bảo toàn thêm / xóa / sửa / sắp xếp)
+        if (parsed.skillTagsByGroup && typeof parsed.skillTagsByGroup === 'object') {
+          Object.keys(parsed.skillTagsByGroup).forEach((grpId) => {
+            const grp = document.querySelector(`.skill-group-card[data-group-id="${CSS.escape(String(grpId))}"]`);
+            if (!grp) return;
+            const tagList = grp.querySelector('.tag-list');
+            if (!tagList) return;
+
+            const savedTags = parsed.skillTagsByGroup[grpId];
+            if (!Array.isArray(savedTags)) return;
+
+            const existingTagsMap = new Map();
+            tagList.querySelectorAll('.skill-tag').forEach((t) => {
+              const id = t.getAttribute('data-tag-id');
+              if (id) existingTagsMap.set(id, t);
+            });
+
+            const addBtn = tagList.querySelector('.add-tag-btn');
+            tagList.querySelectorAll('.skill-tag').forEach((t) => t.remove());
+
+            savedTags.forEach((tagData) => {
+              let tagEl = existingTagsMap.get(tagData.id);
+              if (!tagEl) {
+                tagEl = document.createElement('span');
+                tagEl.className = 'skill-tag';
+                tagEl.setAttribute('data-tag-id', tagData.id);
+                const span = document.createElement('span');
+                span.className = 'tag-text editable-node';
+                if (tagData.i18nKey) {
+                  span.setAttribute('data-i18n', tagData.i18nKey);
+                }
+                span.textContent = tagData.text;
+                tagEl.appendChild(span);
+              } else {
+                const textSpan = tagEl.querySelector('.tag-text');
+                if (textSpan && !tagData.i18nKey) {
+                  textSpan.textContent = tagData.text;
+                }
+              }
+
+              if (addBtn) {
+                tagList.insertBefore(tagEl, addBtn);
+              } else {
+                tagList.appendChild(tagEl);
+              }
+            });
+          });
+        }
+
+        // 6. Khôi phục thứ tự & các card đã xóa trong Education
+        if (Array.isArray(parsed.eduCardsOrder)) {
+          const eduGrid = document.getElementById('education-grid');
+          if (eduGrid) {
+            const cardMap = new Map();
+            eduGrid.querySelectorAll(':scope > .edu-card-item').forEach((c) => {
+              const id = c.getAttribute('data-card-id');
+              if (id) cardMap.set(id, c);
+            });
+            parsed.eduCardsOrder.forEach((cardId) => {
+              const card = cardMap.get(cardId);
+              if (card) {
+                eduGrid.appendChild(card);
+                cardMap.delete(cardId);
+              }
+            });
+            cardMap.forEach((c) => c.remove());
+          }
+        }
+
+        // 7. Khôi phục text edits theo ngôn ngữ (phân biệt plain text và rich text, không escape sai ký tự)
         if (parsed.textEditsByLang && typeof parsed.textEditsByLang === 'object') {
           Object.keys(parsed.textEditsByLang).forEach((langKey) => {
             const langMap = parsed.textEditsByLang[langKey];
             if (translationsCV[langKey] && langMap && typeof langMap === 'object') {
               Object.keys(langMap).forEach((i18nKey) => {
-                if (typeof langMap[i18nKey] === 'string') {
-                  translationsCV[langKey][i18nKey] = escapeHtmlSafeCV(langMap[i18nKey]);
+                const val = langMap[i18nKey];
+                if (typeof val === 'string') {
+                  if (/<(?:br|span|strong)/i.test(val)) {
+                    const tpl = document.createElement('template');
+                    tpl.innerHTML = val;
+                    sanitizeRichFragmentCV(tpl.content);
+                    translationsCV[langKey][i18nKey] = tpl.innerHTML;
+                  } else {
+                    translationsCV[langKey][i18nKey] = val;
+                  }
                 }
               });
             }
           });
         }
 
-        // 3. Khôi phục ảnh đại diện nếu là data:image/ hợp lệ
+        // 8. Khôi phục ảnh đại diện
         if (typeof parsed.avatarDataUrl === 'string' && /^data:image\/(jpeg|png|webp|gif);base64,[A-Za-z0-9+/=]+$/i.test(parsed.avatarDataUrl)) {
           const avatarImg = document.getElementById('avatar-img');
           if (avatarImg) avatarImg.src = parsed.avatarDataUrl;
@@ -1290,6 +1464,13 @@
         const key = el.getAttribute('data-i18n');
         if (translationsCV[lang] && (translationsCV[lang][key] !== undefined)) {
           renderSafeI18nCV(el, translationsCV[lang][key]);
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const key = el.getAttribute('data-i18n-aria');
+        if (translationsCV[lang] && (translationsCV[lang][key] !== undefined)) {
+          el.setAttribute('aria-label', translationsCV[lang][key]);
         }
       });
 
@@ -1456,7 +1637,7 @@
                 <button type="button" onclick="setPalette('indigo')" class="w-full flex items-center gap-2.5 px-2.5 py-2 text-xs font-medium text-slate-200 hover:bg-slate-800 rounded-lg text-left"><span class="w-3.5 h-3.5 rounded-full bg-indigo-400"></span>Midnight AI &amp; Indigo</button>
               </div>
             </div>
-            <button type="button" onclick="window.print()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-sm transition-all cursor-pointer whitespace-nowrap">
+            <button type="button" onclick="window.print()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-[#0369a1] hover:bg-[#075985] text-white shadow-sm transition-all cursor-pointer whitespace-nowrap">
               <span>🖨️</span><span>In PDF</span>
             </button>
             <button type="button" onclick="exportCleanHTML()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/50 shadow-sm transition-all cursor-pointer whitespace-nowrap">
@@ -1475,7 +1656,16 @@
 
     function saveCurrentState() {
       try {
-        let state = { sectionOrder: [], textEditsByLang: {}, avatarDataUrl: null };
+        let state = {
+          sectionOrder: [],
+          solutionsOrder: [],
+          metricsOrder: [],
+          skillGroupsOrder: [],
+          skillTagsByGroup: {},
+          eduCardsOrder: [],
+          textEditsByLang: {},
+          avatarDataUrl: null
+        };
         try {
           const existing = JSON.parse(localStorage.getItem(STORAGE_KEY_STATE) || '{}');
           if (existing && typeof existing === 'object') {
@@ -1483,10 +1673,61 @@
           }
         } catch (err) {}
 
-        const parent = document.getElementById('reorderable-sections');
-        if (parent) {
-          state.sectionOrder = Array.from(parent.querySelectorAll(':scope > .reorderable-section'))
+        const parentSec = document.getElementById('reorderable-sections');
+        if (parentSec) {
+          state.sectionOrder = Array.from(parentSec.querySelectorAll(':scope > .reorderable-section'))
             .map((sec) => sec.getAttribute('data-section-id'))
+            .filter(Boolean);
+        }
+
+        const solGrid = document.getElementById('solutions-grid');
+        if (solGrid) {
+          state.solutionsOrder = Array.from(solGrid.querySelectorAll(':scope > .solution-card-item'))
+            .map((c) => c.getAttribute('data-card-id'))
+            .filter(Boolean);
+        }
+
+        const metricGrid = document.getElementById('metrics-grid');
+        if (metricGrid) {
+          state.metricsOrder = Array.from(metricGrid.querySelectorAll(':scope > .metric-card-item'))
+            .map((c) => c.getAttribute('data-card-id'))
+            .filter(Boolean);
+        }
+
+        const skillList = document.getElementById('skill-groups-list');
+        if (skillList) {
+          state.skillGroupsOrder = Array.from(skillList.querySelectorAll(':scope > .skill-group-card'))
+            .map((grp) => grp.getAttribute('data-group-id'))
+            .filter(Boolean);
+        }
+
+        state.skillTagsByGroup = {};
+        document.querySelectorAll('.skill-group-card').forEach((grp) => {
+          const grpId = grp.getAttribute('data-group-id');
+          if (!grpId) return;
+          const tagList = grp.querySelector('.tag-list');
+          if (!tagList) return;
+          const tags = [];
+          tagList.querySelectorAll('.skill-tag').forEach((tag) => {
+            let tagId = tag.getAttribute('data-tag-id');
+            if (!tagId) {
+              tagId = 'tag_' + Math.random().toString(36).substr(2, 9);
+              tag.setAttribute('data-tag-id', tagId);
+            }
+            const textSpan = tag.querySelector('.tag-text');
+            const i18nKey = textSpan ? textSpan.getAttribute('data-i18n') : null;
+            const text = textSpan ? (textSpan.textContent || '').trim() : tag.textContent.replace(/✕/g, '').trim();
+            if (text) {
+              tags.push({ id: tagId, i18nKey: i18nKey || null, text });
+            }
+          });
+          state.skillTagsByGroup[grpId] = tags;
+        });
+
+        const eduGrid = document.getElementById('education-grid');
+        if (eduGrid) {
+          state.eduCardsOrder = Array.from(eduGrid.querySelectorAll(':scope > .edu-card-item'))
+            .map((c) => c.getAttribute('data-card-id'))
             .filter(Boolean);
         }
 
@@ -1500,10 +1741,17 @@
         document.querySelectorAll('#portfolio-root [data-i18n]').forEach((el) => {
           const key = el.getAttribute('data-i18n');
           if (key) {
-            const plainText = (el.textContent || '').trim();
-            state.textEditsByLang[currentLangCV][key] = plainText;
+            let savedVal = '';
+            if (el.querySelector('br, span.inline-block, strong')) {
+              const clone = el.cloneNode(true);
+              sanitizeRichFragmentCV(clone);
+              savedVal = clone.innerHTML;
+            } else {
+              savedVal = el.textContent || '';
+            }
+            state.textEditsByLang[currentLangCV][key] = savedVal;
             if (translationsCV[currentLangCV]) {
-              translationsCV[currentLangCV][key] = escapeHtmlSafeCV(plainText);
+              translationsCV[currentLangCV][key] = savedVal;
             }
           }
         });
@@ -1739,6 +1987,8 @@
       if (!container) return;
       const newTag = document.createElement('span');
       newTag.className = 'skill-tag';
+      const tagId = 'custom_tag_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+      newTag.setAttribute('data-tag-id', tagId);
       newTag.innerHTML = `<span class="tag-text editable-node" contenteditable="true" spellcheck="false">Kỹ năng mới</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button>`;
       container.insertBefore(newTag, btnEl);
 
@@ -1898,26 +2148,7 @@
         content: finalHTML
       });
 
-      // (1) TỰ ĐỘNG GHI ĐÈ FILE GỐC NGẦM QUA SERVER PYTHON (/api/save)
-      const saveEndpoints = window.location.protocol.startsWith('http')
-        ? ['/api/save']
-        : ['http://127.0.0.1:8000/api/save', 'http://localhost:8000/api/save'];
-
-      saveEndpoints.forEach((endpoint) => {
-        fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: payload
-        })
-          .then((res) => {
-            if (res && res.ok) {
-              showToast('✅ Đã ghi đè trực tiếp vào file gốc trong Git & tải về máy!');
-            }
-          })
-          .catch(() => {});
-      });
-
-      // (2) ĐỒNG THỜI TRIGGER TẢI FILE VỀ TRÌNH DUYỆT NGAY LẬP TỨC
+      // (1) ĐỒNG THỜI TRIGGER TẢI FILE VỀ TRÌNH DUYỆT NGAY LẬP TỨC
       const blob = new Blob([finalHTML], { type: 'text/html;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -1927,8 +2158,38 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      showToast('💾 Đã tải "index_portfolio_clean.html" sạch về máy! Đang kết nối máy chủ để ghi đè...');
 
-      showToast('💾 Đã lưu file gốc (/api/save) & tải "index_portfolio_clean.html" sạch xuống trình duyệt!');
+      // (2) TỰ ĐỘNG GHI ĐÈ FILE GỐC NGẦM QUA SERVER PYTHON (/api/save)
+      const saveEndpoints = window.location.protocol.startsWith('http')
+        ? ['/api/save']
+        : ['http://127.0.0.1:8000/api/save', 'http://localhost:8000/api/save'];
+
+      let saveAttempted = 0;
+      let saveSucceeded = false;
+
+      saveEndpoints.forEach((endpoint) => {
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload
+        })
+          .then((res) => {
+            saveAttempted++;
+            if (res && res.ok) {
+              saveSucceeded = true;
+              showToast('✅ Đã ghi đè trực tiếp vào file gốc trong Git thành công!');
+            } else if (saveAttempted === saveEndpoints.length && !saveSucceeded) {
+              showToast('ℹ️ Tải file thành công. Máy chủ không hỗ trợ /api/save (chế độ tĩnh), hãy dùng file vừa tải.');
+            }
+          })
+          .catch(() => {
+            saveAttempted++;
+            if (saveAttempted === saveEndpoints.length && !saveSucceeded) {
+              showToast('ℹ️ Tải file thành công. Không có máy chủ cục bộ /api/save (chế độ tĩnh), hãy dùng file vừa tải.');
+            }
+          });
+      });
     }
 
     function saveCleanFinalHTML() {
