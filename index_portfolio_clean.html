@@ -479,7 +479,7 @@
 
           <!-- Tên & Tiêu đề chức danh -->
           <div class="space-y-1.5">
-            <h1 class="editable-node text-4xl sm:text-5xl font-black tracking-tight text-white text-balance">TJ</h1>
+            <h1 data-field-id="hero_name" data-i18n="hero_name" class="editable-node text-4xl sm:text-5xl font-black tracking-tight text-white text-balance">TJ</h1>
             <h2 data-i18n="hero_title" class="editable-node text-lg sm:text-xl lg:text-[22px] font-bold text-[#38bdf8] leading-snug text-balance">Data Analyst ➔ Data-Backed <span class="inline-block">Performance Marketing</span></h2>
           </div>
 
@@ -488,11 +488,11 @@
 
           <!-- Thông tin liên hệ -->
           <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-[13px] text-slate-300 pt-0.5">
-            <span class="editable-node inline-flex items-center gap-1.5">
-              <span class="text-amber-400">📞</span> +84 855 239 805
+            <span class="inline-flex items-center gap-1.5">
+              <span class="text-amber-400">📞</span> <span data-field-id="hero_phone" data-i18n="hero_phone" class="editable-node">+84 855 239 805</span>
             </span>
-            <span class="editable-node inline-flex items-center gap-1.5">
-              <span class="text-sky-400">✉</span> teoteo1081@gmail.com
+            <span class="inline-flex items-center gap-1.5">
+              <span class="text-sky-400">✉</span> <span data-field-id="hero_email" data-i18n="hero_email" class="editable-node">teoteo1081@gmail.com</span>
             </span>
             <span class="editable-node inline-flex items-center gap-1.5 text-emerald-400 font-medium">
               <span data-i18n="hero_verified"><span>🛡</span> Thông tin xác thực 100%</span>
@@ -531,7 +531,7 @@
             <!-- Badge "Verified Specialist • 2026" -->
             <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap z-10">
               <div class="px-3.5 py-1 rounded-full bg-[#0f172a] border border-slate-700 shadow-lg text-[11px] font-bold text-slate-100 tracking-wide">
-                <span class="editable-node">Verified Specialist • 2026</span>
+                <span data-field-id="hero_badge_spec" data-i18n="hero_badge_spec" class="editable-node">Verified Specialist • 2026</span>
               </div>
             </div>
           </div>
@@ -567,7 +567,7 @@
                 <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
                   <i data-lucide="trending-up" class="w-4 h-4"></i>
                 </div>
-                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/25">Planning &amp; Growth</span>
+                <span data-field-id="sol_badge_1" data-i18n="sol_badge_1" class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/25">Planning &amp; Growth</span>
               </div>
 
               <div class="space-y-1.5">
@@ -608,7 +608,7 @@
                 <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
                   <i data-lucide="pie-chart" class="w-4 h-4"></i>
                 </div>
-                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/25">Advanced BI &amp; DAX</span>
+                <span data-field-id="sol_badge_2" data-i18n="sol_badge_2" class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/25">Advanced BI &amp; DAX</span>
               </div>
 
               <div class="space-y-1.5">
@@ -645,7 +645,7 @@
                 <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                   <i data-lucide="cpu" class="w-4 h-4"></i>
                 </div>
-                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">Automation &amp; AI</span>
+                <span data-field-id="sol_badge_3" data-i18n="sol_badge_3" class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">Automation &amp; AI</span>
               </div>
 
               <div class="space-y-1.5">
@@ -864,7 +864,7 @@
         </div>
 
         <div class="pt-4 border-t border-slate-800/80 text-[11px] sm:text-xs text-slate-400">
-          <p class="editable-node">&copy; <span class="editable-node">2026</span> <span class="editable-node">Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing &amp; BI Specialist. All rights reserved.</span></p>
+          <p class="editable-node">&copy; <span class="editable-node">2026</span> <span data-field-id="footer_copy" data-i18n="footer_copy" class="editable-node">Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing &amp; BI Specialist. All rights reserved.</span></p>
         </div>
       </div>
     </footer>
@@ -912,8 +912,14 @@
         .replace(/'/g, '&#39;');
     }
 
-    const ALLOWED_SAFE_TAGS_CV = new Set(['BR', 'SPAN', 'STRONG']);
-    const ALLOWED_SPAN_CLASSES_CV = new Set(['inline-block', 'tag-text', 'editable-node']);
+    const ALLOWED_SAFE_TAGS_CV = new Set(['BR', 'SPAN', 'STRONG', 'CODE', 'KBD']);
+    const ALLOWED_CLASSES_BY_TAG_CV = {
+      SPAN: new Set(['inline-block', 'tag-text', 'editable-node', 'text-amber-400', 'text-sky-400', 'text-emerald-400', 'text-purple-400']),
+      STRONG: new Set(['text-white', 'text-cyan-400']),
+      CODE: new Set(['text-cyan-400']),
+      KBD: new Set(['px-1.5', 'py-0.5', 'rounded', 'bg-slate-800', 'border', 'border-slate-700', 'text-slate-300', 'text-amber-400', 'font-mono', 'text-[11px]']),
+      BR: new Set(['hidden', 'md:inline'])
+    };
 
     function sanitizeRichFragmentCV(container) {
       if (!container) return;
@@ -925,17 +931,14 @@
             const textNode = document.createTextNode(child.textContent || '');
             container.replaceChild(textNode, child);
           } else {
+            const allowedSet = ALLOWED_CLASSES_BY_TAG_CV[tag];
             const allowedClasses = [];
-            if (tag === 'SPAN' && child.className) {
-              const classList = child.className.split(/\s+/);
-              for (const cls of classList) {
-                if (ALLOWED_SPAN_CLASSES_CV.has(cls)) {
-                  allowedClasses.push(cls);
+            if (allowedSet && child.className) {
+              const tokens = String(child.className).trim().split(/\s+/);
+              for (const token of tokens) {
+                if (allowedSet.has(token)) {
+                  allowedClasses.push(token);
                 }
-              }
-            } else if (tag === 'STRONG' && child.className) {
-              if (child.className.includes('text-white')) {
-                allowedClasses.push('text-white');
               }
             }
             while (child.attributes.length > 0) {
@@ -952,11 +955,11 @@
       }
     }
 
-    // Sanitizer cho chuỗi i18n nội bộ: phân biệt plain text và rich text (<br>, <span>, <strong>)
+    // Sanitizer cho chuỗi i18n nội bộ: phân biệt plain text và rich text (<br>, <span>, <strong>, <code>, <kbd>)
     function renderSafeI18nCV(el, rawVal) {
       if (!el) return;
       const val = String(rawVal ?? '');
-      if (!/<(?:br|span|strong)/i.test(val)) {
+      if (!/<(?:br|span|strong|code|kbd)\b/i.test(val)) {
         el.textContent = val;
         return;
       }
@@ -1039,7 +1042,15 @@
         modal_close_btn: "✕ Đóng",
         aria_lang_select: "Chọn ngôn ngữ hiển thị",
         aria_theme_toggle: "Chuyển đổi giao diện Sáng / Tối",
-        aria_modal_close: "Đóng cửa sổ"
+        aria_modal_close: "Đóng cửa sổ",
+        hero_name: "TJ",
+        hero_phone: "+84 855 239 805",
+        hero_email: "teoteo1081@gmail.com",
+        hero_badge_spec: "Verified Specialist • 2026",
+        sol_badge_1: "Planning & Growth",
+        sol_badge_2: "Advanced BI & DAX",
+        sol_badge_3: "Automation & AI",
+        footer_copy: "Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing & BI Specialist. All rights reserved."
       },
       en: {
         nav_back: "← Back to Portfolio Showcase",
@@ -1047,6 +1058,14 @@
         pill_loc: "📍 Ho Chi Minh City",
         pill_work: "🌐 Remote / Freelance",
         pill_lang: "🗣 English TOEIC ~700+",
+        hero_name: "TJ",
+        hero_phone: "+84 855 239 805",
+        hero_email: "teoteo1081@gmail.com",
+        hero_badge_spec: "Verified Specialist • 2026",
+        sol_badge_1: "Planning & Growth",
+        sol_badge_2: "Advanced BI & DAX",
+        sol_badge_3: "Automation & AI",
+        footer_copy: "Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing & BI Specialist. All rights reserved.",
         hero_title: "Data Analyst ➔ Data-Backed <span class=\"inline-block\">Performance Marketing</span>",
         hero_bio: "Data analyst specializing in multi-channel advertising optimization (Meta, Google, TikTok). Skilled in combining user behavior tracking (GA4/GTM/BigQuery) and AI automation to control sales acquisition costs, identify high-performing marketing channels, and drive sustainable <span class=\"inline-block\">revenue growth.</span>",
         hero_verified: "<span>🛡</span> 100% Verified Profile",
@@ -1185,7 +1204,15 @@
         modal_close_btn: "✕ Cerrar",
         aria_lang_select: "Seleccionar idioma",
         aria_theme_toggle: "Cambiar tema Claro / Oscuro",
-        aria_modal_close: "Cerrar ventana modal"
+        aria_modal_close: "Cerrar ventana modal",
+        hero_name: "TJ",
+        hero_phone: "+84 855 239 805",
+        hero_email: "teoteo1081@gmail.com",
+        hero_badge_spec: "Verified Specialist • 2026",
+        sol_badge_1: "Planning & Growth",
+        sol_badge_2: "Advanced BI & DAX",
+        sol_badge_3: "Automation & AI",
+        footer_copy: "Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing & BI Specialist. All rights reserved."
       },
       zh: {
         nav_back: "← 返回作品集展示",
@@ -1193,6 +1220,14 @@
         pill_loc: "📍 胡志明市",
         pill_work: "🌐 远程办公 / 自由职业",
         pill_lang: "🗣 英语 TOEIC ~700+",
+        hero_name: "TJ",
+        hero_phone: "+84 855 239 805",
+        hero_email: "teoteo1081@gmail.com",
+        hero_badge_spec: "Verified Specialist • 2026",
+        sol_badge_1: "Planning & Growth",
+        sol_badge_2: "Advanced BI & DAX",
+        sol_badge_3: "Automation & AI",
+        footer_copy: "Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing & BI Specialist. All rights reserved.",
         hero_title: "数据分析师 ➔ 数据驱动型<span class=\"inline-block\">效果营销</span>",
         hero_bio: "专注于跨渠道数字广告优化（Meta、Google、TikTok）的数据分析专家。擅长将全链路用户行为归因埋点（GA4/GTM/BigQuery）与智能体 AI 自动化相结合，严格控制获客成本，精准定位高投产营销渠道，驱动业绩<span class=\"inline-block\">长期稳健增长。</span>",
         hero_verified: "<span>🛡</span> 100% 真实专业履历",
@@ -1258,7 +1293,15 @@
         modal_close_btn: "✕ 关闭",
         aria_lang_select: "选择显示语言",
         aria_theme_toggle: "切换浅色 / 深色模式",
-        aria_modal_close: "关闭模态窗口"
+        aria_modal_close: "关闭模态窗口",
+        hero_name: "TJ",
+        hero_phone: "+84 855 239 805",
+        hero_email: "teoteo1081@gmail.com",
+        hero_badge_spec: "Verified Specialist • 2026",
+        sol_badge_1: "Planning & Growth",
+        sol_badge_2: "Advanced BI & DAX",
+        sol_badge_3: "Automation & AI",
+        footer_copy: "Nguyễn Thị Thu Thảo (TJ) • Verified Digital Marketing & BI Specialist. All rights reserved."
       }
     };
 
@@ -1427,7 +1470,7 @@
               Object.keys(langMap).forEach((i18nKey) => {
                 const val = langMap[i18nKey];
                 if (typeof val === 'string') {
-                  if (/<(?:br|span|strong)/i.test(val)) {
+                  if (/<(?:br|span|strong|code|kbd)\b/i.test(val)) {
                     const tpl = document.createElement('template');
                     tpl.innerHTML = val;
                     sanitizeRichFragmentCV(tpl.content);
@@ -1437,6 +1480,19 @@
                   }
                 }
               });
+            }
+          });
+        }
+
+        // 7B. Khôi phục trực tiếp các field edits theo data-field-id
+        if (parsed.fieldEdits && typeof parsed.fieldEdits === 'object') {
+          Object.keys(parsed.fieldEdits).forEach((fid) => {
+            const val = parsed.fieldEdits[fid];
+            if (typeof val === 'string') {
+              const el = document.querySelector(`[data-field-id="${CSS.escape(fid)}"]`);
+              if (el) {
+                renderSafeI18nCV(el, val);
+              }
             }
           });
         }
@@ -1527,6 +1583,23 @@
         savedLang = localStorage.getItem('portfolio_lang') || 'vi';
       } catch (e) {}
       switchLanguageCV(savedLang, false);
+
+      // Áp dụng lại các fieldEdits đã lưu (đảm bảo các trường có data-field-id không bị locale mặc định ghi đè)
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_STATE);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.fieldEdits && typeof parsed.fieldEdits === 'object') {
+            Object.keys(parsed.fieldEdits).forEach((fid) => {
+              const val = parsed.fieldEdits[fid];
+              if (typeof val === 'string') {
+                const el = document.querySelector(`[data-field-id="${CSS.escape(fid)}"]`);
+                if (el) renderSafeI18nCV(el, val);
+              }
+            });
+          }
+        }
+      } catch (e) {}
 
       const root = document.getElementById('portfolio-root');
       if (document.getElementById('floating-toolbar')) {
@@ -1664,6 +1737,7 @@
           skillTagsByGroup: {},
           eduCardsOrder: [],
           textEditsByLang: {},
+          fieldEdits: {},
           avatarDataUrl: null
         };
         try {
@@ -1738,11 +1812,30 @@
           state.textEditsByLang[currentLangCV] = {};
         }
 
+        if (!state.fieldEdits || typeof state.fieldEdits !== 'object') {
+          state.fieldEdits = {};
+        }
+
+        document.querySelectorAll('#portfolio-root [data-field-id]').forEach((el) => {
+          const fid = el.getAttribute('data-field-id');
+          if (fid) {
+            let savedVal = '';
+            if (el.querySelector('br, span.inline-block, strong, code, kbd')) {
+              const clone = el.cloneNode(true);
+              sanitizeRichFragmentCV(clone);
+              savedVal = clone.innerHTML;
+            } else {
+              savedVal = el.textContent || '';
+            }
+            state.fieldEdits[fid] = savedVal;
+          }
+        });
+
         document.querySelectorAll('#portfolio-root [data-i18n]').forEach((el) => {
           const key = el.getAttribute('data-i18n');
           if (key) {
             let savedVal = '';
-            if (el.querySelector('br, span.inline-block, strong')) {
+            if (el.querySelector('br, span.inline-block, strong, code, kbd')) {
               const clone = el.cloneNode(true);
               sanitizeRichFragmentCV(clone);
               savedVal = clone.innerHTML;
@@ -1752,6 +1845,13 @@
             state.textEditsByLang[currentLangCV][key] = savedVal;
             if (translationsCV[currentLangCV]) {
               translationsCV[currentLangCV][key] = savedVal;
+            }
+            if (key === 'hero_name' || key === 'hero_phone' || key === 'hero_email') {
+              ['vi', 'en', 'es', 'zh'].forEach(l => {
+                if (translationsCV[l]) translationsCV[l][key] = savedVal;
+                if (!state.textEditsByLang[l]) state.textEditsByLang[l] = {};
+                state.textEditsByLang[l][key] = savedVal;
+              });
             }
           }
         });

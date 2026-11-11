@@ -408,10 +408,10 @@
     </section>
 
     <!-- ==================== (4) SECTION 4: HỆ SINH THÁI ĐO LƯỜNG THỰC CHIẾN (GA4 ECOSYSTEM HUB) ==================== -->
-    <section id="ga4-ecosystem" class="space-y-10 relative scroll-mt-32 md:scroll-mt-36" style="scroll-margin-top: 8.5rem;">
+    <section id="ga4-ecosystem" class="space-y-10 relative scroll-mt-32 md:scroll-mt-36 overflow-hidden" style="scroll-margin-top: 8.5rem;">
       <div id="live-projects" class="scroll-mt-32 md:scroll-mt-36" style="scroll-margin-top: 8.5rem;"></div>
       <!-- Ambient Background Glow -->
-      <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-80 sm:w-[32rem] h-64 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-56 sm:w-[32rem] max-w-full h-64 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <!-- Section Heading -->
       <div class="text-center max-w-4xl mx-auto space-y-3">
@@ -1031,7 +1031,7 @@
             </p>
           </div>
         </div>
-        <button type="button" id="ga4-modal-close-btn" aria-label="Close modal" onclick="closeGA4DrilldownModal()" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/40 text-slate-300 hover:text-rose-300 flex items-center justify-center font-bold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all cursor-pointer" title="Esc">
+        <button type="button" id="ga4-modal-close-btn" data-i18n-aria="aria_modal_close" aria-label="Đóng cửa sổ" onclick="closeGA4DrilldownModal()" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/40 text-slate-300 hover:text-rose-300 flex items-center justify-center font-bold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all cursor-pointer" title="Esc">
           ✕
         </button>
       </div>
@@ -1937,27 +1937,41 @@
     let currentLang = 'vi';
     const W17_STORAGE_JSON_KEY = 'w17_portfolio_edits_v14';
 
-    const ALLOWED_SAFE_TAGS = new Set(['BR', 'SPAN', 'STRONG']);
-    const ALLOWED_SPAN_CLASSES = new Set(['inline-block', 'tag-text', 'editable-node']);
+    function escapeHtmlSafe(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    const ALLOWED_SAFE_TAGS = new Set(['BR', 'SPAN', 'STRONG', 'CODE', 'KBD']);
+    const ALLOWED_CLASSES_BY_TAG = {
+      SPAN: new Set(['inline-block', 'tag-text', 'editable-node', 'text-amber-400', 'text-sky-400', 'text-emerald-400']),
+      STRONG: new Set(['text-white', 'text-cyan-400']),
+      CODE: new Set(['text-cyan-400']),
+      KBD: new Set(['px-1.5', 'py-0.5', 'rounded', 'bg-slate-800', 'border', 'border-slate-700', 'text-slate-300', 'text-amber-400', 'font-mono', 'text-[11px]']),
+      BR: new Set(['hidden', 'md:inline'])
+    };
 
     function sanitizeRichFragment(container) {
       const children = Array.from(container.childNodes);
       for (const child of children) {
         if (child.nodeType === Node.ELEMENT_NODE) {
-          if (!ALLOWED_SAFE_TAGS.has(child.tagName)) {
+          const tag = child.tagName.toUpperCase();
+          if (!ALLOWED_SAFE_TAGS.has(tag)) {
             const textNode = document.createTextNode(child.textContent || '');
             container.replaceChild(textNode, child);
           } else {
+            const allowedSet = ALLOWED_CLASSES_BY_TAG[tag];
             const allowedClasses = [];
-            if (child.tagName === 'SPAN') {
-              for (const cls of Array.from(child.classList)) {
-                if (ALLOWED_SPAN_CLASSES.has(cls)) allowedClasses.push(cls);
-              }
-            } else if (child.tagName === 'BR') {
-              if (child.className === 'hidden md:inline') allowedClasses.push('hidden', 'md:inline');
-            } else if (child.tagName === 'STRONG') {
-              if (child.className === 'text-white' || child.className.includes('text-cyan-400')) {
-                allowedClasses.push(child.className.trim());
+            if (allowedSet && child.className) {
+              const tokens = String(child.className).trim().split(/\s+/);
+              for (const token of tokens) {
+                if (allowedSet.has(token)) {
+                  allowedClasses.push(token);
+                }
               }
             }
             while (child.attributes.length > 0) {
@@ -1974,11 +1988,11 @@
       }
     }
 
-    // Sanitizer cho chuỗi i18n: phân biệt plain text và rich text (<br>, <span>)
+    // Sanitizer cho chuỗi i18n: phân biệt plain text và rich text (<br>, <span>, <strong>, <code>, <kbd>)
     function renderSafeI18nHTML(el, rawVal) {
       if (!el) return;
       const val = String(rawVal ?? '');
-      if (!/<(?:br|span|strong)/i.test(val)) {
+      if (!/<(?:br|span|strong|code|kbd)\b/i.test(val)) {
         el.textContent = val;
         return;
       }
@@ -2026,7 +2040,7 @@
             Object.keys(langEdits).forEach((i18nKey) => {
               if (typeof langEdits[i18nKey] === 'string') {
                 const val = langEdits[i18nKey];
-                if (/<(?:br|span|strong)/i.test(val)) {
+                if (/<(?:br|span|strong|code|kbd)\b/i.test(val)) {
                   const tpl = document.createElement('template');
                   tpl.innerHTML = val;
                   sanitizeRichFragment(tpl.content);
@@ -2889,7 +2903,7 @@
           const key = el.getAttribute('data-i18n');
           if (key) {
             let savedVal = '';
-            if (el.querySelector('br, span.inline-block, strong')) {
+            if (el.querySelector('br, span.inline-block, strong, code, kbd')) {
               const clone = el.cloneNode(true);
               sanitizeRichFragment(clone);
               savedVal = clone.innerHTML;
