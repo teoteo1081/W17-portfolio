@@ -97,7 +97,6 @@
       background-color: var(--bg-page);
       color: #f8fafc;
       min-height: 100vh;
-      overflow-x: hidden;
       transition: background-color 0.25s ease, color 0.25s ease;
     }
 
@@ -118,6 +117,115 @@
       box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.6);
     }
 
+    html.light-mode .surface-card {
+      box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.08);
+    }
+
+    html.light-mode .surface-card:hover {
+      border-color: #0284c7;
+      box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.14);
+    }
+
+    /* Tương phản Light Mode chuẩn WCAG 2.2 AA */
+    html.light-mode .text-white {
+      color: #0f172a !important;
+    }
+
+    html.light-mode a.bg-\[\#0284c7\].text-white,
+    html.light-mode button.bg-\[\#0284c7\].text-white,
+    html.light-mode button.bg-emerald-600.text-white {
+      color: #ffffff !important;
+    }
+
+    html.light-mode .text-slate-100,
+    html.light-mode .text-slate-200 {
+      color: #1e293b !important;
+    }
+
+    html.light-mode .text-slate-300 {
+      color: #334155 !important;
+    }
+
+    html.light-mode .text-slate-400 {
+      color: #475569 !important;
+    }
+
+    html.light-mode .text-\[\#38bdf8\],
+    html.light-mode .text-sky-400,
+    html.light-mode .text-sky-300 {
+      color: #0369a1 !important;
+    }
+
+    html.light-mode .text-amber-400,
+    html.light-mode .text-amber-300,
+    html.light-mode .text-\[\#f59e0b\] {
+      color: #b45309 !important;
+    }
+
+    html.light-mode .text-emerald-400,
+    html.light-mode .text-emerald-300,
+    html.light-mode .text-\[\#10b981\] {
+      color: #047857 !important;
+    }
+
+    html.light-mode .text-purple-400,
+    html.light-mode .text-purple-300,
+    html.light-mode .text-purple-200 {
+      color: #6d28d9 !important;
+    }
+
+    html.light-mode .bg-\[\#0c1322\]\/90 {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    html.light-mode .bg-\[\#131d31\] {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    html.light-mode .bg-\[\#131d31\]:hover {
+      background-color: #e2e8f0 !important;
+    }
+
+    html.light-mode .bg-\[\#191233\] {
+      background-color: #f5f3ff !important;
+      border-color: #c4b5fd !important;
+    }
+
+    html.light-mode .bg-\[\#0f243c\] {
+      background-color: #e0f2fe !important;
+      color: #0369a1 !important;
+      border-color: #7dd3fc !important;
+    }
+
+    html.light-mode .bg-\[\#0b2b26\] {
+      background-color: #d1fae5 !important;
+      color: #047857 !important;
+      border-color: #6ee7b7 !important;
+    }
+
+    html.light-mode .bg-\[\#2d1f12\] {
+      background-color: #fef3c7 !important;
+      color: #b45309 !important;
+      border-color: #fcd34d !important;
+    }
+
+    html.light-mode .bg-slate-900\/90,
+    html.light-mode .bg-slate-900,
+    html.light-mode .bg-slate-800 {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    html.light-mode .bg-\[\#0f172a\] {
+      background-color: #ffffff !important;
+      border-color: #94a3b8 !important;
+      color: #0f172a !important;
+    }
+
     /* Skill Tags */
     .skill-tag {
       position: relative;
@@ -134,12 +242,20 @@
     }
 
     html.light-mode .skill-tag {
-      color: #1e293b;
+      color: #0f172a;
+      background-color: #f1f5f9;
+      border-color: #cbd5e1;
     }
 
     .skill-tag:hover {
       border-color: var(--accent-main);
       color: #ffffff;
+    }
+
+    html.light-mode .skill-tag:hover {
+      border-color: #0284c7;
+      color: #0369a1;
+      background-color: #e0f2fe;
     }
 
     /* Tự động ẩn các thẻ rỗng */
@@ -320,23 +436,28 @@
 
     <!-- ==================== [TOP HEADER NAVIGATION: QUAY LẠI PORTFOLIO SHOWCASE] ==================== -->
     <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-[#0c1322]/90 border border-[#1a2740] shadow-lg no-print">
-      <a href="./index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 hover:border-emerald-400 transition-all">
+      <a href="./index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 hover:border-emerald-400 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
         <span data-i18n="nav_back" class="editable-node">← Quay lại Portfolio Showcase</span>
       </a>
-      <div class="flex items-center gap-3">
+      <div class="flex flex-wrap items-center gap-2.5 sm:gap-3">
         <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
-          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+          <span class="w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
           <span data-i18n="top_capability_badge" class="editable-node">Hồ Sơ Năng Lực Tương Tác • Capability Deck (V3)</span>
         </div>
-        <!-- Language Selector -->
+        <!-- Language Selector (Chuẩn 2 ký tự: VI | EN | ES | ZH) -->
         <div class="relative inline-block">
-          <select id="langSelectCV" onchange="switchLanguageCV(this.value, true)" aria-label="Select Language" class="bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:border-sky-400/60 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-sky-400 cursor-pointer transition-all">
+          <select id="langSelectCV" onchange="switchLanguageCV(this.value, true)" aria-label="Chọn ngôn ngữ hiển thị" class="bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:border-sky-400/60 text-xs font-medium rounded-lg px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer transition-all">
             <option value="vi">VI</option>
             <option value="en">EN</option>
             <option value="es">ES</option>
             <option value="zh">ZH</option>
           </select>
         </div>
+        <!-- Theme Toggle Button (Đồng bộ Light/Dark với Portfolio Showcase) -->
+        <button id="themeBtnCV" type="button" onclick="toggleLightDark()" aria-label="Chuyển đổi giao diện Sáng / Tối" aria-pressed="true" class="p-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer">
+          <i data-lucide="sun" id="themeIconSunCV" class="w-4 h-4 text-amber-400"></i>
+          <i data-lucide="moon" id="themeIconMoonCV" class="w-4 h-4 text-slate-700 hidden"></i>
+        </button>
       </div>
     </div>
 
@@ -345,7 +466,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
         <!-- Left Column (8 cols) -->
-        <div class="lg:col-span-8 space-y-5">
+        <div class="lg:col-span-8 space-y-5 max-w-4xl">
           
           <!-- [HEADER TAGS] -->
           <div class="flex flex-wrap items-center gap-2.5">
@@ -356,12 +477,12 @@
 
           <!-- Tên & Tiêu đề chức danh -->
           <div class="space-y-1.5">
-            <h1 class="editable-node text-4xl sm:text-5xl font-black tracking-tight text-white">TJ</h1>
-            <h2 data-i18n="hero_title" class="editable-node text-lg sm:text-xl lg:text-[22px] font-bold text-[#38bdf8] leading-snug">Data Analyst ➔ Data-Backed Performance Marketing</h2>
+            <h1 class="editable-node text-4xl sm:text-5xl font-black tracking-tight text-white text-balance">TJ</h1>
+            <h2 data-i18n="hero_title" class="editable-node text-lg sm:text-xl lg:text-[22px] font-bold text-[#38bdf8] leading-snug text-balance">Data Analyst ➔ Data-Backed <span class="inline-block">Performance Marketing</span></h2>
           </div>
 
           <!-- Đoạn tóm tắt -->
-          <p data-i18n="hero_bio" class="editable-node text-sm sm:text-[15px] text-slate-300 leading-relaxed max-w-2xl">Chuyên gia phân tích dữ liệu ứng dụng vào tối ưu hóa quảng cáo đa kênh (Meta, Google, TikTok). Sở trường kết hợp đo lường hành vi người dùng (GA4/GTM/BigQuery) và tự động hóa AI để kiểm soát chi phí bán hàng, tìm ra kênh tiếp thị hiệu quả nhất và thúc đẩy tăng trưởng doanh thu bền vững.</p>
+          <p data-i18n="hero_bio" class="editable-node text-sm sm:text-[15px] text-slate-300 leading-relaxed max-w-4xl text-balance">Chuyên gia phân tích dữ liệu ứng dụng vào tối ưu hóa quảng cáo đa kênh (Meta, Google, TikTok). Sở trường kết hợp đo lường hành vi người dùng (GA4/GTM/BigQuery) và tự động hóa AI để kiểm soát chi phí bán hàng, tìm ra kênh tiếp thị hiệu quả nhất và thúc đẩy tăng trưởng doanh thu <span class="inline-block">bền vững.</span></p>
 
           <!-- Thông tin liên hệ -->
           <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-[13px] text-slate-300 pt-0.5">
@@ -372,16 +493,16 @@
               <span class="text-sky-400">✉</span> teoteo1081@gmail.com
             </span>
             <span class="editable-node inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-              <span data-i18n="hero_verified"><span data-i18n="hero_verified"><span>🛡</span> Thông tin xác thực 100%</span></span>
+              <span data-i18n="hero_verified"><span>🛡</span> Thông tin xác thực 100%</span>
             </span>
           </div>
 
           <!-- Bộ nút CTA -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all">
+            <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
               <span data-i18n="hero_cta_zalo" class="editable-node">💬 Liên hệ Zalo / Hợp tác</span>
             </a>
-            <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all">
+            <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
               <span data-i18n="hero_cta_github" class="editable-node">🐙 Xem Hồ Sơ GitHub ↗</span>
             </a>
           </div>
@@ -429,9 +550,9 @@
               <i data-lucide="layers" class="w-3.5 h-3.5"></i>
               <span data-i18n="sol_badge_core" class="editable-node">NĂNG LỰC CỐT LÕI &amp; GIẢI PHÁP TRIỂN KHAI</span>
             </div>
-            <h2 data-i18n="sol_heading" class="editable-node text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Bộ Giải Pháp Phân Tích &amp; Tự Động Hóa</h2>
+            <h2 data-i18n="sol_heading" class="editable-node text-2xl sm:text-3xl font-extrabold text-white tracking-tight text-balance">Bộ Giải Pháp Phân Tích &amp; <span class="inline-block">Tự Động Hóa</span></h2>
           </div>
-          <p data-i18n="sol_desc" class="editable-node text-xs sm:text-[13px] text-slate-400 lg:max-w-md leading-relaxed">Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, Chubb Life, AIA.</p>
+          <p data-i18n="sol_desc" class="editable-node text-xs sm:text-[13px] text-slate-400 lg:max-w-md leading-relaxed text-balance">Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, <span class="inline-block">Chubb Life, AIA.</span></p>
         </div>
 
         <!-- 3 Solution Cards -->
@@ -448,7 +569,7 @@
               </div>
 
               <div class="space-y-1.5">
-                <h3 data-i18n="sol_card1_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Lập Kế hoạch Kinh doanh &amp; Quản trị Hiệu suất</h3>
+                <h3 data-i18n="sol_card1_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug text-balance">Lập Kế hoạch Kinh doanh &amp; Quản trị <span class="inline-block">Hiệu suất</span></h3>
                 <div data-i18n="sol_card1_sub" class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Mô hình MAPA • Budget Forecasting • Incentive &amp; KPI • GA4/GTM</div>
               </div>
 
@@ -472,7 +593,7 @@
               </ul>
             </div>
 
-            <button type="button" onclick="openSolutionModal('planning')" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-sky-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
+            <button type="button" onclick="openSolutionModal('planning', this)" aria-haspopup="dialog" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-sky-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
               <i data-lucide="network" class="w-3.5 h-3.5 text-sky-400"></i>
               <span data-i18n="sol_card1_btn" class="editable-node">Xem Sơ đồ &amp; Demo Giải pháp</span>
             </button>
@@ -489,7 +610,7 @@
               </div>
 
               <div class="space-y-1.5">
-                <h3 data-i18n="sol_card2_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Kỹ thuật BI &amp; Dashboard Quản trị Đa Kênh</h3>
+                <h3 data-i18n="sol_card2_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug text-balance">Kỹ thuật BI &amp; Dashboard Quản trị <span class="inline-block">Đa Kênh</span></h3>
                 <div data-i18n="sol_card2_sub" class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard</div>
               </div>
 
@@ -509,7 +630,7 @@
               </ul>
             </div>
 
-            <button type="button" onclick="openSolutionModal('bi')" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-amber-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
+            <button type="button" onclick="openSolutionModal('bi', this)" aria-haspopup="dialog" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-amber-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
               <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-sky-400"></i>
               <span data-i18n="sol_card2_btn" class="editable-node">Xem Demo Dashboard Quản trị</span>
             </button>
@@ -526,7 +647,7 @@
               </div>
 
               <div class="space-y-1.5">
-                <h3 data-i18n="sol_card3_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Tự động hóa Quy trình &amp; Hệ thống Dữ liệu</h3>
+                <h3 data-i18n="sol_card3_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug text-balance">Tự động hóa Quy trình &amp; Hệ thống <span class="inline-block">Dữ liệu</span></h3>
                 <div data-i18n="sol_card3_sub" class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Python Scripts • SQL ETL • AI Tools</div>
               </div>
 
@@ -550,7 +671,7 @@
               </ul>
             </div>
 
-            <button type="button" onclick="openSolutionModal('automation')" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-emerald-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
+            <button type="button" onclick="openSolutionModal('automation', this)" aria-haspopup="dialog" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-emerald-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
               <span data-i18n="sol_card3_btn" class="editable-node font-mono">&gt;_ Xem Pipeline &amp; Workflow Tự Động</span>
             </button>
           </div>
@@ -611,7 +732,7 @@
       <section data-section-id="skills" class="reorderable-section relative space-y-4 pt-2">
         <div class="flex items-center gap-2.5">
           <span class="text-amber-400 font-mono font-bold text-sm">&lt;/&gt;</span>
-          <h2 data-i18n="skills_heading" class="editable-node text-lg sm:text-xl font-extrabold text-white">Kỹ Năng Kỹ Thuật Chuyên Sâu</h2>
+          <h2 data-i18n="skills_heading" class="editable-node text-lg sm:text-xl font-extrabold text-white text-balance">Kỹ Năng Kỹ Thuật <span class="inline-block">Chuyên Sâu</span></h2>
         </div>
 
         <div id="skill-groups-list" class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -629,7 +750,7 @@
               <span class="skill-tag"><span class="tag-text editable-node">UTM Tracking Architecture</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">Google Ads &amp; Meta Ads</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">TikTok &amp; Zalo Ads</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Tối ưu CPA, ROAS, CVR</span></span>
+              <span class="skill-tag"><span data-i18n="skill_tag_cpa" class="tag-text editable-node">Tối ưu CPA, ROAS, CVR</span></span>
             </div>
           </div>
 
@@ -642,7 +763,7 @@
               </div>
             </div>
             <div class="tag-list flex flex-wrap gap-2.5 items-center">
-              <span class="skill-tag"><span class="tag-text editable-node">Power BI (Nâng cao)</span></span>
+              <span class="skill-tag"><span data-i18n="skill_tag_pbi" class="tag-text editable-node">Power BI (Nâng cao)</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">Field Parameters</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">DAX (VAR/RETURN, Calculate)</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">Power Query (M)</span></span>
@@ -660,11 +781,11 @@
             </div>
             <div class="tag-list flex flex-wrap gap-2.5 items-center">
               <span class="skill-tag"><span class="tag-text editable-node">Python (Pandas, Automation)</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">SQL Nâng cao</span></span>
+              <span class="skill-tag"><span data-i18n="skill_tag_sql" class="tag-text editable-node">SQL Nâng cao</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">Oracle ERP</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">Bravo</span></span>
               <span class="skill-tag"><span class="tag-text editable-node">DataLoad</span></span>
-              <span class="skill-tag"><span class="tag-text editable-node">Excel Nâng cao &amp; MS Access</span></span>
+              <span class="skill-tag"><span data-i18n="skill_tag_excel" class="tag-text editable-node">Excel Nâng cao &amp; MS Access</span></span>
             </div>
           </div>
 
@@ -691,7 +812,7 @@
       <section data-section-id="education" class="reorderable-section relative space-y-4 pt-2">
         <div class="flex items-center gap-2.5">
           <span class="text-amber-400 text-base">🎓</span>
-          <h2 data-i18n="edu_heading" class="editable-node text-lg sm:text-xl font-extrabold text-white">Học Vấn &amp; Bằng Cấp</h2>
+          <h2 data-i18n="edu_heading" class="editable-node text-lg sm:text-xl font-extrabold text-white text-balance">Học Vấn &amp; <span class="inline-block">Bằng Cấp</span></h2>
         </div>
 
         <div id="education-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -727,15 +848,15 @@
     <footer class="surface-card p-7 sm:p-10 text-center relative overflow-hidden mt-4">
       <div class="absolute inset-0 bg-gradient-to-r from-sky-500/5 via-indigo-500/5 to-emerald-500/5 pointer-events-none"></div>
 
-      <div class="relative z-10 max-w-2xl mx-auto space-y-4">
-        <h2 data-i18n="footer_title" class="editable-node text-xl sm:text-2xl font-extrabold text-white leading-snug">Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí &amp; Tăng Trưởng Quảng Cáo</h2>
-        <p data-i18n="footer_desc" class="editable-node text-xs sm:text-sm text-slate-300 leading-relaxed">Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu thực tế.</p>
+      <div class="relative z-10 max-w-4xl mx-auto space-y-4">
+        <h2 data-i18n="footer_title" class="editable-node text-xl sm:text-2xl font-extrabold text-white leading-snug text-balance">Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí &amp; Tăng Trưởng <span class="inline-block">Quảng Cáo</span></h2>
+        <p data-i18n="footer_desc" class="editable-node text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl mx-auto text-balance">Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu <span class="inline-block">thực tế.</span></p>
 
         <div class="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-          <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all">
+          <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
             <span data-i18n="footer_zalo" class="editable-node">Nhắn Zalo: 0855 239 805</span>
           </a>
-          <a href="mailto:teoteo1081@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all">
+          <a href="mailto:teoteo1081@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
             <span data-i18n="footer_email" class="editable-node">Gửi Email: teoteo1081@gmail.com</span>
           </a>
         </div>
@@ -756,11 +877,11 @@
   </button>
 
   <!-- ==================== MODAL DEMO GIẢI PHÁP ==================== -->
-  <div id="demo-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+  <div id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" onclick="if(event.target === this) closeSolutionModal()" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="surface-card max-w-2xl w-full p-6 sm:p-8 border border-sky-400/30 shadow-2xl space-y-5">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <h3 id="modal-title" class="text-base sm:text-lg font-extrabold text-white">Sơ đồ &amp; Demo Giải pháp</h3>
-        <button type="button" onclick="closeSolutionModal()" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold cursor-pointer">✕ Đóng</button>
+        <button id="demo-modal-close-btn" type="button" onclick="closeSolutionModal()" aria-label="Đóng cửa sổ" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"><span data-i18n="modal_close_btn">✕ Đóng</span></button>
       </div>
       <div id="modal-body" class="text-xs sm:text-sm text-slate-300 space-y-4 leading-relaxed"></div>
     </div>
@@ -771,16 +892,58 @@
 
   <!-- ==================== JAVASCRIPT XỬ LÝ TƯƠNG TÁC, REORDER, DRAG-DROP & CLEAN EXPORT ==================== -->
   <script id="interactive-editor-script">
-    const STORAGE_KEY_HTML = 'tj_capability_v12_saved_html';
-    const STORAGE_KEY_BRAND = 'tj_capability_v12_saved_brand';
+    const STORAGE_KEY_STATE = 'tj_capability_v14_state_json';
     const STORAGE_KEY_PALETTE = 'tj_capability_v5_palette';
     const PALETTES = ['ocean', 'emerald', 'royal', 'indigo'];
     let isEditMode = false;
-    let initialMainHTML = '';
-    let initialBrandHTML = '';
+    let currentLangCV = 'vi';
+    let currentOpenModalType = null;
+    let lastDemoModalTrigger = null;
     let draggedItem = null;
 
-    
+    function escapeHtmlSafeCV(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // Sanitizer cho chuỗi i18n nội bộ: chỉ cho phép <br>, <span>, <strong> với class an toàn
+    function renderSafeI18nCV(el, rawVal) {
+      if (!el) return;
+      const val = String(rawVal ?? '');
+      if (!val.includes('<')) {
+        el.textContent = val;
+        return;
+      }
+      const template = document.createElement('template');
+      template.innerHTML = val;
+      const allowedTags = new Set(['BR', 'SPAN', 'STRONG']);
+      const walk = (node) => {
+        Array.from(node.childNodes).forEach((child) => {
+          if (child.nodeType === Node.ELEMENT_NODE) {
+            if (!allowedTags.has(child.tagName)) {
+              const textNode = document.createTextNode(child.textContent || '');
+              node.replaceChild(textNode, child);
+              return;
+            }
+            Array.from(child.attributes).forEach((attr) => {
+              if (attr.name !== 'class') {
+                child.removeAttribute(attr.name);
+              }
+            });
+            walk(child);
+          } else if (child.nodeType !== Node.TEXT_NODE) {
+            node.removeChild(child);
+          }
+        });
+      };
+      walk(template.content);
+      el.replaceChildren(template.content.cloneNode(true));
+    }
+
     // ==================== TỪ ĐIỂN ĐA NGÔN NGỮ (I18N: VI, EN, ES, ZH) ====================
     const translationsCV = {
       vi: {
@@ -789,28 +952,28 @@
         pill_loc: "📍 TP. Hồ Chí Minh",
         pill_work: "🌐 Remote / Freelance",
         pill_lang: "🗣 Tiếng Anh TOEIC ~700+",
-        hero_title: "Data Analyst ➔ Data-Backed Performance Marketing",
-        hero_bio: "Chuyên gia phân tích dữ liệu ứng dụng vào tối ưu hóa quảng cáo đa kênh (Meta, Google, TikTok). Sở trường kết hợp đo lường hành vi người dùng (GA4/GTM/BigQuery) và tự động hóa AI để kiểm soát chi phí bán hàng, tìm ra kênh tiếp thị hiệu quả nhất và thúc đẩy tăng trưởng doanh thu bền vững.",
+        hero_title: "Data Analyst ➔ Data-Backed <span class=\"inline-block\">Performance Marketing</span>",
+        hero_bio: "Chuyên gia phân tích dữ liệu ứng dụng vào tối ưu hóa quảng cáo đa kênh (Meta, Google, TikTok). Sở trường kết hợp đo lường hành vi người dùng (GA4/GTM/BigQuery) và tự động hóa AI để kiểm soát chi phí bán hàng, tìm ra kênh tiếp thị hiệu quả nhất và thúc đẩy tăng trưởng doanh thu <span class=\"inline-block\">bền vững.</span>",
         hero_verified: "<span>🛡</span> Thông tin xác thực 100%",
         hero_cta_zalo: "💬 Liên hệ Zalo / Hợp tác",
         hero_cta_github: "🐙 Xem Hồ Sơ GitHub ↗",
         sol_badge_core: "NĂNG LỰC CỐT LÕI & GIẢI PHÁP TRIỂN KHAI",
-        sol_heading: "Bộ Giải Pháp Phân Tích & Tự Động Hóa",
-        sol_desc: "Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, Chubb Life, AIA.",
-        sol_card1_title: "Lập Kế hoạch Kinh doanh & Quản trị Hiệu suất",
+        sol_heading: "Bộ Giải Pháp Phân Tích & <span class=\"inline-block\">Tự Động Hóa</span>",
+        sol_desc: "Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, <span class=\"inline-block\">Chubb Life, AIA.</span>",
+        sol_card1_title: "Lập Kế hoạch Kinh doanh & Quản trị <span class=\"inline-block\">Hiệu suất</span>",
         sol_card1_sub: "Mô hình MAPA • Budget Forecasting • Incentive & KPI • GA4/GTM",
         sol_card1_p1: "Xây dựng mô hình dự báo doanh thu dựa trên 4 động lực <strong class=\"text-white\">MAPA</strong> (Manpower, Active Ratio, Productivity, Case Size).",
         sol_card1_p2: "Mô hình hóa chi phí thù lao, ngân sách hoa hồng và đo lường tỷ lệ hoàn vốn so với doanh thu thực tế.",
         sol_card1_p3: "Phân tích sai lệch <strong class=\"text-white\">Actual vs. Target</strong> (MoM/YoY), phát hiện sớm độ lệch hiệu suất để đề xuất giải pháp điều chỉnh.",
         sol_card1_p4: "Thiết lập hạ tầng đo lường Marketing: cấu hình <strong class=\"text-white\">GA4, GTM</strong>, chuẩn hóa UTM và tối ưu tỷ lệ chuyển đổi (ROAS, CPA, CVR).",
         sol_card1_btn: "Xem Sơ đồ & Demo Giải pháp",
-        sol_card2_title: "Kỹ thuật BI & Dashboard Quản trị Đa Kênh",
+        sol_card2_title: "Kỹ thuật BI & Dashboard Quản trị <span class=\"inline-block\">Đa Kênh</span>",
         sol_card2_sub: "Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard",
         sol_card2_p1: "Báo cáo Real-time đa cấp: Thiết kế dashboard động, tự phục vụ (Self-service BI) phục vụ người dùng ở mọi cấp độ; vận hành hệ thống cấp báo cáo tự động kết nối dữ liệu doanh số cho khách hàng.",
         sol_card2_p2: "Phân tích P&L & Chi phí đa chiều: Trực quan hóa bức tranh lợi nhuận gộp/lợi nhuận ròng chi tiết theo từng dòng sản phẩm, kênh bán hàng, chi nhánh, nhà cung cấp và cấu trúc chi phí vận hành.",
         sol_card2_p3: "Dashboard Tiếp thị Đa kênh: Tổng hợp dữ liệu từ GA4 và các kênh quảng cáo (Google, Meta, TikTok) lên một màn hình tập trung nhằm theo dõi dòng tiền và tỷ suất sinh lời (ROI/ROAS) theo thời gian thực.",
         sol_card2_btn: "Xem Demo Dashboard Quản trị",
-        sol_card3_title: "Tự động hóa Quy trình & Hệ thống Dữ liệu",
+        sol_card3_title: "Tự động hóa Quy trình & Hệ thống <span class=\"inline-block\">Dữ liệu</span>",
         sol_card3_sub: "Python Scripts • SQL ETL • AI Tools",
         sol_card3_p1: "Tự động hóa bằng <strong class=\"text-white\">Python & SQL</strong>: trích xuất dữ liệu, làm sạch, tính toán chỉ số và gởi báo cáo kèm dashboard qua email tự động.",
         sol_card3_p2: "Tự động hóa nhập liệu và đối soát, loại trừ sai sót.",
@@ -826,12 +989,16 @@
         metric_val_3: "12 Vùng",
         metric_title_3: "Vùng kinh doanh liên kết",
         metric_desc_3: "Khu vực kinh doanh được cấp báo cáo tự động kết nối dữ liệu doanh số, hoa hồng & tiếp thị.",
-        skills_heading: "Kỹ Năng Kỹ Thuật Chuyên Sâu",
+        skills_heading: "Kỹ Năng Kỹ Thuật <span class=\"inline-block\">Chuyên Sâu</span>",
         skill_grp_1: "MARKETING TECH & ĐO LƯỜNG CHUYỂN ĐỔI",
         skill_grp_2: "BUSINESS INTELLIGENCE",
         skill_grp_3: "ETL & HỆ THỐNG ERP",
         skill_grp_4: "AI ENGINEERING & DEVELOPER ECOSYSTEM",
-        edu_heading: "Học Vấn & Bằng Cấp",
+        skill_tag_cpa: "Tối ưu CPA, ROAS, CVR",
+        skill_tag_pbi: "Power BI (Nâng cao)",
+        skill_tag_sql: "SQL Nâng cao",
+        skill_tag_excel: "Excel Nâng cao & MS Access",
+        edu_heading: "Học Vấn & <span class=\"inline-block\">Bằng Cấp</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "Thạc sĩ Quản Trị Kinh Doanh (MBA)",
         edu_cat_2: "US Tax & Accounting",
@@ -840,10 +1007,11 @@
         edu_title_3: "Google Skillshop · Lộ Trình Đo Lường GA4",
         edu_cat_4: "AI Engineering",
         edu_title_4: "✨ Thực Hành Agentic AI & Tự Động Hóa Quy Trình",
-        footer_title: "Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí & Tăng Trưởng Quảng Cáo",
-        footer_desc: "Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu thực tế.",
+        footer_title: "Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí & Tăng Trưởng <span class=\"inline-block\">Quảng Cáo</span>",
+        footer_desc: "Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu <span class=\"inline-block\">thực tế.</span>",
         footer_zalo: "Nhắn Zalo: 0855 239 805",
-        footer_email: "Gửi Email: teoteo1081@gmail.com"
+        footer_email: "Gửi Email: teoteo1081@gmail.com",
+        modal_close_btn: "✕ Đóng"
       },
       en: {
         nav_back: "← Back to Portfolio Showcase",
@@ -851,28 +1019,28 @@
         pill_loc: "📍 Ho Chi Minh City",
         pill_work: "🌐 Remote / Freelance",
         pill_lang: "🗣 English TOEIC ~700+",
-        hero_title: "Data Analyst ➔ Data-Backed Performance Marketing",
-        hero_bio: "Data analyst specializing in multi-channel advertising optimization (Meta, Google, TikTok). Skilled in combining user behavior tracking (GA4/GTM/BigQuery) and AI automation to control sales acquisition costs, identify high-performing marketing channels, and drive sustainable revenue growth.",
+        hero_title: "Data Analyst ➔ Data-Backed <span class=\"inline-block\">Performance Marketing</span>",
+        hero_bio: "Data analyst specializing in multi-channel advertising optimization (Meta, Google, TikTok). Skilled in combining user behavior tracking (GA4/GTM/BigQuery) and AI automation to control sales acquisition costs, identify high-performing marketing channels, and drive sustainable <span class=\"inline-block\">revenue growth.</span>",
         hero_verified: "<span>🛡</span> 100% Verified Profile",
         hero_cta_zalo: "💬 Contact via Zalo / Collaborate",
         hero_cta_github: "🐙 View GitHub Profile ↗",
         sol_badge_core: "CORE COMPETENCIES & SOLUTIONS",
-        sol_heading: "Analytics & Automation Solutions",
-        sol_desc: "Refined through hands-on experience at multinational insurance corporations Prudential, Chubb Life, AIA.",
-        sol_card1_title: "Business Planning & Performance Management",
+        sol_heading: "Analytics & <span class=\"inline-block\">Automation Solutions</span>",
+        sol_desc: "Refined through hands-on experience at multinational insurance corporations Prudential, <span class=\"inline-block\">Chubb Life, AIA.</span>",
+        sol_card1_title: "Business Planning & <span class=\"inline-block\">Performance Management</span>",
         sol_card1_sub: "MAPA Model • Budget Forecasting • Incentive & KPI • GA4/GTM",
         sol_card1_p1: "Build revenue forecasting models based on the 4 <strong class=\"text-white\">MAPA</strong> drivers (Manpower, Active Ratio, Productivity, Case Size).",
         sol_card1_p2: "Model remuneration costs, commission budgets, and assess ROI against actual revenue.",
         sol_card1_p3: "Variance analysis of <strong class=\"text-white\">Actual vs. Target</strong> (MoM/YoY) to detect performance gaps early and propose strategic adjustments.",
         sol_card1_p4: "Set up marketing tracking infrastructure: configure <strong class=\"text-white\">GA4, GTM</strong>, standardize UTM tags, and optimize conversion metrics (ROAS, CPA, CVR).",
         sol_card1_btn: "View Flowchart & Solution Demo",
-        sol_card2_title: "BI Engineering & Multi-Channel Dashboards",
+        sol_card2_title: "BI Engineering & Multi-Channel <span class=\"inline-block\">Executive Dashboards</span>",
         sol_card2_sub: "Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard",
         sol_card2_p1: "Real-time multi-tier reporting: Design dynamic Self-service BI dashboards serving diverse stakeholder levels; automate distribution of revenue insights.",
         sol_card2_p2: "Multi-dimensional P&L and cost analysis: Visualize gross/net margins by product line, sales channel, branch, and vendor cost structures.",
         sol_card2_p3: "Omnichannel marketing dashboard: Consolidate data from GA4 and ad networks (Google, Meta, TikTok) onto a centralized hub to track cash flow and real-time ROI/ROAS.",
         sol_card2_btn: "View Dashboard Management Demo",
-        sol_card3_title: "Workflow Automation & Data Systems",
+        sol_card3_title: "Workflow Automation & <span class=\"inline-block\">Data Systems</span>",
         sol_card3_sub: "Python Scripts • SQL ETL • AI Tools",
         sol_card3_p1: "Automated with <strong class=\"text-white\">Python & SQL</strong>: extract data, cleanse, compute metrics, and dispatch reports with dashboards via automated emails.",
         sol_card3_p2: "Automate data entry and reconciliations, eliminating manual discrepancies.",
@@ -888,12 +1056,16 @@
         metric_val_3: "12 Regions",
         metric_title_3: "Business Territories Connected",
         metric_desc_3: "Business territories provisioned with automated reports synchronizing sales, commissions, and marketing data.",
-        skills_heading: "Deep Technical Skills",
+        skills_heading: "Deep <span class=\"inline-block\">Technical Skills</span>",
         skill_grp_1: "MARKETING TECH & CONVERSION TRACKING",
         skill_grp_2: "BUSINESS INTELLIGENCE",
         skill_grp_3: "ETL & ERP SYSTEMS",
         skill_grp_4: "AI ENGINEERING & DEVELOPER ECOSYSTEM",
-        edu_heading: "Education & Certifications",
+        skill_tag_cpa: "CPA, ROAS, CVR Optimization",
+        skill_tag_pbi: "Power BI (Advanced)",
+        skill_tag_sql: "Advanced SQL",
+        skill_tag_excel: "Advanced Excel & MS Access",
+        edu_heading: "Education & <span class=\"inline-block\">Certifications</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "Master of Business Administration (MBA)",
         edu_cat_2: "US Tax & Accounting",
@@ -902,10 +1074,11 @@
         edu_title_3: "Google Skillshop · GA4 Learning Track",
         edu_cat_4: "AI Engineering",
         edu_title_4: "✨ Agentic AI & Workflow Automation",
-        footer_title: "Ready to Partner with Businesses to Optimize Costs & Accelerate Ad Growth",
-        footer_desc: "From setting up GA4/GTM tracking infrastructure and building omnichannel dashboards to data-driven ad cost optimization (ROAS/CPA).",
+        footer_title: "Ready to Partner with Businesses to Optimize Costs & Accelerate <span class=\"inline-block\">Ad Growth</span>",
+        footer_desc: "From setting up GA4/GTM tracking infrastructure and building omnichannel dashboards to data-driven ad cost <span class=\"inline-block\">optimization (ROAS/CPA).</span>",
         footer_zalo: "Message via Zalo: 0855 239 805",
-        footer_email: "Send Email: teoteo1081@gmail.com"
+        footer_email: "Send Email: teoteo1081@gmail.com",
+        modal_close_btn: "✕ Close"
       },
       es: {
         nav_back: "← Volver a Portfolio Showcase",
@@ -913,28 +1086,28 @@
         pill_loc: "📍 Ciudad Ho Chi Minh",
         pill_work: "🌐 Remoto / Freelance",
         pill_lang: "🗣 Inglés TOEIC ~700+",
-        hero_title: "Data Analyst ➔ Marketing de Rendimiento Basado en Datos",
-        hero_bio: "Especialista en análisis de datos aplicado a la optimización de publicidad multicanal (Meta, Google, TikTok). Experiencia combinando medición de comportamiento (GA4/GTM/BigQuery) y automatización con IA para controlar costes de adquisición, identificar canales rentables y acelerar el crecimiento.",
+        hero_title: "Data Analyst ➔ Marketing de Rendimiento <span class=\"inline-block\">Basado en Datos</span>",
+        hero_bio: "Especialista en análisis de datos aplicado a la optimización de publicidad multicanal (Meta, Google, TikTok). Experiencia combinando medición de comportamiento (GA4/GTM/BigQuery) y automatización con IA para controlar costes de adquisición, identificar canales rentables y acelerar <span class=\"inline-block\">el crecimiento.</span>",
         hero_verified: "<span>🛡</span> Información 100% Verificada",
         hero_cta_zalo: "💬 Contactar vía Zalo / Cooperar",
         hero_cta_github: "🐙 Ver Perfil de GitHub ↗",
         sol_badge_core: "COMPETENCIAS CLAVE Y SOLUCIONES",
-        sol_heading: "Soluciones de Análisis y Automatización",
-        sol_desc: "Fruto de la experiencia práctica en corporaciones multinacionales de seguros como Prudential, Chubb Life y AIA.",
-        sol_card1_title: "Planificación Comercial y Gestión del Rendimiento",
+        sol_heading: "Soluciones de Análisis y <span class=\"inline-block\">Automatización</span>",
+        sol_desc: "Fruto de la experiencia práctica en corporaciones multinacionales de seguros como Prudential, <span class=\"inline-block\">Chubb Life y AIA.</span>",
+        sol_card1_title: "Planificación Comercial y Gestión <span class=\"inline-block\">del Rendimiento</span>",
         sol_card1_sub: "Modelo MAPA • Previsión Presupuestaria • Incentivos y KPI • GA4/GTM",
         sol_card1_p1: "Construcción de modelos predictivos de ingresos basados en 4 pilares <strong class=\"text-white\">MAPA</strong> (Manpower, Active Ratio, Productivity, Case Size).",
         sol_card1_p2: "Modelado de compensaciones, presupuesto de comisiones y medición del retorno respecto a ingresos reales.",
         sol_card1_p3: "Análisis de variaciones <strong class=\"text-white\">Actual vs. Target</strong> (MoM/YoY) para detectar brechas de rendimiento y ajustar la estrategia.",
         sol_card1_p4: "Configuración de infraestructura de marketing: <strong class=\"text-white\">GA4, GTM</strong>, etiquetado UTM y optimización de conversión (ROAS, CPA, CVR).",
         sol_card1_btn: "Ver Diagrama y Demo",
-        sol_card2_title: "Ingeniería BI y Cuadros de Mando Multicanal",
+        sol_card2_title: "Ingeniería BI y Cuadros de <span class=\"inline-block\">Mando Multicanal</span>",
         sol_card2_sub: "Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard",
         sol_card2_p1: "Informes en tiempo real: Cuadros de mando dinámicos de autoservicio (Self-service BI) para todos los niveles organizativos con distribución automatizada.",
         sol_card2_p2: "Análisis multidimensional de P&G y costes: Visualización del margen bruto y neto por línea de producto, canal de venta y sucursales.",
         sol_card2_p3: "Dashboard de marketing omnicanal: Unificación de datos de GA4 y redes de anuncios (Google, Meta, TikTok) para rastrear ROI/ROAS en tiempo real.",
         sol_card2_btn: "Ver Demo de Cuadro de Mando",
-        sol_card3_title: "Automatización de Procesos y Sistemas de Datos",
+        sol_card3_title: "Automatización de Procesos y <span class=\"inline-block\">Sistemas de Datos</span>",
         sol_card3_sub: "Python Scripts • SQL ETL • AI Tools",
         sol_card3_p1: "Automatizado con <strong class=\"text-white\">Python y SQL</strong>: extracción, limpieza, cómputo de métricas y envío de informes por email.",
         sol_card3_p2: "Automatización de entrada y conciliación de datos, eliminando errores manuales.",
@@ -950,12 +1123,16 @@
         metric_val_3: "12 Regiones",
         metric_title_3: "Territorios de Negocio Vinculados",
         metric_desc_3: "Territorios dotados de informes automatizados que sincronizan ventas, comisiones y marketing.",
-        skills_heading: "Habilidades Técnicas Especializadas",
+        skills_heading: "Habilidades Técnicas <span class=\"inline-block\">Especializadas</span>",
         skill_grp_1: "MARKETING TECH Y MEDICIÓN DE CONVERSIÓN",
         skill_grp_2: "BUSINESS INTELLIGENCE",
         skill_grp_3: "ETL Y SISTEMAS ERP",
         skill_grp_4: "INGENIERÍA DE IA Y ECOSISTEMA DE DESARROLLO",
-        edu_heading: "Educación y Certificaciones",
+        skill_tag_cpa: "Optimización de CPA, ROAS, CVR",
+        skill_tag_pbi: "Power BI (Avanzado)",
+        skill_tag_sql: "SQL Avanzado",
+        skill_tag_excel: "Excel Avanzado y MS Access",
+        edu_heading: "Educación y <span class=\"inline-block\">Certificaciones</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "Máster en Administración de Empresas (MBA)",
         edu_cat_2: "US Tax & Accounting",
@@ -964,10 +1141,11 @@
         edu_title_3: "Google Skillshop · Ruta de Medición GA4",
         edu_cat_4: "AI Engineering",
         edu_title_4: "✨ IA Agéntica y Automatización de Procesos",
-        footer_title: "Listo para Asociarse con Empresas para Optimizar Costes y Crecer en Publicidad",
-        footer_desc: "Desde la infraestructura de medición GA4/GTM y cuadros de mando omnicanal hasta la optimización de inversión (ROAS/CPA).",
+        footer_title: "Listo para Asociarse con Empresas para Optimizar Costes y Crecer <span class=\"inline-block\">en Publicidad</span>",
+        footer_desc: "Desde la infraestructura de medición GA4/GTM y cuadros de mando omnicanal hasta la optimización de <span class=\"inline-block\">inversión (ROAS/CPA).</span>",
         footer_zalo: "Mensaje por Zalo: 0855 239 805",
-        footer_email: "Enviar Email: teoteo1081@gmail.com"
+        footer_email: "Enviar Email: teoteo1081@gmail.com",
+        modal_close_btn: "✕ Cerrar"
       },
       zh: {
         nav_back: "← 返回作品集展示",
@@ -975,28 +1153,28 @@
         pill_loc: "📍 胡志明市",
         pill_work: "🌐 远程办公 / 自由职业",
         pill_lang: "🗣 英语 TOEIC ~700+",
-        hero_title: "数据分析师 ➔ 数据驱动型效果营销",
-        hero_bio: "专注于跨渠道数字广告优化（Meta、Google、TikTok）的数据分析专家。擅长将全链路用户行为归因埋点（GA4/GTM/BigQuery）与智能体 AI 自动化相结合，严格控制获客成本，精准定位高投产营销渠道，驱动业绩长期稳健增长。",
+        hero_title: "数据分析师 ➔ 数据驱动型<span class=\"inline-block\">效果营销</span>",
+        hero_bio: "专注于跨渠道数字广告优化（Meta、Google、TikTok）的数据分析专家。擅长将全链路用户行为归因埋点（GA4/GTM/BigQuery）与智能体 AI 自动化相结合，严格控制获客成本，精准定位高投产营销渠道，驱动业绩<span class=\"inline-block\">长期稳健增长。</span>",
         hero_verified: "<span>🛡</span> 100% 真实专业履历",
         hero_cta_zalo: "💬 Zalo 洽谈 / 业务合作",
         hero_cta_github: "🐙 查看 GitHub 主页 ↗",
         sol_badge_core: "核心竞争力与实战解决方案",
-        sol_heading: "数据分析与自动化解决方案",
-        sol_desc: "源自保诚 (Prudential)、安达 (Chubb Life)、友邦 (AIA) 等跨国人寿保险集团实战积累。",
-        sol_card1_title: "业务规划与绩效业绩管理",
+        sol_heading: "数据分析与<span class=\"inline-block\">自动化解决方案</span>",
+        sol_desc: "源自保诚 (Prudential)、安达 (Chubb Life)、友邦 (AIA) 等跨国人寿保险<span class=\"inline-block\">集团实战积累。</span>",
+        sol_card1_title: "业务规划与<span class=\"inline-block\">绩效业绩管理</span>",
         sol_card1_sub: "MAPA 增长模型 • 预算预测 • 佣金激励与 KPI • GA4/GTM",
         sol_card1_p1: "基于 4 大核心驱动要素 <strong class=\"text-white\">MAPA</strong>（人力、活动率、人均产能、件均保费）搭建营收预测与规划模型。",
         sol_card1_p2: "测算薪酬佣金激励成本与业务预算，精准核算相对实际业绩的投资回报率 (ROI)。",
         sol_card1_p3: "<strong class=\"text-white\">实际与目标差异分析 (Actual vs. Target)</strong> (MoM/YoY)，前瞻识别业绩偏差点并提供策略微调建议。",
         sol_card1_p4: "搭建营销全链路埋点底座：配置 <strong class=\"text-white\">GA4、GTM</strong>、规范 UTM 架构，深度优化转化关键指标 (ROAS, CPA, CVR)。",
         sol_card1_btn: "查看架构流程图与方案演示",
-        sol_card2_title: "商业智能 BI 与跨渠道决策看板",
+        sol_card2_title: "商业智能 BI 与<span class=\"inline-block\">跨渠道决策看板</span>",
         sol_card2_sub: "Power BI • Looker Studio • 动态 DAX • 营销看板",
         sol_card2_p1: "多层级实时看板：设计高度交互的自助式分析看板 (Self-service BI)，为管理层及一线团队自动化分发精准销售数据。",
         sol_card2_p2: "多维损益 P&L 与成本穿透：按产品线、销售渠道、分公司及运营成本结构深入洞察毛利与净利表现。",
         sol_card2_p3: "跨渠道营销中控看板：整合 GA4 及各广告投放平台（Google、Meta、TikTok）数据，全景监控资金流与实时投产比 (ROI/ROAS)。",
         sol_card2_btn: "查看管理看板交互演示",
-        sol_card3_title: "业务流程与数据系统自动化",
+        sol_card3_title: "业务流程与<span class=\"inline-block\">数据系统自动化</span>",
         sol_card3_sub: "Python 脚本 • SQL ETL • AI 智能工具",
         sol_card3_p1: "基于 <strong class=\"text-white\">Python 与 SQL</strong> 自动化：数据抽取、清洗、指标计算并通过定时邮件自动化分发报表与看板。",
         sol_card3_p2: "自动化数据录入与财务对账，杜绝人工低级错误。",
@@ -1012,12 +1190,16 @@
         metric_val_3: "12 个战区",
         metric_title_3: "全面协同业务大区",
         metric_desc_3: "覆盖各业务大区，自动无缝串联销售额、佣金激励与跨渠道营销数据。",
-        skills_heading: "核心专业技术栈",
+        skills_heading: "核心专业<span class=\"inline-block\">技术栈</span>",
         skill_grp_1: "营销技术与转化全链路归因",
         skill_grp_2: "商业智能 (BI) 数据洞察",
         skill_grp_3: "ETL 管道与 ERP 系统集成",
         skill_grp_4: "AI 智能体工程与开发者生态",
-        edu_heading: "教育背景与专业资质",
+        skill_tag_cpa: "优化 CPA, ROAS, CVR",
+        skill_tag_pbi: "Power BI (高级)",
+        skill_tag_sql: "高级 SQL",
+        skill_tag_excel: "高级 Excel 与 MS Access",
+        edu_heading: "教育背景与<span class=\"inline-block\">专业资质</span>",
         edu_cat_1: "Master Degree",
         edu_title_1: "工商管理硕士 (MBA)",
         edu_cat_2: "US Tax & Accounting",
@@ -1026,15 +1208,76 @@
         edu_title_3: "Google Skillshop · GA4 效果衡量认证路径",
         edu_cat_4: "AI Engineering",
         edu_title_4: "✨ Agentic AI 智能体与业务流程自动化",
-        footer_title: "竭诚赋能企业业务：精准优化营销成本，驱动广告业绩指数级增长",
-        footer_desc: "从搭建 GA4/GTM 全链路埋点底座、构建全渠道监控大屏，到基于真实业务数据的营销投产比 (ROAS/CPA) 深度调优。",
+        footer_title: "竭诚赋能企业业务：精准优化营销成本，驱动广告业绩<span class=\"inline-block\">指数级增长</span>",
+        footer_desc: "从搭建 GA4/GTM 全链路埋点底座、构建全渠道监控大屏，到基于真实业务数据的营销投产比 <span class=\"inline-block\">(ROAS/CPA) 深度调优。</span>",
         footer_zalo: "Zalo 即时沟通: 0855 239 805",
-        footer_email: "发送邮件: teoteo1081@gmail.com"
+        footer_email: "发送邮件: teoteo1081@gmail.com",
+        modal_close_btn: "✕ 关闭"
       }
     };
 
+    function loadStructuredStateCV() {
+      try {
+        [
+          'tj_portfolio_clean_saved_v1',
+          'tj_portfolio_v3_saved_html',
+          'tj_capability_v5_saved_html',
+          'tj_capability_v6_saved_html',
+          'tj_capability_v7_saved_html',
+          'tj_capability_v7_saved_brand',
+          'tj_capability_v8_saved_html',
+          'tj_capability_v8_saved_brand',
+          'tj_capability_v9_saved_html',
+          'tj_capability_v9_saved_brand',
+          'tj_capability_v10_saved_html',
+          'tj_capability_v10_saved_brand',
+          'tj_capability_v11_saved_html',
+          'tj_capability_v11_saved_brand',
+          'tj_capability_v12_saved_html',
+          'tj_capability_v12_saved_brand'
+        ].forEach((oldKey) => localStorage.removeItem(oldKey));
+
+        const raw = localStorage.getItem(STORAGE_KEY_STATE);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== 'object') return;
+
+        // 1. Khôi phục thứ tự các section lớn an toàn qua DOM node reference
+        if (Array.isArray(parsed.sectionOrder)) {
+          const parent = document.getElementById('reorderable-sections');
+          if (parent) {
+            parsed.sectionOrder.forEach((secId) => {
+              const sec = parent.querySelector(`.reorderable-section[data-section-id="${CSS.escape(String(secId))}"]`);
+              if (sec) parent.appendChild(sec);
+            });
+          }
+        }
+
+        // 2. Khôi phục text edits theo ngôn ngữ (dạng plain text đã escape an toàn)
+        if (parsed.textEditsByLang && typeof parsed.textEditsByLang === 'object') {
+          Object.keys(parsed.textEditsByLang).forEach((langKey) => {
+            const langMap = parsed.textEditsByLang[langKey];
+            if (translationsCV[langKey] && langMap && typeof langMap === 'object') {
+              Object.keys(langMap).forEach((i18nKey) => {
+                if (typeof langMap[i18nKey] === 'string') {
+                  translationsCV[langKey][i18nKey] = escapeHtmlSafeCV(langMap[i18nKey]);
+                }
+              });
+            }
+          });
+        }
+
+        // 3. Khôi phục ảnh đại diện nếu là data:image/ hợp lệ
+        if (typeof parsed.avatarDataUrl === 'string' && /^data:image\/(jpeg|png|webp|gif);base64,[A-Za-z0-9+/=]+$/i.test(parsed.avatarDataUrl)) {
+          const avatarImg = document.getElementById('avatar-img');
+          if (avatarImg) avatarImg.src = parsed.avatarDataUrl;
+        }
+      } catch (e) {}
+    }
+
     function switchLanguageCV(lang, isManual = false) {
       if (!translationsCV[lang]) lang = 'vi';
+      currentLangCV = lang;
       document.documentElement.lang = lang;
       try {
         localStorage.setItem('portfolio_lang', lang);
@@ -1045,74 +1288,66 @@
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translationsCV[lang] && translationsCV[lang][key]) {
-          if (translationsCV[lang][key].includes('<')) {
-            el.innerHTML = translationsCV[lang][key];
-          } else {
-            el.textContent = translationsCV[lang][key];
-          }
+        if (translationsCV[lang] && (translationsCV[lang][key] !== undefined)) {
+          renderSafeI18nCV(el, translationsCV[lang][key]);
         }
       });
+
+      const modal = document.getElementById('demo-modal');
+      if (modal && !modal.classList.contains('hidden') && currentOpenModalType) {
+        renderSolutionModalContent(currentOpenModalType);
+      }
 
       if (window.lucide) {
         lucide.createIcons();
       }
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) {
-        lucide.createIcons();
+    function updateThemeIconsCV() {
+      const isLight = document.documentElement.classList.contains('light-mode');
+      const sun = document.getElementById('themeIconSunCV');
+      const moon = document.getElementById('themeIconMoonCV');
+      const btn = document.getElementById('themeBtnCV');
+      if (btn) btn.setAttribute('aria-pressed', isLight ? 'false' : 'true');
+      if (isLight) {
+        if (sun) sun.classList.add('hidden');
+        if (moon) moon.classList.remove('hidden');
+      } else {
+        if (sun) sun.classList.remove('hidden');
+        if (moon) moon.classList.add('hidden');
       }
+      if (window.lucide) lucide.createIcons();
+    }
 
-      // Xóa cache phiên bản cũ để nạp cấu trúc V3 mới
-      [
-        'tj_portfolio_clean_saved_v1',
-        'tj_portfolio_v3_saved_html',
-        'tj_capability_v5_saved_html',
-        'tj_capability_v6_saved_html',
-        'tj_capability_v7_saved_html',
-        'tj_capability_v7_saved_brand',
-        'tj_capability_v8_saved_html',
-        'tj_capability_v8_saved_brand',
-        'tj_capability_v9_saved_html',
-        'tj_capability_v9_saved_brand',
-        'tj_capability_v10_saved_html',
-        'tj_capability_v10_saved_brand',
-        'tj_capability_v11_saved_html',
-        'tj_capability_v11_saved_brand'
-      ].forEach((oldKey) => {
-        localStorage.removeItem(oldKey);
-      });
-
-      const root = document.getElementById('portfolio-root');
-      const brandEl = document.getElementById('toolbar-brand-container');
-      initialMainHTML = root.innerHTML;
-      if (brandEl) initialBrandHTML = brandEl.innerHTML;
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Đồng bộ Theme Sáng / Tối từ portfolio_theme
+      let savedTheme = 'dark';
+      try {
+        savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+      } catch (e) {}
+      if (savedTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      } else {
+        document.documentElement.classList.remove('light-mode');
+      }
+      updateThemeIconsCV();
 
       const savedPalette = localStorage.getItem(STORAGE_KEY_PALETTE);
-      if (savedPalette) {
+      if (savedPalette && PALETTES.includes(savedPalette)) {
         document.documentElement.setAttribute('data-palette', savedPalette);
       }
 
-      const savedHTML = localStorage.getItem(STORAGE_KEY_HTML);
-      if (savedHTML) {
-        root.innerHTML = savedHTML;
-        if (window.lucide) lucide.createIcons();
-      }
+      // 2. Nạp dữ liệu cache JSON an toàn TRƯỚC khi áp dụng locale
+      loadStructuredStateCV();
 
-      // Đồng bộ ngôn ngữ đã lưu từ portfolio_lang
+      // 3. Áp dụng ngôn ngữ đã lưu từ portfolio_lang để F5 luôn đúng ngôn ngữ
       let savedLang = 'vi';
       try {
         savedLang = localStorage.getItem('portfolio_lang') || 'vi';
       } catch (e) {}
       switchLanguageCV(savedLang, false);
 
-
-      const savedBrand = localStorage.getItem(STORAGE_KEY_BRAND);
-      if (savedBrand && brandEl) {
-        brandEl.innerHTML = savedBrand;
-      }
-
+      const root = document.getElementById('portfolio-root');
       if (document.getElementById('floating-toolbar')) {
         ensureEditControls(root);
       }
@@ -1120,15 +1355,16 @@
       initDragAndDrop();
 
       document.body.addEventListener('input', () => {
-        saveCurrentState();
+        if (isEditMode) saveCurrentState();
       });
 
       document.body.addEventListener('blur', () => {
-        pruneEmptyTags(root);
-        saveCurrentState();
+        if (isEditMode) {
+          pruneEmptyTags(root);
+          saveCurrentState();
+        }
       }, true);
 
-      // Khi đang ở chế độ Bật sửa chữ, chặn hành vi nhảy trang khi click vào các thẻ <a> để người dùng đặt con trỏ sửa chữ trực tiếp
       document.addEventListener('click', (e) => {
         if (!document.body.classList.contains('is-editing')) return;
         const link = e.target.closest('a');
@@ -1145,7 +1381,7 @@
         }
       });
 
-      // Phím tắt Alt + E: Bật/tắt nhanh thanh công cụ và chế độ contenteditable bất cứ lúc nào (kể cả trên file sạch đã xóa #floating-toolbar)
+      // Phím tắt Alt + E: Bật/tắt nhanh thanh công cụ và chế độ contenteditable
       window.addEventListener('keydown', (e) => {
         if (e.altKey && (e.key === 'e' || e.key === 'E' || e.code === 'KeyE')) {
           e.preventDefault();
@@ -1238,14 +1474,47 @@
     }
 
     function saveCurrentState() {
-      const root = document.getElementById('portfolio-root');
-      const brandEl = document.getElementById('toolbar-brand-container');
-      if (root) {
-        localStorage.setItem(STORAGE_KEY_HTML, root.innerHTML);
-      }
-      if (brandEl) {
-        localStorage.setItem(STORAGE_KEY_BRAND, brandEl.innerHTML);
-      }
+      try {
+        let state = { sectionOrder: [], textEditsByLang: {}, avatarDataUrl: null };
+        try {
+          const existing = JSON.parse(localStorage.getItem(STORAGE_KEY_STATE) || '{}');
+          if (existing && typeof existing === 'object') {
+            state = Object.assign(state, existing);
+          }
+        } catch (err) {}
+
+        const parent = document.getElementById('reorderable-sections');
+        if (parent) {
+          state.sectionOrder = Array.from(parent.querySelectorAll(':scope > .reorderable-section'))
+            .map((sec) => sec.getAttribute('data-section-id'))
+            .filter(Boolean);
+        }
+
+        if (!state.textEditsByLang || typeof state.textEditsByLang !== 'object') {
+          state.textEditsByLang = {};
+        }
+        if (!state.textEditsByLang[currentLangCV]) {
+          state.textEditsByLang[currentLangCV] = {};
+        }
+
+        document.querySelectorAll('#portfolio-root [data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (key) {
+            const plainText = (el.textContent || '').trim();
+            state.textEditsByLang[currentLangCV][key] = plainText;
+            if (translationsCV[currentLangCV]) {
+              translationsCV[currentLangCV][key] = escapeHtmlSafeCV(plainText);
+            }
+          }
+        });
+
+        const avatarImg = document.getElementById('avatar-img');
+        if (avatarImg && avatarImg.src && avatarImg.src.startsWith('data:image/')) {
+          state.avatarDataUrl = avatarImg.src;
+        }
+
+        localStorage.setItem(STORAGE_KEY_STATE, JSON.stringify(state));
+      } catch (e) {}
     }
 
     // Tự động xóa thẻ tag rỗng (bỏ qua ký tự ✕ của nút xóa)
@@ -1571,7 +1840,11 @@
     }
 
     function toggleLightDark() {
-      document.documentElement.classList.toggle('light-mode');
+      const isLight = document.documentElement.classList.toggle('light-mode');
+      try {
+        localStorage.setItem('portfolio_theme', isLight ? 'light' : 'dark');
+      } catch (e) {}
+      updateThemeIconsCV();
     }
 
     // 6. Lưu file HTML sạch Final (Xóa sạch #floating-toolbar, contenteditable, spellcheck và các nút [⬆], [⬇], [✕], [+ Thêm tag]; bấm Alt + E bất cứ lúc nào để mở lại sửa tiếp)
@@ -1665,100 +1938,241 @@
     // 7. Khôi phục ban đầu
     function resetOriginalState() {
       if (confirm('Khôi phục toàn bộ nội dung và bố cục về trạng thái gốc ban đầu?')) {
-        localStorage.removeItem(STORAGE_KEY_HTML);
-        localStorage.removeItem(STORAGE_KEY_BRAND);
-        localStorage.removeItem(STORAGE_KEY_PALETTE);
+        try {
+          localStorage.removeItem(STORAGE_KEY_STATE);
+          localStorage.removeItem(STORAGE_KEY_PALETTE);
+        } catch (e) {}
         document.documentElement.setAttribute('data-palette', 'ocean');
-        document.documentElement.classList.remove('light-mode');
-        const root = document.getElementById('portfolio-root');
-        const brandEl = document.getElementById('toolbar-brand-container');
-        if (root && initialMainHTML) {
-          root.innerHTML = initialMainHTML;
-          if (window.lucide) lucide.createIcons();
-          initDragAndDrop();
-        }
-        if (brandEl && initialBrandHTML) {
-          brandEl.innerHTML = initialBrandHTML;
-        }
-        if (isEditMode) {
-          toggleEditMode();
-        }
-        showToast('↺ Đã khôi phục về trạng thái gốc!');
+        window.location.reload();
       }
     }
 
-    // 8. Nội dung Modal Demo
-    function getSolutionModalContent(type) {
-      if (type === 'planning') {
-        return {
+    // 8. Nội dung Modal Demo (4 ngôn ngữ: VI | EN | ES | ZH)
+    const solutionModalTranslations = {
+      vi: {
+        planning: {
           title: '📈 Sơ đồ Giải pháp: Lập Kế hoạch MAPA & Hạ tầng GA4/GTM',
+          box1: '[MAPA Drivers: Manpower × Active Ratio × Productivity × Case Size] ➔ [Dự báo Doanh thu & Ngân sách Hoa hồng] ➔ [Actual vs. Target (MoM/YoY)]',
+          box2: '[Chuẩn hóa UTM] ➔ [Google Tag Manager (GTM)] ➔ [GA4 Events & Conversions] ➔ [Tối ưu ROAS / CPA / CVR]',
+          desc: 'Kết hợp mô hình tài chính - kinh doanh chuẩn tập đoàn đa quốc gia với phễu đo lường chuyển đổi Digital Marketing thực chiến.'
+        },
+        bi: {
+          title: '📊 Demo Kiến trúc: Dashboard Quản trị Đa Kênh & Dynamic DAX',
+          c1_sub: 'Self-Service BI',
+          c1_val: 'Field Parameters',
+          c2_sub: 'Phân tích Tài chính',
+          c2_val: 'P&L Đa chiều',
+          c3_sub: 'Hiệu suất Quảng cáo',
+          c3_val: 'ROI / ROAS Trực tiếp',
+          desc: 'Tích hợp dữ liệu từ SQL/ERP, GA4, Google Ads, Meta Ads và TikTok Ads lên Power BI & Looker Studio phục vụ 500+ người dùng tại 12 vùng kinh doanh.'
+        },
+        automation: {
+          title: '>_ Pipeline & Workflow Tự Động Hóa (Python • SQL • AI Agents)',
+          s1: '1. [SQL Server / ERP / Ads API] ➔ Trích xuất & Đối soát tự động',
+          s2: '2. [Python Pandas ETL] ➔ Làm sạch, kiểm tra sai lệch & tính KPI',
+          s3: '3. [AI Agents: Claude Code + Codex + AGY] ➔ Tăng tốc code & kiểm thử',
+          s4: '4. [Auto-Dispatch] ➔ Gửi Email báo cáo & cập nhật Dashboard định kỳ (~60% thời gian tiết kiệm)'
+        }
+      },
+      en: {
+        planning: {
+          title: '📈 Solution Blueprint: MAPA Planning & GA4/GTM Infrastructure',
+          box1: '[MAPA Drivers: Manpower × Active Ratio × Productivity × Case Size] ➔ [Revenue & Commission Budget Forecast] ➔ [Actual vs. Target (MoM/YoY)]',
+          box2: '[UTM Standardization] ➔ [Google Tag Manager (GTM)] ➔ [GA4 Events & Conversions] ➔ [ROAS / CPA / CVR Optimization]',
+          desc: 'Combines multinational corporate financial-sales modeling with production-ready Digital Marketing conversion measurement funnels.'
+        },
+        bi: {
+          title: '📊 Architecture Demo: Multi-Channel Executive Dashboard & Dynamic DAX',
+          c1_sub: 'Self-Service BI',
+          c1_val: 'Field Parameters',
+          c2_sub: 'Financial Analytics',
+          c2_val: 'Multi-dimensional P&L',
+          c3_sub: 'Ads Performance',
+          c3_val: 'Live ROI / ROAS',
+          desc: 'Integrates data from SQL/ERP, GA4, Google Ads, Meta Ads, and TikTok Ads into Power BI & Looker Studio serving 500+ users across 12 sales regions.'
+        },
+        automation: {
+          title: '>_ Automated Data Pipeline & Workflow (Python • SQL • AI Agents)',
+          s1: '1. [SQL Server / ERP / Ads API] ➔ Automated Extraction & Reconciliation',
+          s2: '2. [Python Pandas ETL] ➔ Data Cleaning, Anomaly Checks & KPI Calculation',
+          s3: '3. [AI Agents: Claude Code + Codex + AGY] ➔ Accelerated Coding & QA',
+          s4: '4. [Auto-Dispatch] ➔ Scheduled Email Reports & Dashboard Refresh (~60% time saved)'
+        }
+      },
+      es: {
+        planning: {
+          title: '📈 Esquema de Solución: Planificación MAPA e Infraestructura GA4/GTM',
+          box1: '[Impulsores MAPA: Manpower × Active Ratio × Productivity × Case Size] ➔ [Pronóstico de Ingresos y Comisiones] ➔ [Real vs. Meta (MoM/YoY)]',
+          box2: '[Estandarización UTM] ➔ [Google Tag Manager (GTM)] ➔ [Eventos y Conversiones GA4] ➔ [Optimización ROAS / CPA / CVR]',
+          desc: 'Combina modelos financieros y comerciales de nivel multinacional con embudos prácticos de medición de conversión en Marketing Digital.'
+        },
+        bi: {
+          title: '📊 Demo de Arquitectura: Dashboard Ejecutivo Multicanal y DAX Dinámico',
+          c1_sub: 'BI de Autoservicio',
+          c1_val: 'Parámetros de Campo',
+          c2_sub: 'Análisis Financiero',
+          c2_val: 'P&L Multidimensional',
+          c3_sub: 'Rendimiento de Ads',
+          c3_val: 'ROI / ROAS en Vivo',
+          desc: 'Integra datos de SQL/ERP, GA4, Google Ads, Meta Ads y TikTok Ads en Power BI y Looker Studio para más de 500 usuarios en 12 regiones comerciales.'
+        },
+        automation: {
+          title: '>_ Pipeline y Flujo de Trabajo Automatizado (Python • SQL • Agentes IA)',
+          s1: '1. [SQL Server / ERP / Ads API] ➔ Extracción y Conciliación Automática',
+          s2: '2. [Python Pandas ETL] ➔ Limpieza, Validación de Desviaciones y Cálculo de KPI',
+          s3: '3. [Agentes IA: Claude Code + Codex + AGY] ➔ Aceleración de Código y Pruebas',
+          s4: '4. [Auto-Dispatch] ➔ Envío Programado de Reportes y Actualización de Dashboards (~60% de tiempo ahorrado)'
+        }
+      },
+      zh: {
+        planning: {
+          title: '📈 解决方案蓝图：MAPA 规划与 GA4/GTM 基础设施',
+          box1: '[MAPA 驱动因素：人力 × 活动率 × 产能 × 件均] ➔ [营收与佣金预算预测] ➔ [实际 vs 目标 (环比/同比)]',
+          box2: '[UTM 标准化] ➔ [Google Tag Manager (GTM)] ➔ [GA4 事件与转化] ➔ [ROAS / CPA / CVR 优化]',
+          desc: '将跨国企业级财务与业务规划模型与实战型数字营销转化测量漏斗深度结合。'
+        },
+        bi: {
+          title: '📊 架构演示：多渠道管理层看板与动态 DAX',
+          c1_sub: '自助式 BI',
+          c1_val: '字段参数 (Field Parameters)',
+          c2_sub: '财务分析',
+          c2_val: '多维损益表 (P&L)',
+          c3_sub: '广告成效',
+          c3_val: '实时 ROI / ROAS',
+          desc: '整合 SQL/ERP、GA4、Google Ads、Meta Ads 与 TikTok Ads 数据至 Power BI 与 Looker Studio，服务 12 个业务大区的 500+ 名用户。'
+        },
+        automation: {
+          title: '>_ 自动化数据管道与工作流 (Python • SQL • AI 代理)',
+          s1: '1. [SQL Server / ERP / Ads API] ➔ 自动提取与数据对账',
+          s2: '2. [Python Pandas ETL] ➔ 数据清洗、异常检测与 KPI 计算',
+          s3: '3. [AI 代理：Claude Code + Codex + AGY] ➔ 加速代码编写与测试验证',
+          s4: '4. [自动分发] ➔ 定时发送报表邮件并刷新看板（节省约 60% 时间）'
+        }
+      }
+    };
+
+    function getSolutionModalContent(type, lang = currentLangCV) {
+      const dict = solutionModalTranslations[lang] || solutionModalTranslations.vi;
+      if (type === 'planning') {
+        const d = dict.planning;
+        return {
+          title: d.title,
           html: `
             <div class="space-y-3">
-              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-sky-300">
-                [MAPA Drivers: Manpower × Active Ratio × Productivity × Case Size] ➔ [Dự báo Doanh thu & Ngân sách Hoa hồng] ➔ [Actual vs. Target (MoM/YoY)]
+              <div class="surface-card p-3.5 rounded-xl border border-slate-800 font-mono text-xs text-sky-400">
+                ${escapeHtmlSafeCV(d.box1)}
               </div>
-              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-emerald-300">
-                [Chuẩn hóa UTM] ➔ [Google Tag Manager (GTM)] ➔ [GA4 Events & Conversions] ➔ [Tối ưu ROAS / CPA / CVR]
+              <div class="surface-card p-3.5 rounded-xl border border-slate-800 font-mono text-xs text-emerald-400">
+                ${escapeHtmlSafeCV(d.box2)}
               </div>
-              <p class="text-xs text-slate-300">Kết hợp mô hình tài chính - kinh doanh chuẩn tập đoàn đa quốc gia với phễu đo lường chuyển đổi Digital Marketing thực chiến.</p>
+              <p class="text-xs text-slate-300">${escapeHtmlSafeCV(d.desc)}</p>
             </div>
           `
         };
       }
       if (type === 'bi') {
+        const d = dict.bi;
         return {
-          title: '📊 Demo Kiến trúc: Dashboard Quản trị Đa Kênh & Dynamic DAX',
+          title: d.title,
           html: `
             <div class="space-y-3">
-              <div class="grid grid-cols-3 gap-2.5 text-center">
-                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                  <div class="text-xs text-slate-400">Self-Service BI</div>
-                  <div class="text-sm font-bold text-sky-300 mt-1">Field Parameters</div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-center">
+                <div class="surface-card p-3 rounded-xl border border-slate-800">
+                  <div class="text-xs text-slate-400">${escapeHtmlSafeCV(d.c1_sub)}</div>
+                  <div class="text-sm font-bold text-sky-400 mt-1">${escapeHtmlSafeCV(d.c1_val)}</div>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                  <div class="text-xs text-slate-400">Phân tích Tài chính</div>
-                  <div class="text-sm font-bold text-amber-300 mt-1">P&amp;L Đa chiều</div>
+                <div class="surface-card p-3 rounded-xl border border-slate-800">
+                  <div class="text-xs text-slate-400">${escapeHtmlSafeCV(d.c2_sub)}</div>
+                  <div class="text-sm font-bold text-amber-400 mt-1">${escapeHtmlSafeCV(d.c2_val)}</div>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                  <div class="text-xs text-slate-400">Ads Performance</div>
-                  <div class="text-sm font-bold text-emerald-300 mt-1">ROI / ROAS Live</div>
+                <div class="surface-card p-3 rounded-xl border border-slate-800">
+                  <div class="text-xs text-slate-400">${escapeHtmlSafeCV(d.c3_sub)}</div>
+                  <div class="text-sm font-bold text-emerald-400 mt-1">${escapeHtmlSafeCV(d.c3_val)}</div>
                 </div>
               </div>
-              <p class="text-xs text-slate-300">Tích hợp dữ liệu từ SQL/ERP, GA4, Google Ads, Meta Ads và TikTok Ads lên Power BI &amp; Looker Studio phục vụ 500+ người dùng tại 12 vùng kinh doanh.</p>
+              <p class="text-xs text-slate-300">${escapeHtmlSafeCV(d.desc)}</p>
             </div>
           `
         };
       }
+      const d = dict.automation;
       return {
-        title: '>_ Pipeline & Workflow Tự Động Hóa (Python • SQL • AI Agents)',
+        title: d.title,
         html: `
           <div class="space-y-3">
-            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-emerald-300 space-y-1.5">
-              <div>1. [SQL Server / ERP / Ads API] ➔ Trích xuất &amp; Đối soát tự động</div>
-              <div>2. [Python Pandas ETL] ➔ Làm sạch, kiểm tra sai lệch &amp; tính KPI</div>
-              <div>3. [AI Agents: Claude Code + Codex + AGY] ➔ Tăng tốc code &amp; kiểm thử</div>
-              <div>4. [Auto-Dispatch] ➔ Gửi Email báo cáo &amp; cập nhật Dashboard định kỳ (~60% thời gian tiết kiệm)</div>
+            <div class="surface-card p-3.5 rounded-xl border border-slate-800 font-mono text-xs text-emerald-400 space-y-1.5">
+              <div>${escapeHtmlSafeCV(d.s1)}</div>
+              <div>${escapeHtmlSafeCV(d.s2)}</div>
+              <div>${escapeHtmlSafeCV(d.s3)}</div>
+              <div>${escapeHtmlSafeCV(d.s4)}</div>
             </div>
           </div>
         `
       };
     }
 
-    function openSolutionModal(type) {
-      const modal = document.getElementById('demo-modal');
+    function renderSolutionModalContent(type) {
       const title = document.getElementById('modal-title');
       const body = document.getElementById('modal-body');
-      if (!modal || !title || !body) return;
-      const data = getSolutionModalContent(type);
-      title.innerHTML = data.title;
+      if (!title || !body) return;
+      const data = getSolutionModalContent(type, currentLangCV);
+      title.textContent = data.title;
       body.innerHTML = data.html;
+    }
+
+    function openSolutionModal(type, triggerEl) {
+      const modal = document.getElementById('demo-modal');
+      if (!modal) return;
+      lastDemoModalTrigger = triggerEl || document.activeElement;
+      currentOpenModalType = type;
+      renderSolutionModalContent(type);
       modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      const closeBtn = document.getElementById('demo-modal-close-btn');
+      if (closeBtn) {
+        setTimeout(() => closeBtn.focus(), 20);
+      }
     }
 
     function closeSolutionModal() {
       const modal = document.getElementById('demo-modal');
-      if (modal) modal.classList.add('hidden');
+      if (!modal || modal.classList.contains('hidden')) return;
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      currentOpenModalType = null;
+      if (lastDemoModalTrigger && typeof lastDemoModalTrigger.focus === 'function') {
+        lastDemoModalTrigger.focus();
+      }
     }
+
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('demo-modal');
+      if (!modal || modal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeSolutionModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const focusables = Array.from(
+          modal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first || !modal.contains(document.activeElement)) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last || !modal.contains(document.activeElement)) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    });
 
     function showToast(msg) {
       const toast = document.getElementById('toast-notification');
