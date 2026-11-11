@@ -13,9 +13,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 ALLOWED_FILES = {
     "index.html",
-    "index_portfolio_v4.html",
     "index_portfolio_clean.html",
-    "index_capability_v5.html",
 }
 
 

@@ -405,11 +405,22 @@
     <!-- ==================== [TOP HEADER NAVIGATION: QUAY LẠI PORTFOLIO SHOWCASE] ==================== -->
     <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-[#0c1322]/90 border border-[#1a2740] shadow-lg no-print">
       <a href="./editor_portfolio.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 hover:border-emerald-400 transition-all">
-        <span class="editable-node">← Quay lại Portfolio Showcase</span>
+        <span data-i18n="nav_back" class="editable-node">← Quay lại Portfolio Showcase</span>
       </a>
-      <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
-        <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-        <span class="editable-node">Hồ Sơ Năng Lực Tương Tác • Capability Deck (V3)</span>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+          <span data-i18n="top_capability_badge" class="editable-node">Hồ Sơ Năng Lực Tương Tác • Capability Deck (V3)</span>
+        </div>
+        <!-- Language Selector -->
+        <div class="relative inline-block">
+          <select id="langSelectCV" onchange="switchLanguageCV(this.value, true)" aria-label="Select Language" class="bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:border-sky-400/60 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-sky-400 cursor-pointer transition-all">
+            <option value="vi">VI</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="zh">ZH</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -422,19 +433,19 @@
           
           <!-- [HEADER TAGS] -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="header-pill editable-node inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0f243c] text-[#7dd3fc] border border-[#1e4066]">📍 TP. Hồ Chí Minh</span>
-            <span class="header-pill editable-node inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0b2b26] text-[#6ee7b7] border border-[#145346]">🌐 Remote / Freelance</span>
-            <span class="header-pill editable-node inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#2d1f12] text-[#fcd34d] border border-[#5c3d1e]">🗣 Tiếng Anh TOEIC ~700+</span>
+            <span data-i18n="pill_loc" class="header-pill editable-node inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0f243c] text-[#7dd3fc] border border-[#1e4066]">📍 TP. Hồ Chí Minh</span>
+            <span data-i18n="pill_work" class="header-pill editable-node inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0b2b26] text-[#6ee7b7] border border-[#145346]">🌐 Remote / Freelance</span>
+            <span data-i18n="pill_lang" class="header-pill editable-node inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#2d1f12] text-[#fcd34d] border border-[#5c3d1e]">🗣 Tiếng Anh TOEIC ~700+</span>
           </div>
 
           <!-- Tên & Tiêu đề chức danh -->
           <div class="space-y-1.5">
             <h1 class="editable-node text-4xl sm:text-5xl font-black tracking-tight text-white">TJ</h1>
-            <h2 class="editable-node text-lg sm:text-xl lg:text-[22px] font-bold text-[#38bdf8] leading-snug">Data Analyst ➔ Digital Marketing &amp; Ads Performance</h2>
+            <h2 data-i18n="hero_title" class="editable-node text-lg sm:text-xl lg:text-[22px] font-bold text-[#38bdf8] leading-snug">Data Analyst ➔ Data-Backed Performance Marketing</h2>
           </div>
 
           <!-- Đoạn tóm tắt -->
-          <p class="editable-node text-sm sm:text-[15px] text-slate-300 leading-relaxed max-w-2xl">Chuyên viên phân tích dữ liệu chuyển dịch sang Digital Marketing, khai thác sức mạnh AI Agents cùng hạ tầng tracking GA4/GTM để kiểm soát chi phí và tối ưu hóa chuyển đổi thực chiến (ROAS, CPA).</p>
+          <p data-i18n="hero_bio" class="editable-node text-sm sm:text-[15px] text-slate-300 leading-relaxed max-w-2xl">Chuyên gia phân tích dữ liệu ứng dụng vào tối ưu hóa quảng cáo đa kênh (Meta, Google, TikTok). Sở trường kết hợp đo lường hành vi người dùng (GA4/GTM/BigQuery) và tự động hóa AI để kiểm soát chi phí bán hàng, tìm ra kênh tiếp thị hiệu quả nhất và thúc đẩy tăng trưởng doanh thu bền vững.</p>
 
           <!-- Thông tin liên hệ -->
           <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-[13px] text-slate-300 pt-0.5">
@@ -445,20 +456,17 @@
               <span class="text-sky-400">✉</span> teoteo1081@gmail.com
             </span>
             <span class="editable-node inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-              <span>🛡</span> Thông tin xác thực 100%
+              <span data-i18n="hero_verified"><span data-i18n="hero_verified"><span>🛡</span> Thông tin xác thực 100%</span></span>
             </span>
           </div>
 
           <!-- Bộ nút CTA -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
             <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all">
-              <span class="editable-node">💬 Liên hệ Zalo / Hợp tác</span>
+              <span data-i18n="hero_cta_zalo" class="editable-node">💬 Liên hệ Zalo / Hợp tác</span>
             </a>
             <a href="https://github.com/teoteo1081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all">
-              <span class="editable-node">🐙 Xem Hồ Sơ GitHub ↗</span>
-            </a>
-            <a href="./editor_portfolio.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 hover:border-emerald-400 transition-all">
-              <span class="editable-node">← Quay lại Portfolio Showcase</span>
+              <span data-i18n="hero_cta_github" class="editable-node">🐙 Xem Hồ Sơ GitHub ↗</span>
             </a>
           </div>
 
@@ -493,11 +501,160 @@
       </div>
     </section>
 
-    <!-- ==================== VÙNG 3 CỤM SECTION CÓ THỂ HOÁN ĐỔI VỊ TRÍ (REORDERABLE SECTIONS) ==================== -->
+    <!-- ==================== VÙNG CÁC CỤM SECTION CÓ THỂ HOÁN ĐỔI VỊ TRÍ (REORDERABLE SECTIONS) ==================== -->
     <div id="reorderable-sections" class="space-y-6">
 
-      <!-- ==================== CỤM A: [3 CARD SỐ LIỆU THÀNH TÍCH] ==================== -->
-      <section data-section-id="metrics" class="reorderable-section relative space-y-2">
+      <!-- ==================== (1) CỤM B: [SECTION: BỘ GIẢI PHÁP PHÂN TÍCH & TỰ ĐỘNG HÓA] ==================== -->
+      <section data-section-id="solutions" class="reorderable-section relative space-y-5 pt-2">
+        <!-- Nút điều hướng [⬆ Lên] / [⬇ Xuống] -->
+        <div class="flex justify-end">
+          <div class="reorder-controls no-print" contenteditable="false">
+            <button type="button" onclick="moveSection(this, -1)" class="reorder-btn" title="Đưa cụm này lên trên">⬆ Lên</button>
+            <button type="button" onclick="moveSection(this, 1)" class="reorder-btn" title="Đẩy cụm này xuống dưới">⬇ Xuống</button>
+          </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3">
+          <div class="space-y-1">
+            <div class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-400">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+              <span data-i18n="sol_badge_core" class="editable-node">NĂNG LỰC CỐT LÕI &amp; GIẢI PHÁP TRIỂN KHAI</span>
+            </div>
+            <h2 data-i18n="sol_heading" class="editable-node text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Bộ Giải Pháp Phân Tích &amp; Tự Động Hóa</h2>
+          </div>
+          <p data-i18n="sol_desc" class="editable-node text-xs sm:text-[13px] text-slate-400 lg:max-w-md leading-relaxed">Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, Chubb Life, AIA.</p>
+        </div>
+
+        <!-- 3 Solution Cards (Kéo thả ngang Draggable) -->
+        <div id="solutions-grid" class="draggable-container grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch">
+          
+          <!-- Card 1: [Planning & Growth] -->
+          <div class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
+            <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ giải pháp này">✕</button>
+            <div class="space-y-4 flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                </div>
+                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/25">Planning &amp; Growth</span>
+              </div>
+
+              <div class="space-y-1.5">
+                <h3 data-i18n="sol_card1_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Lập Kế hoạch Kinh doanh &amp; Quản trị Hiệu suất</h3>
+                <div data-i18n="sol_card1_sub" class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Mô hình MAPA • Budget Forecasting • Incentive &amp; KPI • GA4/GTM</div>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-sky-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card1_p1" class="editable-node">Xây dựng mô hình dự báo doanh thu dựa trên 4 động lực <strong class="text-white">MAPA</strong> (Manpower, Active Ratio, Productivity, Case Size).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-sky-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card1_p2" class="editable-node">Mô hình hóa chi phí thù lao, ngân sách hoa hồng và đo lường tỷ lệ hoàn vốn so với doanh thu thực tế.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-sky-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card1_p3" class="editable-node">Phân tích sai lệch <strong class="text-white">Actual vs. Target</strong> (MoM/YoY), phát hiện sớm độ lệch hiệu suất để đề xuất giải pháp điều chỉnh.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-sky-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card1_p4" class="editable-node">Thiết lập hạ tầng đo lường Marketing: cấu hình <strong class="text-white">GA4, GTM</strong>, chuẩn hóa UTM và tối ưu tỷ lệ chuyển đổi (ROAS, CPA, CVR).</span>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" onclick="openSolutionModal('planning')" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-sky-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
+              <i data-lucide="network" class="w-3.5 h-3.5 text-sky-400"></i>
+              <span data-i18n="sol_card1_btn" class="editable-node">Xem Sơ đồ &amp; Demo Giải pháp</span>
+            </button>
+          </div>
+
+          <!-- Card 2: [Advanced BI & DAX] -->
+          <div class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
+            <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ giải pháp này">✕</button>
+            <div class="space-y-4 flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <i data-lucide="pie-chart" class="w-4 h-4"></i>
+                </div>
+                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/25">Advanced BI &amp; DAX</span>
+              </div>
+
+              <div class="space-y-1.5">
+                <h3 data-i18n="sol_card2_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Kỹ thuật BI &amp; Dashboard Quản trị Đa Kênh</h3>
+                <div data-i18n="sol_card2_sub" class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard</div>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card2_p1" class="editable-node">Báo cáo Real-time đa cấp: Thiết kế dashboard động, tự phục vụ (Self-service BI) phục vụ người dùng ở mọi cấp độ; vận hành hệ thống cấp báo cáo tự động kết nối dữ liệu doanh số cho khách hàng.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card2_p2" class="editable-node">Phân tích P&amp;L &amp; Chi phí đa chiều: Trực quan hóa bức tranh lợi nhuận gộp/lợi nhuận ròng chi tiết theo từng dòng sản phẩm, kênh bán hàng, chi nhánh, nhà cung cấp và cấu trúc chi phí vận hành.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card2_p3" class="editable-node">Dashboard Tiếp thị Đa kênh: Tổng hợp dữ liệu từ GA4 và các kênh quảng cáo (Google, Meta, TikTok) lên một màn hình tập trung nhằm theo dõi dòng tiền và tỷ suất sinh lời (ROI/ROAS) theo thời gian thực.</span>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" onclick="openSolutionModal('bi')" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-amber-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
+              <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-sky-400"></i>
+              <span data-i18n="sol_card2_btn" class="editable-node">Xem Demo Dashboard Quản trị</span>
+            </button>
+          </div>
+
+          <!-- Card 3: [Automation & AI] -->
+          <div class="solution-card-item draggable-card surface-card p-6 h-full flex flex-col justify-between space-y-6 relative" draggable="true">
+            <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ giải pháp này">✕</button>
+            <div class="space-y-4 flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                  <i data-lucide="cpu" class="w-4 h-4"></i>
+                </div>
+                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">Automation &amp; AI</span>
+              </div>
+
+              <div class="space-y-1.5">
+                <h3 data-i18n="sol_card3_title" class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Tự động hóa Quy trình &amp; Hệ thống Dữ liệu</h3>
+                <div data-i18n="sol_card3_sub" class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Python Scripts • SQL ETL • AI Tools</div>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card3_p1" class="editable-node">Tự động hóa bằng <strong class="text-white">Python &amp; SQL</strong>: trích xuất dữ liệu, làm sạch, tính toán chỉ số và gởi báo cáo kèm dashboard qua email tự động.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card3_p2" class="editable-node">Tự động hóa nhập liệu và đối soát, loại trừ sai sót.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card3_p3" class="editable-node">Tích hợp bộ ba <strong class="text-white">AI Agents</strong> (Claude Code, Codex, AGY) để tăng tốc xây dựng pipeline và kiểm thử code.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span data-i18n="sol_card3_p4" class="editable-node">Quản lý mã nguồn chuẩn mực Git, đảm bảo quy chuẩn bảo mật dữ liệu doanh nghiệp và vận hành ổn định.</span>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" onclick="openSolutionModal('automation')" class="mt-auto w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-emerald-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
+              <span data-i18n="sol_card3_btn" class="editable-node font-mono">&gt;_ Xem Pipeline &amp; Workflow Tự Động</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== (2) CỤM A: [3 CARD SỐ LIỆU THÀNH TÍCH] ==================== -->
+      <section data-section-id="metrics" class="reorderable-section relative space-y-2 mb-8 sm:mb-10 pb-2">
         <!-- Nút điều hướng [⬆ Lên] / [⬇ Xuống] khi bật chế độ sửa -->
         <div class="flex justify-end">
           <div class="reorder-controls no-print" contenteditable="false">
@@ -513,13 +670,13 @@
             <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ số liệu này">✕</button>
             <div class="space-y-2">
               <div class="flex items-start justify-between gap-2">
-                <div class="editable-node text-3xl sm:text-4xl font-black text-[#f59e0b] tracking-tight">~60%</div>
+                <div data-i18n="metric_val_1" class="editable-node text-3xl sm:text-4xl font-black text-[#f59e0b] tracking-tight">~60%</div>
                 <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                   <i data-lucide="clock" class="w-4 h-4"></i>
                 </div>
               </div>
-              <h3 class="editable-node text-sm sm:text-[15px] font-bold text-white pt-1">Tiết kiệm thời gian báo cáo</h3>
-              <p class="editable-node text-xs text-slate-400 leading-relaxed">Giảm thời gian xử lý báo cáo thủ công nhờ tự động hóa Python &amp; SQL kết hợp Power Query.</p>
+              <h3 data-i18n="metric_title_1" class="editable-node text-sm sm:text-[15px] font-bold text-white pt-1">Tiết kiệm thời gian báo cáo</h3>
+              <p data-i18n="metric_desc_1" class="editable-node text-xs text-slate-400 leading-relaxed">Giảm thời gian xử lý báo cáo thủ công nhờ tự động hóa Python &amp; SQL kết hợp Power Query.</p>
             </div>
           </div>
 
@@ -528,13 +685,13 @@
             <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ số liệu này">✕</button>
             <div class="space-y-2">
               <div class="flex items-start justify-between gap-2">
-                <div class="editable-node text-3xl sm:text-4xl font-black text-[#38bdf8] tracking-tight">500+</div>
+                <div data-i18n="metric_val_2" class="editable-node text-3xl sm:text-4xl font-black text-[#38bdf8] tracking-tight">500+</div>
                 <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
                   <i data-lucide="users" class="w-4 h-4"></i>
                 </div>
               </div>
-              <h3 class="editable-node text-sm sm:text-[15px] font-bold text-white pt-1">Người dùng &amp; Điểm bán phục vụ</h3>
-              <p class="editable-node text-xs text-slate-400 leading-relaxed">Chi nhánh, điểm bán &amp; người dùng vận hành được phục vụ qua hệ thống Dashboard BI tương tác.</p>
+              <h3 data-i18n="metric_title_2" class="editable-node text-sm sm:text-[15px] font-bold text-white pt-1">Người dùng &amp; Điểm bán phục vụ</h3>
+              <p data-i18n="metric_desc_2" class="editable-node text-xs text-slate-400 leading-relaxed">Chi nhánh, điểm bán &amp; người dùng vận hành được phục vụ qua hệ thống Dashboard BI tương tác.</p>
             </div>
           </div>
 
@@ -543,21 +700,21 @@
             <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ số liệu này">✕</button>
             <div class="space-y-2">
               <div class="flex items-start justify-between gap-2">
-                <div class="editable-node text-3xl sm:text-4xl font-black text-[#10b981] tracking-tight">12 Vùng</div>
+                <div data-i18n="metric_val_3" class="editable-node text-3xl sm:text-4xl font-black text-[#10b981] tracking-tight">12 Vùng</div>
                 <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                   <i data-lucide="map" class="w-4 h-4"></i>
                 </div>
               </div>
-              <h3 class="editable-node text-sm sm:text-[15px] font-bold text-white pt-1">Vùng kinh doanh liên kết</h3>
-              <p class="editable-node text-xs text-slate-400 leading-relaxed">Khu vực kinh doanh được cấp báo cáo tự động kết nối dữ liệu doanh số, hoa hồng &amp; tiếp thị.</p>
+              <h3 data-i18n="metric_title_3" class="editable-node text-sm sm:text-[15px] font-bold text-white pt-1">Vùng kinh doanh liên kết</h3>
+              <p data-i18n="metric_desc_3" class="editable-node text-xs text-slate-400 leading-relaxed">Khu vực kinh doanh được cấp báo cáo tự động kết nối dữ liệu doanh số, hoa hồng &amp; tiếp thị.</p>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- ==================== CỤM B: [SECTION: BỘ GIẢI PHÁP PHÂN TÍCH & TỰ ĐỘNG HÓA] ==================== -->
-      <section data-section-id="solutions" class="reorderable-section relative space-y-5 pt-2">
+      <!-- ==================== (3) CỤM C: [KỸ NĂNG KỸ THUẬT CHUYÊN SÂU] ==================== -->
+      <section data-section-id="skills" class="reorderable-section relative space-y-4 pt-2">
         <!-- Nút điều hướng [⬆ Lên] / [⬇ Xuống] -->
         <div class="flex justify-end">
           <div class="reorder-controls no-print" contenteditable="false">
@@ -566,329 +723,135 @@
           </div>
         </div>
 
-        <!-- Section Header -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3">
-          <div class="space-y-1">
-            <div class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-400">
-              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-              <span class="editable-node">NĂNG LỰC CỐT LÕI &amp; GIẢI PHÁP TRIỂN KHAI</span>
-            </div>
-            <h2 class="editable-node text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Bộ Giải Pháp Phân Tích &amp; Tự Động Hóa</h2>
-          </div>
-          <p class="editable-node text-xs sm:text-[13px] text-slate-400 lg:max-w-md leading-relaxed">Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, Chubb Life, AIA.</p>
+        <div class="flex items-center gap-2.5">
+          <span class="text-amber-400 font-mono font-bold text-sm">&lt;/&gt;</span>
+          <h2 data-i18n="skills_heading" class="editable-node text-lg sm:text-xl font-extrabold text-white">Kỹ Năng Kỹ Thuật Chuyên Sâu</h2>
         </div>
 
-        <!-- 3 Solution Cards (Kéo thả ngang Draggable) -->
-        <div id="solutions-grid" class="draggable-container grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch">
-          
-          <!-- Card 1: [Planning & Growth] -->
-          <div class="solution-card-item draggable-card surface-card p-6 flex flex-col justify-between space-y-6 relative" draggable="true">
-            <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ giải pháp này">✕</button>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-2">
-                <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
-                  <i data-lucide="trending-up" class="w-4 h-4"></i>
-                </div>
-                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/25">Planning &amp; Growth</span>
+        <div id="skill-groups-list" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Box 1: MARKETING TECH & ĐO LƯỜNG CHUYỂN ĐỔI -->
+          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-amber-400">
+                <span>🎯</span>
+                <h3 data-i18n="skill_grp_1" class="editable-node">MARKETING TECH &amp; ĐO LƯỜNG CHUYỂN ĐỔI</h3>
               </div>
-
-              <div class="space-y-1.5">
-                <h3 class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Lập Kế hoạch Kinh doanh &amp; Quản trị Hiệu suất</h3>
-                <div class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Mô hình MAPA • Budget Forecasting • Incentive &amp; KPI • GA4/GTM</div>
+              <div class="reorder-controls no-print" contenteditable="false">
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
               </div>
-
-              <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Xây dựng mô hình dự báo doanh thu dựa trên 4 động lực <strong class="text-white">MAPA</strong> (Manpower, Active Ratio, Productivity, Case Size).</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Mô hình hóa chi phí thù lao, ngân sách hoa hồng và đo lường tỷ lệ hoàn vốn so với doanh thu thực tế.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Phân tích sai lệch <strong class="text-white">Actual vs. Target</strong> (MoM/YoY), phát hiện sớm độ lệch hiệu suất để đề xuất giải pháp điều chỉnh.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Thiết lập hạ tầng đo lường Marketing: cấu hình <strong class="text-white">GA4, GTM</strong>, chuẩn hóa UTM và tối ưu tỷ lệ chuyển đổi (ROAS, CPA, CVR).</span>
-                </li>
-              </ul>
             </div>
-
-            <button type="button" onclick="openSolutionModal('planning')" class="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-sky-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <i data-lucide="network" class="w-3.5 h-3.5 text-sky-400"></i>
-              <span class="editable-node">Xem Sơ đồ &amp; Demo Giải pháp</span>
-            </button>
+            <div class="tag-list flex flex-wrap gap-2.5 items-center">
+              <span class="skill-tag"><span class="tag-text editable-node">Google Analytics 4 (GA4)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Google Tag Manager (GTM)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">UTM Tracking Architecture</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Google Ads &amp; Meta Ads</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">TikTok &amp; Zalo Ads</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Tối ưu CPA, ROAS, CVR</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
+            </div>
           </div>
 
-          <!-- Card 2: [Advanced BI & DAX] -->
-          <div class="solution-card-item draggable-card surface-card p-6 flex flex-col justify-between space-y-6 relative" draggable="true">
-            <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ giải pháp này">✕</button>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-2">
-                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                  <i data-lucide="pie-chart" class="w-4 h-4"></i>
-                </div>
-                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/25">Advanced BI &amp; DAX</span>
+          <!-- Box 2: BUSINESS INTELLIGENCE -->
+          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-sky-400">
+                <span>📈</span>
+                <h3 data-i18n="skill_grp_2" class="editable-node">BUSINESS INTELLIGENCE</h3>
               </div>
-
-              <div class="space-y-1.5">
-                <h3 class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Kỹ thuật BI &amp; Dashboard Quản trị Đa Kênh</h3>
-                <div class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard</div>
+              <div class="reorder-controls no-print" contenteditable="false">
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
               </div>
-
-              <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Báo cáo Real-time đa cấp: Thiết kế dashboard động, tự phục vụ (Self-service BI) phục vụ người dùng ở mọi cấp độ; vận hành hệ thống cấp báo cáo tự động kết nối dữ liệu doanh số cho khách hàng.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Phân tích P&amp;L &amp; Chi phí đa chiều: Trực quan hóa bức tranh lợi nhuận gộp/lợi nhuận ròng chi tiết theo từng dòng sản phẩm, kênh bán hàng, chi nhánh, nhà cung cấp và cấu trúc chi phí vận hành.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Dashboard Tiếp thị Đa kênh: Tổng hợp dữ liệu từ GA4 và các kênh quảng cáo (Google, Meta, TikTok) lên một màn hình tập trung nhằm theo dõi dòng tiền và tỷ suất sinh lời (ROI/ROAS) theo thời gian thực.</span>
-                </li>
-              </ul>
             </div>
-
-            <button type="button" onclick="openSolutionModal('bi')" class="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-amber-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-sky-400"></i>
-              <span class="editable-node">Xem Demo Dashboard Quản trị</span>
-            </button>
+            <div class="tag-list flex flex-wrap gap-2.5 items-center">
+              <span class="skill-tag"><span class="tag-text editable-node">Power BI (Nâng cao)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Field Parameters</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">DAX (VAR/RETURN, Calculate)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Power Query (M)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Dynamic Measures</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
+            </div>
           </div>
 
-          <!-- Card 3: [Automation & AI] -->
-          <div class="solution-card-item draggable-card surface-card p-6 flex flex-col justify-between space-y-6 relative" draggable="true">
-            <button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa thẻ giải pháp này">✕</button>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-2">
-                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <i data-lucide="cpu" class="w-4 h-4"></i>
-                </div>
-                <span class="solution-badge editable-node px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">Automation &amp; AI</span>
+          <!-- Box 3: ETL & HỆ THỐNG ERP -->
+          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+                <span>⚙️</span>
+                <h3 data-i18n="skill_grp_3" class="editable-node">ETL &amp; HỆ THỐNG ERP</h3>
               </div>
-
-              <div class="space-y-1.5">
-                <h3 class="editable-node text-base sm:text-[17px] font-bold text-white leading-snug">Tự động hóa Quy trình &amp; Hệ thống Dữ liệu</h3>
-                <div class="editable-node text-[11.5px] font-medium text-sky-400 leading-relaxed">Python Scripts • SQL ETL • AI Tools</div>
+              <div class="reorder-controls no-print" contenteditable="false">
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
               </div>
-
-              <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
-                <li class="flex items-start gap-2">
-                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Tự động hóa bằng <strong class="text-white">Python &amp; SQL</strong>: trích xuất dữ liệu, làm sạch, tính toán chỉ số và gởi báo cáo kèm dashboard qua email tự động.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Tự động hóa nhập liệu và đối soát, loại trừ sai sót.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Tích hợp bộ ba <strong class="text-white">AI Agents</strong> (Claude Code, Codex, AGY) để tăng tốc xây dựng pipeline và kiểm thử code.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span class="editable-node">Quản lý mã nguồn chuẩn mực Git, đảm bảo quy chuẩn bảo mật dữ liệu doanh nghiệp và vận hành ổn định.</span>
-                </li>
-              </ul>
             </div>
-
-            <button type="button" onclick="openSolutionModal('automation')" class="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#131d31] hover:bg-[#1a2844] text-slate-200 border border-[#253552] hover:border-emerald-400/50 flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <span class="editable-node font-mono">&gt;_ Xem Pipeline &amp; Workflow Tự Động</span>
-            </button>
+            <div class="tag-list flex flex-wrap gap-2.5 items-center">
+              <span class="skill-tag"><span class="tag-text editable-node">Python (Pandas, Automation)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">SQL Nâng cao</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Oracle ERP</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Bravo</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">DataLoad</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Excel Nâng cao &amp; MS Access</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
+            </div>
           </div>
 
+          <!-- Box 4: AI ENGINEERING & DEVELOPER ECOSYSTEM -->
+          <div class="skill-group-card surface-card p-5 space-y-3 relative">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-purple-400">
+                <span>🤖</span>
+                <h3 data-i18n="skill_grp_4" class="editable-node">AI ENGINEERING &amp; DEVELOPER ECOSYSTEM</h3>
+              </div>
+              <div class="reorder-controls no-print" contenteditable="false">
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
+                <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
+              </div>
+            </div>
+            <div class="tag-list flex flex-wrap gap-2.5 items-center">
+              <span class="skill-tag"><span class="tag-text editable-node">Claude Code</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Antigravity CLI</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">OpenAI Codex</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">Git &amp; GitHub Workflow</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <span class="skill-tag"><span class="tag-text editable-node">AI Prompt Orchestration</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
+              <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- ==================== CỤM C: [KHỐI DƯỚI: 2 CỘT CHUYÊN MÔN] ==================== -->
-      <section data-section-id="expertise" class="reorderable-section relative space-y-2 pt-2">
-        <!-- Nút điều hướng [⬆ Lên] / [⬇ Xuống] -->
-        <div class="flex justify-end">
-          <div class="reorder-controls no-print" contenteditable="false">
-            <button type="button" onclick="moveSection(this, -1)" class="reorder-btn" title="Đưa cụm này lên trên">⬆ Lên</button>
-            <button type="button" onclick="moveSection(this, 1)" class="reorder-btn" title="Đẩy cụm này xuống dưới">⬇ Xuống</button>
-          </div>
+      <!-- ==================== (4) CỤM HỌC VẤN & BẰNG CẤP (ĐẶT TRƯỚC FOOTER BANNER) ==================== -->
+      <section data-section-id="education" class="reorderable-section relative space-y-4 pt-2">
+        <div class="flex items-center gap-2.5">
+          <span class="text-amber-400 text-base">🎓</span>
+          <h2 data-i18n="edu_heading" class="editable-node text-lg sm:text-xl font-extrabold text-white">Học Vấn &amp; Bằng Cấp</h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          
-          <!-- CỘT TRÁI: </> Kỹ Năng Kỹ Thuật Chuyên Sâu (7 cols) -->
-          <div class="lg:col-span-7 space-y-4">
-            <div class="flex items-center gap-2.5">
-              <span class="text-amber-400 font-mono font-bold text-sm">&lt;/&gt;</span>
-              <h2 class="editable-node text-lg sm:text-xl font-extrabold text-white">Kỹ Năng Kỹ Thuật Chuyên Sâu</h2>
-            </div>
-
-            <div id="skill-groups-list" class="space-y-3.5">
-              <!-- Box 1: MARKETING TECH & ĐO LƯỜNG CHUYỂN ĐỔI -->
-              <div class="skill-group-card surface-card p-5 space-y-3 relative">
-                <div class="flex items-center justify-between gap-2">
-                  <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-amber-400">
-                    <span>🎯</span>
-                    <h3 class="editable-node">MARKETING TECH &amp; ĐO LƯỜNG CHUYỂN ĐỔI</h3>
-                  </div>
-                  <div class="reorder-controls no-print" contenteditable="false">
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
-                  </div>
-                </div>
-                <div class="tag-list flex flex-wrap gap-2.5 items-center">
-                  <span class="skill-tag"><span class="tag-text editable-node">Google Analytics 4 (GA4)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Google Tag Manager (GTM)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">UTM Tracking Architecture</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Google Ads &amp; Meta Ads</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">TikTok &amp; Zalo Ads</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Tối ưu CPA, ROAS, CVR</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
-                </div>
-              </div>
-
-              <!-- Box 2: BUSINESS INTELLIGENCE -->
-              <div class="skill-group-card surface-card p-5 space-y-3 relative">
-                <div class="flex items-center justify-between gap-2">
-                  <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-sky-400">
-                    <span>📈</span>
-                    <h3 class="editable-node">BUSINESS INTELLIGENCE</h3>
-                  </div>
-                  <div class="reorder-controls no-print" contenteditable="false">
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
-                  </div>
-                </div>
-                <div class="tag-list flex flex-wrap gap-2.5 items-center">
-                  <span class="skill-tag"><span class="tag-text editable-node">Power BI (Nâng cao)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Field Parameters</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">DAX (VAR/RETURN, Calculate)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Power Query (M)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Dynamic Measures</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
-                </div>
-              </div>
-
-              <!-- Box 3: ETL & HỆ THỐNG ERP -->
-              <div class="skill-group-card surface-card p-5 space-y-3 relative">
-                <div class="flex items-center justify-between gap-2">
-                  <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
-                    <span>⚙️</span>
-                    <h3 class="editable-node">ETL &amp; HỆ THỐNG ERP</h3>
-                  </div>
-                  <div class="reorder-controls no-print" contenteditable="false">
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
-                  </div>
-                </div>
-                <div class="tag-list flex flex-wrap gap-2.5 items-center">
-                  <span class="skill-tag"><span class="tag-text editable-node">Python (Pandas, Automation)</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">SQL Nâng cao</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Oracle ERP</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Bravo</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">DataLoad</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Excel Nâng cao &amp; MS Access</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
-                </div>
-              </div>
-
-              <!-- Box 4: AI ENGINEERING & DEVELOPER ECOSYSTEM -->
-              <div class="skill-group-card surface-card p-5 space-y-3 relative">
-                <div class="flex items-center justify-between gap-2">
-                  <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-purple-400">
-                    <span>🤖</span>
-                    <h3 class="editable-node">AI ENGINEERING &amp; DEVELOPER ECOSYSTEM</h3>
-                  </div>
-                  <div class="reorder-controls no-print" contenteditable="false">
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', -1)" class="reorder-btn" title="Đưa nhóm kỹ năng này lên trên">⬆</button>
-                    <button type="button" onclick="moveItemUpDown(this, '.skill-group-card', 1)" class="reorder-btn" title="Đẩy nhóm kỹ năng này xuống dưới">⬇</button>
-                  </div>
-                </div>
-                <div class="tag-list flex flex-wrap gap-2.5 items-center">
-                  <span class="skill-tag"><span class="tag-text editable-node">Claude Code</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Antigravity CLI</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">OpenAI Codex</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">Git &amp; GitHub Workflow</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <span class="skill-tag"><span class="tag-text editable-node">AI Prompt Orchestration</span><button type="button" class="delete-btn" contenteditable="false" onclick="removeElement(event, this)" title="Xóa tag">✕</button></span>
-                  <button type="button" class="add-tag-btn no-print" contenteditable="false" onclick="addNewSkillTag(this)">+ Thêm tag</button>
-                </div>
-              </div>
-            </div>
+        <div id="education-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Mục 1: MBA -->
+          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-sky-400 space-y-3" draggable="true">
+            <span data-i18n="edu_cat_1" class="text-[10px] font-bold uppercase tracking-wider text-sky-400 font-mono">Master Degree</span>
+            <div data-i18n="edu_title_1" class="editable-node text-sm font-bold text-white leading-snug">Thạc sĩ Quản Trị Kinh Doanh (MBA)</div>
           </div>
 
-          <!-- CỘT PHẢI: 🎓 Học Vấn & Bằng Cấp (5 cols — Vertical Timeline + Nút [⬆][⬇] từng dòng + Kéo thả) -->
-          <div class="lg:col-span-5 space-y-4">
-            <div class="flex items-center gap-2.5">
-              <span class="text-amber-400 text-base">🎓</span>
-              <h2 class="editable-node text-lg sm:text-xl font-extrabold text-white">Học Vấn &amp; Bằng Cấp</h2>
-            </div>
-
-            <div id="education-timeline" class="draggable-container relative pl-6 space-y-4 before:content-[''] before:absolute before:left-[7px] before:top-3 before:bottom-3 before:w-[2px] before:bg-slate-800">
-              
-              <!-- Mục 1 -->
-              <div class="edu-card-item draggable-card relative" draggable="true">
-                <span class="absolute -left-[21px] top-5 w-2.5 h-2.5 rounded-full bg-sky-400 ring-4 ring-[#060b14]"></span>
-                <div class="surface-card p-5 relative">
-                  <button type="button" class="delete-btn" contenteditable="false" onclick="removeEduItem(event, this)" title="Xóa mục bằng cấp này">✕</button>
-                  <div class="flex items-start justify-between gap-2">
-                    <div class="editable-node text-sm sm:text-[15px] font-bold text-white">Thạc sĩ Quản Trị Kinh Doanh (MBA)</div>
-                    <div class="reorder-controls no-print shrink-0" contenteditable="false">
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', -1)" class="reorder-btn" title="Đưa dòng này lên trên">⬆</button>
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', 1)" class="reorder-btn" title="Đẩy dòng này xuống dưới">⬇</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Mục 2 -->
-              <div class="edu-card-item draggable-card relative" draggable="true">
-                <span class="absolute -left-[21px] top-5 w-2.5 h-2.5 rounded-full bg-sky-400 ring-4 ring-[#060b14]"></span>
-                <div class="surface-card p-5 relative">
-                  <button type="button" class="delete-btn" contenteditable="false" onclick="removeEduItem(event, this)" title="Xóa mục bằng cấp này">✕</button>
-                  <div class="flex items-start justify-between gap-2">
-                    <div class="editable-node text-sm sm:text-[15px] font-bold text-white">Chứng chỉ EA Thuế Mỹ, CPA Mỹ (đang học)</div>
-                    <div class="reorder-controls no-print shrink-0" contenteditable="false">
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', -1)" class="reorder-btn" title="Đưa dòng này lên trên">⬆</button>
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', 1)" class="reorder-btn" title="Đẩy dòng này xuống dưới">⬇</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Mục 3 -->
-              <div class="edu-card-item draggable-card relative" draggable="true">
-                <span class="absolute -left-[21px] top-5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-4 ring-[#060b14]"></span>
-                <div class="surface-card p-5 relative">
-                  <button type="button" class="delete-btn" contenteditable="false" onclick="removeEduItem(event, this)" title="Xóa mục bằng cấp này">✕</button>
-                  <div class="flex items-start justify-between gap-2">
-                    <div class="editable-node text-sm sm:text-[15px] font-bold text-white">Google Skillshop (đang học)</div>
-                    <div class="reorder-controls no-print shrink-0" contenteditable="false">
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', -1)" class="reorder-btn" title="Đưa dòng này lên trên">⬆</button>
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', 1)" class="reorder-btn" title="Đẩy dòng này xuống dưới">⬇</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Mục 4 -->
-              <div class="edu-card-item draggable-card relative" draggable="true">
-                <span class="absolute -left-[21px] top-5 w-2.5 h-2.5 rounded-full bg-purple-400 ring-4 ring-[#060b14]"></span>
-                <div class="surface-card rounded-2xl p-5 bg-[#191233] border border-purple-500/40 shadow-lg relative">
-                  <button type="button" class="delete-btn" contenteditable="false" onclick="removeEduItem(event, this)" title="Xóa mục bằng cấp này">✕</button>
-                  <div class="flex items-start justify-between gap-2">
-                    <div class="editable-node text-xs sm:text-sm font-bold text-purple-300 leading-relaxed">✨ Nâng Cao Năng Lực Sử Dụng AI | Agentic AI &amp; Tự Động Hóa (đang học)</div>
-                    <div class="reorder-controls no-print shrink-0" contenteditable="false">
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', -1)" class="reorder-btn" title="Đưa dòng này lên trên">⬆</button>
-                      <button type="button" onclick="moveItemUpDown(this, '.edu-card-item', 1)" class="reorder-btn" title="Đẩy dòng này xuống dưới">⬇</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          <!-- Mục 2: EA, CPA -->
+          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-sky-400 space-y-3" draggable="true">
+            <span data-i18n="edu_cat_2" class="text-[10px] font-bold uppercase tracking-wider text-sky-400 font-mono">US Tax &amp; Accounting</span>
+            <div data-i18n="edu_title_2" class="editable-node text-sm font-bold text-white leading-snug">Ứng viên Enrolled Agent (EA Thuế Mỹ)</div>
           </div>
 
+          <!-- Mục 3: Google Skillshop -->
+          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between border-t-2 border-t-emerald-400 space-y-3" draggable="true">
+            <span data-i18n="edu_cat_3" class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 font-mono">Digital Marketing</span>
+            <div data-i18n="edu_title_3" class="editable-node text-sm font-bold text-white leading-snug">Google Skillshop · Lộ Trình Đo Lường GA4</div>
+          </div>
+
+          <!-- Mục 4: AI & Automation -->
+          <div class="edu-card-item draggable-card surface-card p-5 relative flex flex-col justify-between bg-[#191233] border border-purple-500/40 shadow-lg border-t-2 border-t-purple-400 space-y-3" draggable="true">
+            <span data-i18n="edu_cat_4" class="text-[10px] font-bold uppercase tracking-wider text-purple-300 font-mono">AI Engineering</span>
+            <div data-i18n="edu_title_4" class="editable-node text-xs sm:text-sm font-bold text-purple-200 leading-snug">✨ Thực Hành Agentic AI &amp; Tự Động Hóa Quy Trình</div>
+          </div>
         </div>
       </section>
 
@@ -899,15 +862,15 @@
       <div class="absolute inset-0 bg-gradient-to-r from-sky-500/5 via-indigo-500/5 to-emerald-500/5 pointer-events-none"></div>
 
       <div class="relative z-10 max-w-2xl mx-auto space-y-4">
-        <h2 class="editable-node text-xl sm:text-2xl font-extrabold text-white leading-snug">Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí &amp; Tăng Trưởng Quảng Cáo</h2>
-        <p class="editable-node text-xs sm:text-sm text-slate-300 leading-relaxed">Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu thực tế.</p>
+        <h2 data-i18n="footer_title" class="editable-node text-xl sm:text-2xl font-extrabold text-white leading-snug">Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí &amp; Tăng Trưởng Quảng Cáo</h2>
+        <p data-i18n="footer_desc" class="editable-node text-xs sm:text-sm text-slate-300 leading-relaxed">Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu thực tế.</p>
 
         <div class="flex flex-wrap items-center justify-center gap-3.5 pt-2">
           <a href="https://zalo.me/0855239805" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284c7] hover:bg-[#0369a1] text-white shadow-lg shadow-sky-500/20 transition-all">
-            <span class="editable-node">Nhắn Zalo: 0855 239 805</span>
+            <span data-i18n="footer_zalo" class="editable-node">Nhắn Zalo: 0855 239 805</span>
           </a>
           <a href="mailto:teoteo1081@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#131d31] hover:bg-[#1a2742] text-slate-200 border border-[#26354d] hover:border-sky-400/60 transition-all">
-            <span class="editable-node">Gửi Email: teoteo1081@gmail.com</span>
+            <span data-i18n="footer_email" class="editable-node">Gửi Email: teoteo1081@gmail.com</span>
           </a>
         </div>
 
@@ -942,14 +905,293 @@
 
   <!-- ==================== JAVASCRIPT XỬ LÝ TƯƠNG TÁC, REORDER, DRAG-DROP & CLEAN EXPORT ==================== -->
   <script id="interactive-editor-script">
-    const STORAGE_KEY_HTML = 'tj_capability_v9_saved_html';
-    const STORAGE_KEY_BRAND = 'tj_capability_v9_saved_brand';
+    const STORAGE_KEY_HTML = 'tj_capability_v12_saved_html';
+    const STORAGE_KEY_BRAND = 'tj_capability_v12_saved_brand';
     const STORAGE_KEY_PALETTE = 'tj_capability_v5_palette';
     const PALETTES = ['ocean', 'emerald', 'royal', 'indigo'];
     let isEditMode = false;
     let initialMainHTML = '';
     let initialBrandHTML = '';
     let draggedItem = null;
+
+    
+    // ==================== TỪ ĐIỂN ĐA NGÔN NGỮ (I18N: VI, EN, ES, ZH) ====================
+    const translationsCV = {
+      vi: {
+        nav_back: "← Quay lại Portfolio Showcase",
+        top_capability_badge: "Hồ Sơ Năng Lực Tương Tác • Capability Deck (V3)",
+        pill_loc: "📍 TP. Hồ Chí Minh",
+        pill_work: "🌐 Remote / Freelance",
+        pill_lang: "🗣 Tiếng Anh TOEIC ~700+",
+        hero_title: "Data Analyst ➔ Data-Backed Performance Marketing",
+        hero_bio: "Chuyên gia phân tích dữ liệu ứng dụng vào tối ưu hóa quảng cáo đa kênh (Meta, Google, TikTok). Sở trường kết hợp đo lường hành vi người dùng (GA4/GTM/BigQuery) và tự động hóa AI để kiểm soát chi phí bán hàng, tìm ra kênh tiếp thị hiệu quả nhất và thúc đẩy tăng trưởng doanh thu bền vững.",
+        hero_verified: "<span>🛡</span> Thông tin xác thực 100%",
+        hero_cta_zalo: "💬 Liên hệ Zalo / Hợp tác",
+        hero_cta_github: "🐙 Xem Hồ Sơ GitHub ↗",
+        sol_badge_core: "NĂNG LỰC CỐT LÕI & GIẢI PHÁP TRIỂN KHAI",
+        sol_heading: "Bộ Giải Pháp Phân Tích & Tự Động Hóa",
+        sol_desc: "Đúc kết từ kinh nghiệm thực chiến tại các tập đoàn Bảo hiểm đa quốc gia Prudential, Chubb Life, AIA.",
+        sol_card1_title: "Lập Kế hoạch Kinh doanh & Quản trị Hiệu suất",
+        sol_card1_sub: "Mô hình MAPA • Budget Forecasting • Incentive & KPI • GA4/GTM",
+        sol_card1_p1: "Xây dựng mô hình dự báo doanh thu dựa trên 4 động lực <strong class=\"text-white\">MAPA</strong> (Manpower, Active Ratio, Productivity, Case Size).",
+        sol_card1_p2: "Mô hình hóa chi phí thù lao, ngân sách hoa hồng và đo lường tỷ lệ hoàn vốn so với doanh thu thực tế.",
+        sol_card1_p3: "Phân tích sai lệch <strong class=\"text-white\">Actual vs. Target</strong> (MoM/YoY), phát hiện sớm độ lệch hiệu suất để đề xuất giải pháp điều chỉnh.",
+        sol_card1_p4: "Thiết lập hạ tầng đo lường Marketing: cấu hình <strong class=\"text-white\">GA4, GTM</strong>, chuẩn hóa UTM và tối ưu tỷ lệ chuyển đổi (ROAS, CPA, CVR).",
+        sol_card1_btn: "Xem Sơ đồ & Demo Giải pháp",
+        sol_card2_title: "Kỹ thuật BI & Dashboard Quản trị Đa Kênh",
+        sol_card2_sub: "Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard",
+        sol_card2_p1: "Báo cáo Real-time đa cấp: Thiết kế dashboard động, tự phục vụ (Self-service BI) phục vụ người dùng ở mọi cấp độ; vận hành hệ thống cấp báo cáo tự động kết nối dữ liệu doanh số cho khách hàng.",
+        sol_card2_p2: "Phân tích P&L & Chi phí đa chiều: Trực quan hóa bức tranh lợi nhuận gộp/lợi nhuận ròng chi tiết theo từng dòng sản phẩm, kênh bán hàng, chi nhánh, nhà cung cấp và cấu trúc chi phí vận hành.",
+        sol_card2_p3: "Dashboard Tiếp thị Đa kênh: Tổng hợp dữ liệu từ GA4 và các kênh quảng cáo (Google, Meta, TikTok) lên một màn hình tập trung nhằm theo dõi dòng tiền và tỷ suất sinh lời (ROI/ROAS) theo thời gian thực.",
+        sol_card2_btn: "Xem Demo Dashboard Quản trị",
+        sol_card3_title: "Tự động hóa Quy trình & Hệ thống Dữ liệu",
+        sol_card3_sub: "Python Scripts • SQL ETL • AI Tools",
+        sol_card3_p1: "Tự động hóa bằng <strong class=\"text-white\">Python & SQL</strong>: trích xuất dữ liệu, làm sạch, tính toán chỉ số và gởi báo cáo kèm dashboard qua email tự động.",
+        sol_card3_p2: "Tự động hóa nhập liệu và đối soát, loại trừ sai sót.",
+        sol_card3_p3: "Tích hợp bộ ba <strong class=\"text-white\">AI Agents</strong> (Claude Code, Codex, AGY) để tăng tốc xây dựng pipeline và kiểm thử code.",
+        sol_card3_p4: "Quản lý mã nguồn chuẩn mực Git, đảm bảo quy chuẩn bảo mật dữ liệu doanh nghiệp và vận hành ổn định.",
+        sol_card3_btn: ">_ Xem Pipeline & Workflow Tự Động",
+        metric_val_1: "~60%",
+        metric_title_1: "Tiết kiệm thời gian báo cáo",
+        metric_desc_1: "Giảm thời gian xử lý báo cáo thủ công nhờ tự động hóa Python & SQL kết hợp Power Query.",
+        metric_val_2: "500+",
+        metric_title_2: "Người dùng & Điểm bán phục vụ",
+        metric_desc_2: "Chi nhánh, điểm bán & người dùng vận hành được phục vụ qua hệ thống Dashboard BI tương tác.",
+        metric_val_3: "12 Vùng",
+        metric_title_3: "Vùng kinh doanh liên kết",
+        metric_desc_3: "Khu vực kinh doanh được cấp báo cáo tự động kết nối dữ liệu doanh số, hoa hồng & tiếp thị.",
+        skills_heading: "Kỹ Năng Kỹ Thuật Chuyên Sâu",
+        skill_grp_1: "MARKETING TECH & ĐO LƯỜNG CHUYỂN ĐỔI",
+        skill_grp_2: "BUSINESS INTELLIGENCE",
+        skill_grp_3: "ETL & HỆ THỐNG ERP",
+        skill_grp_4: "AI ENGINEERING & DEVELOPER ECOSYSTEM",
+        edu_heading: "Học Vấn & Bằng Cấp",
+        edu_cat_1: "Master Degree",
+        edu_title_1: "Thạc sĩ Quản Trị Kinh Doanh (MBA)",
+        edu_cat_2: "US Tax & Accounting",
+        edu_title_2: "Ứng viên Enrolled Agent (EA Thuế Mỹ)",
+        edu_cat_3: "Digital Marketing",
+        edu_title_3: "Google Skillshop · Lộ Trình Đo Lường GA4",
+        edu_cat_4: "AI Engineering",
+        edu_title_4: "✨ Thực Hành Agentic AI & Tự Động Hóa Quy Trình",
+        footer_title: "Sẵn Sàng Đồng Hành Cùng Doanh Nghiệp Tối Ưu Hóa Chi Phí & Tăng Trưởng Quảng Cáo",
+        footer_desc: "Từ thiết lập hạ tầng tracking GA4/GTM, xây dựng Dashboard theo dõi chiến dịch đa kênh đến tối ưu hóa chi phí quảng cáo (ROAS/CPA) dựa trên dữ liệu thực tế.",
+        footer_zalo: "Nhắn Zalo: 0855 239 805",
+        footer_email: "Gửi Email: teoteo1081@gmail.com"
+      },
+      en: {
+        nav_back: "← Back to Portfolio Showcase",
+        top_capability_badge: "Interactive Capability Deck (V3)",
+        pill_loc: "📍 Ho Chi Minh City",
+        pill_work: "🌐 Remote / Freelance",
+        pill_lang: "🗣 English TOEIC ~700+",
+        hero_title: "Data Analyst ➔ Data-Backed Performance Marketing",
+        hero_bio: "Data analyst specializing in multi-channel advertising optimization (Meta, Google, TikTok). Skilled in combining user behavior tracking (GA4/GTM/BigQuery) and AI automation to control sales acquisition costs, identify high-performing marketing channels, and drive sustainable revenue growth.",
+        hero_verified: "<span>🛡</span> 100% Verified Profile",
+        hero_cta_zalo: "💬 Contact via Zalo / Collaborate",
+        hero_cta_github: "🐙 View GitHub Profile ↗",
+        sol_badge_core: "CORE COMPETENCIES & SOLUTIONS",
+        sol_heading: "Analytics & Automation Solutions",
+        sol_desc: "Refined through hands-on experience at multinational insurance corporations Prudential, Chubb Life, AIA.",
+        sol_card1_title: "Business Planning & Performance Management",
+        sol_card1_sub: "MAPA Model • Budget Forecasting • Incentive & KPI • GA4/GTM",
+        sol_card1_p1: "Build revenue forecasting models based on the 4 <strong class=\"text-white\">MAPA</strong> drivers (Manpower, Active Ratio, Productivity, Case Size).",
+        sol_card1_p2: "Model remuneration costs, commission budgets, and assess ROI against actual revenue.",
+        sol_card1_p3: "Variance analysis of <strong class=\"text-white\">Actual vs. Target</strong> (MoM/YoY) to detect performance gaps early and propose strategic adjustments.",
+        sol_card1_p4: "Set up marketing tracking infrastructure: configure <strong class=\"text-white\">GA4, GTM</strong>, standardize UTM tags, and optimize conversion metrics (ROAS, CPA, CVR).",
+        sol_card1_btn: "View Flowchart & Solution Demo",
+        sol_card2_title: "BI Engineering & Multi-Channel Dashboards",
+        sol_card2_sub: "Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard",
+        sol_card2_p1: "Real-time multi-tier reporting: Design dynamic Self-service BI dashboards serving diverse stakeholder levels; automate distribution of revenue insights.",
+        sol_card2_p2: "Multi-dimensional P&L and cost analysis: Visualize gross/net margins by product line, sales channel, branch, and vendor cost structures.",
+        sol_card2_p3: "Omnichannel marketing dashboard: Consolidate data from GA4 and ad networks (Google, Meta, TikTok) onto a centralized hub to track cash flow and real-time ROI/ROAS.",
+        sol_card2_btn: "View Dashboard Management Demo",
+        sol_card3_title: "Workflow Automation & Data Systems",
+        sol_card3_sub: "Python Scripts • SQL ETL • AI Tools",
+        sol_card3_p1: "Automated with <strong class=\"text-white\">Python & SQL</strong>: extract data, cleanse, compute metrics, and dispatch reports with dashboards via automated emails.",
+        sol_card3_p2: "Automate data entry and reconciliations, eliminating manual discrepancies.",
+        sol_card3_p3: "Integrate the trio of <strong class=\"text-white\">AI Agents</strong> (Claude Code, Codex, AGY) to accelerate pipeline development and code testing.",
+        sol_card3_p4: "Standardized Git version control, guaranteeing corporate data security standards and robust uptime.",
+        sol_card3_btn: ">_ View Automated Pipeline & Workflow",
+        metric_val_1: "~60%",
+        metric_title_1: "Reporting Time Saved",
+        metric_desc_1: "Slashed manual report prep time through automated Python & SQL pipelines and Power Query.",
+        metric_val_2: "500+",
+        metric_title_2: "Users & Sales Points Supported",
+        metric_desc_2: "Branches, sales outlets, and operational staff served via interactive BI dashboards.",
+        metric_val_3: "12 Regions",
+        metric_title_3: "Business Territories Connected",
+        metric_desc_3: "Business territories provisioned with automated reports synchronizing sales, commissions, and marketing data.",
+        skills_heading: "Deep Technical Skills",
+        skill_grp_1: "MARKETING TECH & CONVERSION TRACKING",
+        skill_grp_2: "BUSINESS INTELLIGENCE",
+        skill_grp_3: "ETL & ERP SYSTEMS",
+        skill_grp_4: "AI ENGINEERING & DEVELOPER ECOSYSTEM",
+        edu_heading: "Education & Certifications",
+        edu_cat_1: "Master Degree",
+        edu_title_1: "Master of Business Administration (MBA)",
+        edu_cat_2: "US Tax & Accounting",
+        edu_title_2: "IRS Enrolled Agent (EA) Candidate",
+        edu_cat_3: "Digital Marketing",
+        edu_title_3: "Google Skillshop · GA4 Learning Track",
+        edu_cat_4: "AI Engineering",
+        edu_title_4: "✨ Agentic AI & Workflow Automation",
+        footer_title: "Ready to Partner with Businesses to Optimize Costs & Accelerate Ad Growth",
+        footer_desc: "From setting up GA4/GTM tracking infrastructure and building omnichannel dashboards to data-driven ad cost optimization (ROAS/CPA).",
+        footer_zalo: "Message via Zalo: 0855 239 805",
+        footer_email: "Send Email: teoteo1081@gmail.com"
+      },
+      es: {
+        nav_back: "← Volver a Portfolio Showcase",
+        top_capability_badge: "Deck Interactivo de Capacidades (V3)",
+        pill_loc: "📍 Ciudad Ho Chi Minh",
+        pill_work: "🌐 Remoto / Freelance",
+        pill_lang: "🗣 Inglés TOEIC ~700+",
+        hero_title: "Data Analyst ➔ Marketing de Rendimiento Basado en Datos",
+        hero_bio: "Especialista en análisis de datos aplicado a la optimización de publicidad multicanal (Meta, Google, TikTok). Experiencia combinando medición de comportamiento (GA4/GTM/BigQuery) y automatización con IA para controlar costes de adquisición, identificar canales rentables y acelerar el crecimiento.",
+        hero_verified: "<span>🛡</span> Información 100% Verificada",
+        hero_cta_zalo: "💬 Contactar vía Zalo / Cooperar",
+        hero_cta_github: "🐙 Ver Perfil de GitHub ↗",
+        sol_badge_core: "COMPETENCIAS CLAVE Y SOLUCIONES",
+        sol_heading: "Soluciones de Análisis y Automatización",
+        sol_desc: "Fruto de la experiencia práctica en corporaciones multinacionales de seguros como Prudential, Chubb Life y AIA.",
+        sol_card1_title: "Planificación Comercial y Gestión del Rendimiento",
+        sol_card1_sub: "Modelo MAPA • Previsión Presupuestaria • Incentivos y KPI • GA4/GTM",
+        sol_card1_p1: "Construcción de modelos predictivos de ingresos basados en 4 pilares <strong class=\"text-white\">MAPA</strong> (Manpower, Active Ratio, Productivity, Case Size).",
+        sol_card1_p2: "Modelado de compensaciones, presupuesto de comisiones y medición del retorno respecto a ingresos reales.",
+        sol_card1_p3: "Análisis de variaciones <strong class=\"text-white\">Actual vs. Target</strong> (MoM/YoY) para detectar brechas de rendimiento y ajustar la estrategia.",
+        sol_card1_p4: "Configuración de infraestructura de marketing: <strong class=\"text-white\">GA4, GTM</strong>, etiquetado UTM y optimización de conversión (ROAS, CPA, CVR).",
+        sol_card1_btn: "Ver Diagrama y Demo",
+        sol_card2_title: "Ingeniería BI y Cuadros de Mando Multicanal",
+        sol_card2_sub: "Power BI • Looker Studio • Dynamic DAX • Marketing Dashboard",
+        sol_card2_p1: "Informes en tiempo real: Cuadros de mando dinámicos de autoservicio (Self-service BI) para todos los niveles organizativos con distribución automatizada.",
+        sol_card2_p2: "Análisis multidimensional de P&G y costes: Visualización del margen bruto y neto por línea de producto, canal de venta y sucursales.",
+        sol_card2_p3: "Dashboard de marketing omnicanal: Unificación de datos de GA4 y redes de anuncios (Google, Meta, TikTok) para rastrear ROI/ROAS en tiempo real.",
+        sol_card2_btn: "Ver Demo de Cuadro de Mando",
+        sol_card3_title: "Automatización de Procesos y Sistemas de Datos",
+        sol_card3_sub: "Python Scripts • SQL ETL • AI Tools",
+        sol_card3_p1: "Automatizado con <strong class=\"text-white\">Python y SQL</strong>: extracción, limpieza, cómputo de métricas y envío de informes por email.",
+        sol_card3_p2: "Automatización de entrada y conciliación de datos, eliminando errores manuales.",
+        sol_card3_p3: "Integración de agentes <strong class=\"text-white\">AI</strong> (Claude Code, Codex, AGY) para acelerar pipelines y pruebas de código.",
+        sol_card3_p4: "Control de versiones Git estandarizado, garantizando seguridad de datos empresariales y alta disponibilidad.",
+        sol_card3_btn: ">_ Ver Pipeline y Flujo Automatizado",
+        metric_val_1: "~60%",
+        metric_title_1: "Ahorro de Tiempo en Reportes",
+        metric_desc_1: "Reducción del tiempo manual mediante automatización en Python, SQL y Power Query.",
+        metric_val_2: "500+",
+        metric_title_2: "Usuarios y Puntos de Venta Servidos",
+        metric_desc_2: "Sucursales, puntos de venta y personal operativo respaldados con paneles BI interactivos.",
+        metric_val_3: "12 Regiones",
+        metric_title_3: "Territorios de Negocio Vinculados",
+        metric_desc_3: "Territorios dotados de informes automatizados que sincronizan ventas, comisiones y marketing.",
+        skills_heading: "Habilidades Técnicas Especializadas",
+        skill_grp_1: "MARKETING TECH Y MEDICIÓN DE CONVERSIÓN",
+        skill_grp_2: "BUSINESS INTELLIGENCE",
+        skill_grp_3: "ETL Y SISTEMAS ERP",
+        skill_grp_4: "INGENIERÍA DE IA Y ECOSISTEMA DE DESARROLLO",
+        edu_heading: "Educación y Certificaciones",
+        edu_cat_1: "Master Degree",
+        edu_title_1: "Máster en Administración de Empresas (MBA)",
+        edu_cat_2: "US Tax & Accounting",
+        edu_title_2: "Candidato a Enrolled Agent (EA Impuestos EE. UU.)",
+        edu_cat_3: "Digital Marketing",
+        edu_title_3: "Google Skillshop · Ruta de Medición GA4",
+        edu_cat_4: "AI Engineering",
+        edu_title_4: "✨ IA Agéntica y Automatización de Procesos",
+        footer_title: "Listo para Asociarse con Empresas para Optimizar Costes y Crecer en Publicidad",
+        footer_desc: "Desde la infraestructura de medición GA4/GTM y cuadros de mando omnicanal hasta la optimización de inversión (ROAS/CPA).",
+        footer_zalo: "Mensaje por Zalo: 0855 239 805",
+        footer_email: "Enviar Email: teoteo1081@gmail.com"
+      },
+      zh: {
+        nav_back: "← 返回作品集展示",
+        top_capability_badge: "交互式专业能力名片 (V3)",
+        pill_loc: "📍 胡志明市",
+        pill_work: "🌐 远程办公 / 自由职业",
+        pill_lang: "🗣 英语 TOEIC ~700+",
+        hero_title: "数据分析师 ➔ 数据驱动型效果营销",
+        hero_bio: "专注于跨渠道数字广告优化（Meta、Google、TikTok）的数据分析专家。擅长将全链路用户行为归因埋点（GA4/GTM/BigQuery）与智能体 AI 自动化相结合，严格控制获客成本，精准定位高投产营销渠道，驱动业绩长期稳健增长。",
+        hero_verified: "<span>🛡</span> 100% 真实专业履历",
+        hero_cta_zalo: "💬 Zalo 洽谈 / 业务合作",
+        hero_cta_github: "🐙 查看 GitHub 主页 ↗",
+        sol_badge_core: "核心竞争力与实战解决方案",
+        sol_heading: "数据分析与自动化解决方案",
+        sol_desc: "源自保诚 (Prudential)、安达 (Chubb Life)、友邦 (AIA) 等跨国人寿保险集团实战积累。",
+        sol_card1_title: "业务规划与绩效业绩管理",
+        sol_card1_sub: "MAPA 增长模型 • 预算预测 • 佣金激励与 KPI • GA4/GTM",
+        sol_card1_p1: "基于 4 大核心驱动要素 <strong class=\"text-white\">MAPA</strong>（人力、活动率、人均产能、件均保费）搭建营收预测与规划模型。",
+        sol_card1_p2: "测算薪酬佣金激励成本与业务预算，精准核算相对实际业绩的投资回报率 (ROI)。",
+        sol_card1_p3: "<strong class=\"text-white\">实际与目标差异分析 (Actual vs. Target)</strong> (MoM/YoY)，前瞻识别业绩偏差点并提供策略微调建议。",
+        sol_card1_p4: "搭建营销全链路埋点底座：配置 <strong class=\"text-white\">GA4、GTM</strong>、规范 UTM 架构，深度优化转化关键指标 (ROAS, CPA, CVR)。",
+        sol_card1_btn: "查看架构流程图与方案演示",
+        sol_card2_title: "商业智能 BI 与跨渠道决策看板",
+        sol_card2_sub: "Power BI • Looker Studio • 动态 DAX • 营销看板",
+        sol_card2_p1: "多层级实时看板：设计高度交互的自助式分析看板 (Self-service BI)，为管理层及一线团队自动化分发精准销售数据。",
+        sol_card2_p2: "多维损益 P&L 与成本穿透：按产品线、销售渠道、分公司及运营成本结构深入洞察毛利与净利表现。",
+        sol_card2_p3: "跨渠道营销中控看板：整合 GA4 及各广告投放平台（Google、Meta、TikTok）数据，全景监控资金流与实时投产比 (ROI/ROAS)。",
+        sol_card2_btn: "查看管理看板交互演示",
+        sol_card3_title: "业务流程与数据系统自动化",
+        sol_card3_sub: "Python 脚本 • SQL ETL • AI 智能工具",
+        sol_card3_p1: "基于 <strong class=\"text-white\">Python 与 SQL</strong> 自动化：数据抽取、清洗、指标计算并通过定时邮件自动化分发报表与看板。",
+        sol_card3_p2: "自动化数据录入与财务对账，杜绝人工低级错误。",
+        sol_card3_p3: "深度整合 <strong class=\"text-white\">AI Agents 智能体</strong>（Claude Code、Codex、AGY），数倍加速 Pipeline 构建与代码测试。",
+        sol_card3_p4: "规范化 Git 源码与版本管理，严格遵循企业数据安全合规标准，保障高可用稳定运行。",
+        sol_card3_btn: ">_ 查看自动化管道与工作流",
+        metric_val_1: "~60%",
+        metric_title_1: "报表处理耗时减少",
+        metric_desc_1: "借助 Python 与 SQL 自动化及 Power Query，大幅削减手工制表与统计时间。",
+        metric_val_2: "500+",
+        metric_title_2: "赋能用户与销售终端",
+        metric_desc_2: "通过高交互 BI 决策看板赋能覆盖的分支机构、网点及一线运营人员。",
+        metric_val_3: "12 个战区",
+        metric_title_3: "全面协同业务大区",
+        metric_desc_3: "覆盖各业务大区，自动无缝串联销售额、佣金激励与跨渠道营销数据。",
+        skills_heading: "核心专业技术栈",
+        skill_grp_1: "营销技术与转化全链路归因",
+        skill_grp_2: "商业智能 (BI) 数据洞察",
+        skill_grp_3: "ETL 管道与 ERP 系统集成",
+        skill_grp_4: "AI 智能体工程与开发者生态",
+        edu_heading: "教育背景与专业资质",
+        edu_cat_1: "Master Degree",
+        edu_title_1: "工商管理硕士 (MBA)",
+        edu_cat_2: "US Tax & Accounting",
+        edu_title_2: "美国国税局注册税务师 (EA) 候选人",
+        edu_cat_3: "Digital Marketing",
+        edu_title_3: "Google Skillshop · GA4 效果衡量认证路径",
+        edu_cat_4: "AI Engineering",
+        edu_title_4: "✨ Agentic AI 智能体与业务流程自动化",
+        footer_title: "竭诚赋能企业业务：精准优化营销成本，驱动广告业绩指数级增长",
+        footer_desc: "从搭建 GA4/GTM 全链路埋点底座、构建全渠道监控大屏，到基于真实业务数据的营销投产比 (ROAS/CPA) 深度调优。",
+        footer_zalo: "Zalo 即时沟通: 0855 239 805",
+        footer_email: "发送邮件: teoteo1081@gmail.com"
+      }
+    };
+
+    function switchLanguageCV(lang, isManual = false) {
+      if (!translationsCV[lang]) lang = 'vi';
+      document.documentElement.lang = lang;
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch (e) {}
+
+      const selectEl = document.getElementById('langSelectCV');
+      if (selectEl) selectEl.value = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translationsCV[lang] && translationsCV[lang][key]) {
+          if (translationsCV[lang][key].includes('<')) {
+            el.innerHTML = translationsCV[lang][key];
+          } else {
+            el.textContent = translationsCV[lang][key];
+          }
+        }
+      });
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (window.lucide) {
@@ -965,7 +1207,13 @@
         'tj_capability_v7_saved_html',
         'tj_capability_v7_saved_brand',
         'tj_capability_v8_saved_html',
-        'tj_capability_v8_saved_brand'
+        'tj_capability_v8_saved_brand',
+        'tj_capability_v9_saved_html',
+        'tj_capability_v9_saved_brand',
+        'tj_capability_v10_saved_html',
+        'tj_capability_v10_saved_brand',
+        'tj_capability_v11_saved_html',
+        'tj_capability_v11_saved_brand'
       ].forEach((oldKey) => {
         localStorage.removeItem(oldKey);
       });
@@ -985,6 +1233,14 @@
         root.innerHTML = savedHTML;
         if (window.lucide) lucide.createIcons();
       }
+
+      // Đồng bộ ngôn ngữ đã lưu từ portfolio_lang
+      let savedLang = 'vi';
+      try {
+        savedLang = localStorage.getItem('portfolio_lang') || 'vi';
+      } catch (e) {}
+      switchLanguageCV(savedLang, false);
+
 
       const savedBrand = localStorage.getItem(STORAGE_KEY_BRAND);
       if (savedBrand && brandEl) {
