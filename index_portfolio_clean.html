@@ -969,6 +969,29 @@
       el.replaceChildren(template.content.cloneNode(true));
     }
 
+    // Field dùng chung giữa 4 locale (thông tin nhận dạng, không dịch).
+    // Các field data-field-id khác (badge, copyright) được dịch riêng và lưu theo textEditsByLang.
+    const SHARED_FIELD_KEYS_CV = ['hero_name', 'hero_phone', 'hero_email'];
+
+    // Ghi giá trị field dùng chung vào từ điển của cả 4 locale để switchLanguageCV luôn render nhất quán
+    function applySharedFieldEditsCV(fieldEdits) {
+      if (!fieldEdits || typeof fieldEdits !== 'object') return;
+      SHARED_FIELD_KEYS_CV.forEach((fid) => {
+        const val = fieldEdits[fid];
+        if (typeof val !== 'string') return;
+        let safeVal = val;
+        if (/<(?:br|span|strong|code|kbd)\b/i.test(val)) {
+          const tpl = document.createElement('template');
+          tpl.innerHTML = val;
+          sanitizeRichFragmentCV(tpl.content);
+          safeVal = tpl.innerHTML;
+        }
+        Object.keys(translationsCV).forEach((l) => {
+          translationsCV[l][fid] = safeVal;
+        });
+      });
+    }
+
     // ==================== TỪ ĐIỂN ĐA NGÔN NGỮ (I18N: VI, EN, ES, ZH) ====================
     const translationsCV = {
       vi: {
@@ -1484,18 +1507,9 @@
           });
         }
 
-        // 7B. Khôi phục trực tiếp các field edits theo data-field-id
-        if (parsed.fieldEdits && typeof parsed.fieldEdits === 'object') {
-          Object.keys(parsed.fieldEdits).forEach((fid) => {
-            const val = parsed.fieldEdits[fid];
-            if (typeof val === 'string') {
-              const el = document.querySelector(`[data-field-id="${CSS.escape(fid)}"]`);
-              if (el) {
-                renderSafeI18nCV(el, val);
-              }
-            }
-          });
-        }
+        // 7B. Khôi phục field dùng chung (tên, điện thoại, email) cho cả 4 locale.
+        // Các field dịch riêng (badge, copyright) chỉ lấy từ textEditsByLang để không rò rỉ giữa các ngôn ngữ.
+        applySharedFieldEditsCV(parsed.fieldEdits);
 
         // 8. Khôi phục ảnh đại diện
         if (typeof parsed.avatarDataUrl === 'string' && /^data:image\/(jpeg|png|webp|gif);base64,[A-Za-z0-9+/=]+$/i.test(parsed.avatarDataUrl)) {
@@ -1583,23 +1597,6 @@
         savedLang = localStorage.getItem('portfolio_lang') || 'vi';
       } catch (e) {}
       switchLanguageCV(savedLang, false);
-
-      // Áp dụng lại các fieldEdits đã lưu (đảm bảo các trường có data-field-id không bị locale mặc định ghi đè)
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY_STATE);
-        if (raw) {
-          const parsed = JSON.parse(raw);
-          if (parsed && parsed.fieldEdits && typeof parsed.fieldEdits === 'object') {
-            Object.keys(parsed.fieldEdits).forEach((fid) => {
-              const val = parsed.fieldEdits[fid];
-              if (typeof val === 'string') {
-                const el = document.querySelector(`[data-field-id="${CSS.escape(fid)}"]`);
-                if (el) renderSafeI18nCV(el, val);
-              }
-            });
-          }
-        }
-      } catch (e) {}
 
       const root = document.getElementById('portfolio-root');
       if (document.getElementById('floating-toolbar')) {
@@ -1812,13 +1809,16 @@
           state.textEditsByLang[currentLangCV] = {};
         }
 
-        if (!state.fieldEdits || typeof state.fieldEdits !== 'object') {
-          state.fieldEdits = {};
-        }
+        // fieldEdits chỉ chứa field dùng chung; loại bỏ khóa cũ của field dịch riêng (dữ liệu trước bản sửa này)
+        const prevFieldEdits = (state.fieldEdits && typeof state.fieldEdits === 'object') ? state.fieldEdits : {};
+        state.fieldEdits = {};
+        SHARED_FIELD_KEYS_CV.forEach((fid) => {
+          if (typeof prevFieldEdits[fid] === 'string') state.fieldEdits[fid] = prevFieldEdits[fid];
+        });
 
         document.querySelectorAll('#portfolio-root [data-field-id]').forEach((el) => {
           const fid = el.getAttribute('data-field-id');
-          if (fid) {
+          if (fid && SHARED_FIELD_KEYS_CV.includes(fid)) {
             let savedVal = '';
             if (el.querySelector('br, span.inline-block, strong, code, kbd')) {
               const clone = el.cloneNode(true);
@@ -1846,7 +1846,7 @@
             if (translationsCV[currentLangCV]) {
               translationsCV[currentLangCV][key] = savedVal;
             }
-            if (key === 'hero_name' || key === 'hero_phone' || key === 'hero_email') {
+            if (SHARED_FIELD_KEYS_CV.includes(key)) {
               ['vi', 'en', 'es', 'zh'].forEach(l => {
                 if (translationsCV[l]) translationsCV[l][key] = savedVal;
                 if (!state.textEditsByLang[l]) state.textEditsByLang[l] = {};
