@@ -86,20 +86,20 @@
 
   <!-- Sticky Glassmorphism Navigation -->
   <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-slate-950/80 glass-nav transition-colors duration-300" id="main-navbar">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 xl:px-8 h-20 flex items-center justify-between gap-2">
       
       <!-- Brand Logo -->
       <a href="#about" class="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-xl min-w-0">
         <span class="brand-title editable-node shrink-0 w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-400 to-cyan-400 flex items-center justify-center text-slate-950 font-black text-lg shadow-sm group-hover:scale-105 transition-transform">
           TJ
         </span>
-        <span class="brand-title editable-node truncate font-bold text-sm sm:text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-          Thao Nguyen <span class="brand-title editable-node hidden sm:inline text-xs font-semibold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 ml-1">Portfolio Showcase (V3)</span>
+        <span class="brand-title editable-node truncate font-bold text-sm sm:text-xl lg:text-lg xl:text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+          Thao Nguyen <span class="brand-title editable-node hidden sm:inline lg:hidden xl:inline text-xs font-semibold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 ml-1">Portfolio Showcase (V3)</span>
         </span>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav aria-label="Điều hướng chính" data-i18n-aria="aria_primary_nav" class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300">
+      <nav aria-label="Điều hướng chính" data-i18n-aria="aria_primary_nav" class="hidden lg:flex items-center gap-3 xl:gap-6 whitespace-nowrap text-sm font-medium text-slate-700 dark:text-slate-300">
         <a href="#about" data-i18n="nav_about" class="editable-node hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded px-1 transition-colors">Giới thiệu</a>
         <a href="#dashboard" data-i18n="nav_dashboard" class="editable-node hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded px-1 transition-colors">Mô phỏng Phễu</a>
         <a href="#ga4-ecosystem" data-i18n="nav_ecosystem" class="editable-node hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded px-1 transition-colors">Hệ Sinh Thái GA4</a>
@@ -108,7 +108,7 @@
       </nav>
 
       <!-- Desktop Controls & CTA -->
-      <div class="hidden sm:flex items-center gap-3">
+      <div class="hidden sm:flex items-center gap-3 lg:gap-2 xl:gap-3">
         <!-- Language Selector -->
         <div class="relative inline-block">
           <select id="langSelect" onchange="switchLanguage(this.value, true)" aria-label="Chọn ngôn ngữ" data-i18n-aria="aria_lang_select" class="bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-zinc-800 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer">
@@ -126,7 +126,7 @@
         </button>
 
         <!-- CTA Button -->
-        <a href="#contact" data-i18n="nav_cta" class="editable-node inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 focus-visible:from-emerald-300 focus-visible:to-cyan-300 shadow-sm shadow-emerald-500/10 hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
+        <a href="#contact" data-i18n="nav_cta" class="editable-node inline-flex items-center justify-center whitespace-nowrap px-4 lg:px-3 xl:px-4 py-2 text-xs font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 focus-visible:from-emerald-300 focus-visible:to-cyan-300 shadow-sm shadow-emerald-500/10 hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all">
           Liên hệ ngay
         </a>
       </div>
@@ -408,7 +408,7 @@
     </section>
 
     <!-- ==================== (4) SECTION 4: HỆ SINH THÁI ĐO LƯỜNG THỰC CHIẾN (GA4 ECOSYSTEM HUB) ==================== -->
-    <section id="ga4-ecosystem" class="space-y-10 relative scroll-mt-32 md:scroll-mt-36 overflow-hidden" style="scroll-margin-top: 8.5rem;">
+    <section id="ga4-ecosystem" class="space-y-10 relative scroll-mt-32 md:scroll-mt-36" style="scroll-margin-top: 8.5rem;">
       <div id="live-projects" class="scroll-mt-32 md:scroll-mt-36" style="scroll-margin-top: 8.5rem;"></div>
       <!-- Ambient Background Glow -->
       <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-56 sm:w-[32rem] max-w-full h-64 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
